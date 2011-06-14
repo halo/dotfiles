@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# from http://kerneltrap.org/mailarchive/git/2006/11/16/230518
+
+BR=$(git symbolic-ref HEAD 2>/dev/null)
+HOST=$(hostname -s)
+
+if [ $BR ]; then
+    BR=${BR#refs/heads/}
+    REL=$(git rev-parse --show-prefix) 
+    REL="${REL//%\/}"
+    LOC="${PWD%/$REL}"
+    echo "$HOST:${LOC/*\/} ($BR) $ "
+else
+    LOC=$(pwd)
+    echo "$HOST:${LOC/*\/} $ "
+fi

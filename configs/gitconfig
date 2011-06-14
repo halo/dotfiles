@@ -1,0 +1,17 @@
+[user]
+  # Keeping user data locally for now to avoid confusion.
+
+[core]
+  editor = mate -w  # This is overriden by $GIT_EDITOR
+  
+[color]
+  status = auto
+  branch = auto
+  diff = auto
+
+[alias]
+  standup = shortlog --since=yesterday
+  uncommit = reset --soft HEAD^
+
+<.replace github-token>
+
