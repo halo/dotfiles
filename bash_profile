@@ -3,11 +3,10 @@
 
 # Read profiles if exists
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
-[[ -s "$HOME/.bdev/.profile" ]] && source "$HOME/.bdev/.profile"
+[[ -s "$HOME/.bdev/profile" ]] && source "$HOME/.bdev/profile"
 
 # Paths
-export PATH=/usr/local/Cellar/python/2.6.5/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
+#export PATH=/usr/local/mysql/bin:$PATH
 
 # Override git-config "core.editor" to enforce vim over SSH
 if test -n "$SSH_CONNECTION"; then
@@ -15,7 +14,9 @@ if test -n "$SSH_CONNECTION"; then
 fi
 
 # Git fancy
-export PS1='$(~/.git-ps1 "[\u@\h \W]\$ ")'
+export PS1='$(~/.git-ps1 "[\u@\h \w]\$ ")'
+export PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+
 [[ -s "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
 
 # The rest is just aliases
@@ -63,7 +64,8 @@ alias cu='script/cucumber features -b -s -f progress'
 alias cuf='rake features:focus'
 alias rs='rake spec'
 alias mig='rake db:migrate'
-alias mpr='mate app features config lib db/schema.rb db/migrate public spec script/cruise stories test todo.txt script/cron script/oneoff script/app Gemfile'
+alias mpr='pa; mate app features config lib db/schema.rb db/migrate public spec script/cruise stories test todo.txt script/cron script/oneoff script/app Gemfile'
+alias mpa='pa; mate .'
 alias tdev='tail -n 90 -f log/development.log'
 alias tdevp='tdev | egrep "*Parameters"'
 alias tprod='tail -f log/production.log'
@@ -155,4 +157,23 @@ function diffx {
 
 function mkcd {
   mkdir -p "$1" && cd "$1"
+}
+
+function robots {
+  osascript 2>/dev/null <<EOF
+  tell application "System Events"
+          tell process "Terminal" to keystroke "t" using command down
+  end
+  tell application "Terminal"
+          activate
+          do script with command "pa && clear && cup" in window 1
+  end tell
+  tell application "System Events"
+          tell process "Terminal" to keystroke "t" using command down
+  end
+  tell application "Terminal"
+          activate
+          do script with command "pa && clear && rsp" in window 1
+  end tell
+EOF
 }
