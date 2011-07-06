@@ -96,6 +96,7 @@ alias gp='git push'
 alias gpp='git pull --rebase && git push'
 alias gcp="git cherry-pick"
 alias gm='git merge'
+alias gr='git remote show origin'
 alias gbt='git branch --track' # stubs origin/stubs
 alias mim='mergeinmaster'
 alias grb='git-remote-branch'
