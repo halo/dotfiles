@@ -5,10 +5,7 @@
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 [[ -s "$HOME/.bdev/profile" ]] && source "$HOME/.bdev/profile"
 
-# Paths
-#export PATH=/usr/local/mysql/bin:$PATH
-
-# Override git-config "core.editor" to enforce vim over SSH
+# Override git-config "core.editor" to enforce it over SSH
 if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='nano'
 fi
@@ -28,6 +25,7 @@ alias pa="cd ~/Projects/auktion"
 alias tc="cd ~/Projects/testbot_cloud"
 alias t="cd ~/Projects/testbot"
 alias o="open ."
+alias m="mate"
 
 # Management
 alias dots="mate ~/.dotfiles"
@@ -74,7 +72,7 @@ alias spc='script/spork cucumber'
 alias rsp='rake testbot:spec'
 alias cup='rake testbot:features'
 alias prep='rake db:test:prepare'
-alias g='bundle exec guard start -n f'
+alias g='guard'
 alias gf='FUNCTIONAL=true bundle exec guard start -n f'
 
 # Git
@@ -83,7 +81,9 @@ alias gs="git status"
 alias gst="git status"
 alias gw="git show"
 alias gd="git diff"  # What's changed but not yet added?
+alias gdm="git diff | mate"
 alias gdc="git diff --cached"  # What's added but not yet committed?
+alias gdcm="git diff --cached | mate"
 alias ga='git add'
 alias gc="git commit -v -a"
 alias gca="git commit -v -a"
