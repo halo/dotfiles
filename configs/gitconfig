@@ -3,7 +3,7 @@
 
 [core]
   editor = mate -w  # This is overriden by $GIT_EDITOR
-  
+
 [color]
   status = auto
   branch = auto
@@ -14,4 +14,3 @@
   uncommit = reset --soft HEAD^
 
 <.replace github-token>
-

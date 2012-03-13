@@ -1,3 +1,7 @@
+export RBENV_ROOT="<%= @home_path %>/.biosphere/spheres/bukowskis/rbenv"
+export PATH="${RBENV_ROOT}/bin:$PATH"
+[[ -d "${RBENV_ROOT}/bin" ]] && eval "$(rbenv init -)"     # rbenv mode
+
 ### CHEF MANAGED START ###
 
 # Adding the "bio" executable to your path.
