@@ -1,19 +1,20 @@
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+### CHEF MANAGED START ###
 
-# Read profiles if exists
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
-[[ -s "$HOME/.bdev/profile" ]] && source "$HOME/.bdev/profile"
+# Adding the "bio" executable to your path.
+export PATH="/Users/zoo/.biosphere/core/bin:$PATH"
+
+# Loading Biosphere's bash_profile for easier de-/activation of spheres.
+[[ -s /Users/zoo/.biosphere/active/bash_profile ]] && source /Users/zoo/.biosphere/active/bash_profile
+
+### CHEF MANAGED STOP ###
 
 # Override git-config "core.editor" to enforce it over SSH
 if test -n "$SSH_CONNECTION"; then
-  export GIT_EDITOR='nano'
+  export GIT_EDITOR='vi'
 fi
 
 # Git fancy
-export PS1='$(~/.git-ps1 "[\u@\h \w]\$ ")'
-export PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
-
+[[ -s "$HOME/.git-ps1" ]] && export PS1='$(~/.git-ps1 "[\u@\h \w]\$ ")'
 [[ -s "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
 
 # The rest is just aliases
@@ -31,10 +32,6 @@ alias m="mate"
 alias dots="mate ~/.dotfiles"
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
 alias redot='cd ~/.dotfiles && git pull && rake; cd -'
-
-# Dropbox projects
-alias mdrop='~/Dropbox/Projects/move_here.sh'
-alias sdrop='~/Dropbox/Projects/symlink.rb'
 
 # Shell
 alias c='clear'
@@ -54,7 +51,7 @@ elif ls -G -d . >/dev/null 2>&1; then
 fi
 
 # Ruby on Rails
-alias ss='script/server'   
+alias ss='script/server'
 alias ssp='DEV=true script/server -e production'
 alias sc='script/console'
 alias at="script/autospec -f -c"
@@ -102,39 +99,16 @@ alias mim='mergeinmaster'
 alias grb='git-remote-branch'
 alias stats='git shortlog -s -n'
 
-# Xcode versioning
-# http://www.blog.montgomerie.net/easy-iphone-application-versioning-with-agvtool
-alias xv="agvtool what-version; agvtool what-marketing-version"  # Show versions.
-alias xvbump="agvtool bump -all"  # Bump build number.
-alias xvset="agvtool new-marketing-version"  # Set user-visible version: xvset 2.0
-
 # Servers
-alias grace='sudo apachectl graceful'
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
 alias res="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
 
 alias hosts='sudo mate /etc/hosts'
-
-# Work
-# Use with autologin Greasemonkey script: http://gist.github.com/raw/487186/ccf2c203741c1e39eb45416d02bc58b2728427fc/basefarm_auto.user.js
-alias vpn="open -a Firefox 'https://ssl-vpn.sth.basefarm.net/ssl'; sleep 1; osascript -e 'tell app \"System Events\" to set visible of process \"Firefox\" to false'"
-alias vpnagent="sudo killall -9 vpnagentd; sudo nohup /opt/cisco/vpn/bin/vpnagentd -execv_instance &"
+alias sshconf='mate ~/.ssh/config'
 alias keys="open ~/.ssh"
-
-# LiveReload
-alias lr="nohup /usr/bin/rake livereload &> /dev/null &"
-
-# RVM
-alias gsd="rvm gemset delete"
-alias gsc="rvm gemset create"
-alias gsl="rvm gemset list"
-alias gsu="rvm gemset use"
-alias rvu="rvm use"
 
 # Other:
 alias online="ping -c 1 www.sunet.se &> /dev/null && echo 'Online :)' || echo 'Offline :('"
-alias v="vagrant"
-
 
 function guser {
   if [ -z "$1" ]
@@ -150,7 +124,6 @@ function guser {
     git config --get user.email
   fi
 }
-
 
 # Functions
 function diffx {
