@@ -90,6 +90,7 @@ alias gc="git commit -v -a"
 alias gca="git commit -v -a"
 alias gam="git commit --amend"
 alias gco="git checkout"
+alias gg='git grep'
 alias go="git checkout"
 alias gb="git checkout -b --color"
 alias gba='git branch -a --color'
