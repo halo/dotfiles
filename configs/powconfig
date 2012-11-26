@@ -1,6 +1,0 @@
-export POW_TIMEOUT=7200
-
-
-### CHEF MANAGED START ###
-export PATH="/Users/zoo/.rbenv/shims:/Users/zoo/.rbenv/bin:$PATH"
-### CHEF MANAGED STOP ###

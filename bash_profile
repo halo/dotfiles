@@ -1,6 +1,6 @@
 export RBENV_ROOT="<%= @home_path %>/.biosphere/spheres/bukowskis/rbenv"
 export PATH="${RBENV_ROOT}/bin:$PATH"
-[[ -d "${RBENV_ROOT}/bin" ]] && eval "$(rbenv init -)"     # rbenv mode
+[[ -d "${RBENV_ROOT}/bin" ]] && eval "$(rbenv init -)"
 
 ### CHEF MANAGED START ###
 
@@ -14,12 +14,11 @@ export PATH="/Users/zoo/.biosphere/core/bin:$PATH"
 
 # Override git-config "core.editor" to enforce it over SSH
 if test -n "$SSH_CONNECTION"; then
-  export GIT_EDITOR='vi'
+  export GIT_EDITOR='vim'
 fi
 
 # Git fancy
 [[ -s "$HOME/.git-ps1" ]] && export PS1='$(~/.git-ps1 "[\u@\h \w]\$ ")'
-[[ -s "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
 
 # The rest is just aliases
 
@@ -27,19 +26,15 @@ fi
 alias p="cd ~/Projects"
 alias a="cd ~/Projects/auktion"
 alias pa="cd ~/Projects/auktion"
-alias tc="cd ~/Projects/testbot_cloud"
-alias t="cd ~/Projects/testbot"
 alias o="open ."
 alias m="mate"
 
 # Management
 alias dots="mate ~/.dotfiles"
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
-alias redot='cd ~/.dotfiles && git pull && rake; cd -'
 
 # Shell
-alias c='clear'
-alias la='ls -alh'
+alias la='ls -lah'
 alias cdd='cd -'  # back to last directory
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -106,7 +101,6 @@ alias stats='git shortlog -s -n'
 
 # Servers
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
-alias res="touch tmp/restart.txt && echo touched tmp/restart.txt"  # Passenger
 
 alias hosts='sudo mate /etc/hosts'
 alias sshconf='mate ~/.ssh/config'
@@ -133,27 +127,4 @@ function guser {
 # Functions
 function diffx {
   `/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
-}
-
-function mkcd {
-  mkdir -p "$1" && cd "$1"
-}
-
-function robots {
-  osascript 2>/dev/null <<EOF
-  tell application "System Events"
-          tell process "Terminal" to keystroke "t" using command down
-  end
-  tell application "Terminal"
-          activate
-          do script with command "pa && clear && cup" in window 1
-  end tell
-  tell application "System Events"
-          tell process "Terminal" to keystroke "t" using command down
-  end
-  tell application "Terminal"
-          activate
-          do script with command "pa && clear && rsp" in window 1
-  end tell
-EOF
 }
