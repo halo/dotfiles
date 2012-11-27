@@ -11,5 +11,7 @@
   diff = auto
 
 [alias]
-  uncommit = reset --soft HEAD^
   unstage = reset HEAD .
+  uncommit = reset --soft HEAD^
+  cut = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

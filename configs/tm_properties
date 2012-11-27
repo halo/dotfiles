@@ -1,3 +1,11 @@
 softWrap = false
 softTabs = true
 tabSize = 2
+fontSize = 11
+scmStatus = false
+fileBrowserGlob = "{*,.tm_properties,.htaccess,.gitignore}"
+
+[ .git/COMMIT_EDITMSG ]
+softWrap         = true
+spellChecking    = true
+spellingLanguage = 'en'
