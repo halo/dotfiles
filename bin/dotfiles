@@ -56,7 +56,7 @@ end
 
 Dotfiles.all do |source, destination|
 
-  if !destination.symlink? && destination.read != source.read
+  if !destination.symlink? && destination.readable? && destination.read != source.read
     puts "Skipping custom #{destination.basename.to_s.bold}".yellow
     next
   end
@@ -66,7 +66,7 @@ Dotfiles.all do |source, destination|
     destination.delete
   end
 
-  if destination.readlink == source
+  if destination.symlink? && destination.readlink == source
     puts "Already up-to-date #{destination.to_s.bold} -> #{source.to_s.bold}".green
   else
     puts "Creating symlink #{destination.to_s.bold} -> #{source.to_s.bold}".green
