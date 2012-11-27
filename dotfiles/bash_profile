@@ -12,6 +12,8 @@ export PATH="/Users/zoo/.biosphere/core/bin:$PATH"
 
 ### CHEF MANAGED STOP ###
 
+export PATH="~/.dotfiles/bin:$PATH"
+
 # Override git-config "core.editor" to enforce vim when using SSH
 if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
@@ -26,7 +28,7 @@ alias sshconf='mate ~/.ssh/config'
 alias known='mate ~/.ssh/known_hosts'
 alias keys="open ~/.ssh"
 
-# Directories
+# Project Directories
 alias p="cd ~/Projects"
 alias pc="cd ~/Projects/chef-repo"
 alias pa="cd ~/Projects/auktion"
@@ -52,6 +54,7 @@ alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"
 
 # Other:
 alias online="ping -c 1 www.sunet.se &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+alias be="bundle exec"
 
 # Git
 alias gl="git pull --rebase"

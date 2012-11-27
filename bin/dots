@@ -1,3 +1,76 @@
 #!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -W0
 # -*- encoding: utf-8 -*-
+require 'pathname'
 
+module Dotfiles
+  module StringExtensions
+
+    def normal()  stylize(:normal);  end
+    def red()     stylize(:red);     end
+    def green()   stylize(:green);   end
+    def yellow()  stylize(:yellow);  end
+    def blue()    stylize(:blue);    end
+    def magenta() stylize(:magenta); end
+    def cyan()    stylize(:cyan);    end
+    def bold()    stylize(:bold);    end
+    def blink()   stylize(:blink);   end
+
+    private
+
+    def stylize(style)
+      start_code = case style
+      when :normal    then 0
+      when :red       then 31
+      when :green     then 32
+      when :yellow    then 33
+      when :blue      then 34
+      when :magenta   then 35
+      when :cyan      then 36
+      when :bold      then 1
+      end
+
+      end_code = case style
+      when :blink then 25
+      when :bold  then 22
+      else             0
+      end
+
+      %{\033[#{start_code}m#{self}\033[#{end_code}m}
+    end
+
+  end
+end
+
+class String
+  include Dotfiles::StringExtensions
+end
+
+module Dotfiles
+  def self.all(&block)
+    Pathname.glob(File.expand_path('../../dotfiles/*', __FILE__)) do |source|
+      destination = Pathname.new(File.expand_path(".#{source.basename}", '~'))
+      yield source, destination
+    end
+  end
+end
+
+Dotfiles.all do |source, destination|
+
+  if !destination.symlink? && destination.read != source.read
+    puts "Skipping custom #{destination.basename.to_s.bold}".yellow
+    next
+  end
+
+  if destination.symlink? && destination.readlink != source
+    puts "Removing existing symlink #{destination.to_s.bold} -> #{destination.readlink.to_s.bold}".red
+    destination.delete
+  end
+
+  if destination.readlink == source
+    puts "Already up-to-date #{destination.to_s.bold} -> #{source.to_s.bold}".green
+  else
+    puts "Creating symlink #{destination.to_s.bold} -> #{source.to_s.bold}".green
+    destination.make_symlink(source)
+  end
+
+end
