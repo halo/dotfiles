@@ -14,6 +14,9 @@ export PATH="/Users/zoo/.biosphere/core/bin:$PATH"
 
 export PATH="~/.dotfiles/bin:$PATH"
 
+# Adding the airport utility
+export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/"
+
 # Override git-config "core.editor" to enforce vim when using SSH
 if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
