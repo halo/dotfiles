@@ -3,6 +3,8 @@ if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
 fi
 
+export PATH="~/.dotfiles/bin:$PATH"
+
 # Shell
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
 alias la='ls -lah'
