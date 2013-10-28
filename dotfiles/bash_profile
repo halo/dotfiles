@@ -1,9 +1,13 @@
+# Default prompt
+export PS1='\w\$ '
+
+# Dotfiles path
+export PATH="~/.dotfiles/bin:$PATH"
+
 # Override git-config "core.editor" to enforce it over SSH
 if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
 fi
-
-export PATH="~/.dotfiles/bin:$PATH"
 
 # Shell
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
