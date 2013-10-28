@@ -1,9 +1,11 @@
 softWrap = false
 softTabs = true
 tabSize = 2
+
 fontSize = 11
 scmStatus = false
-fileBrowserGlob = "{*,.tm_properties,.htaccess,.gitignore}"
+
+fileBrowserGlob = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version}"
 
 [ .git/COMMIT_EDITMSG ]
 softWrap         = true

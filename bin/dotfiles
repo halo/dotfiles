@@ -46,31 +46,66 @@ class String
 end
 
 module Dotfiles
-  def self.all(&block)
-    Pathname.glob(File.expand_path('../../dotfiles/*', __FILE__)) do |source|
-      destination = Pathname.new(File.expand_path(".#{source.basename}", '~'))
-      yield source, destination
+  module Runtime
+    def self.dry_run?
+      ARGV.include? '--dry'
     end
   end
 end
 
-Dotfiles.all do |source, destination|
+module Dotfiles
+  def self.all(&block)
+    home_path = Pathname.new('~').expand_path
+    Pathname.glob(File.expand_path('../../dotfiles/**/*', __FILE__)) do |config_path|
 
-  if !destination.symlink? && destination.readable? && destination.read != source.read
-    puts "Skipping custom #{destination.basename.to_s.bold}".yellow
-    next
+      path     = config_path.relative_path_from(Pathname.new File.expand_path('../../dotfiles', __FILE__))
+      components = []
+      path.each_filename { |component| components << component }
+      original = home_path.join ".#{components.first}", File.join(components[1..-1])
+      destiny  = config_path.expand_path
+
+      yield original, destiny
+    end
   end
-
-  if destination.symlink? && destination.readlink != source
-    puts "Removing existing symlink #{destination.to_s.bold} -> #{destination.readlink.to_s.bold}".red
-    destination.delete
-  end
-
-  if destination.symlink? && destination.readlink == source
-    puts "Already up-to-date #{destination.to_s.bold} -> #{source.to_s.bold}".green
-  else
-    puts "Creating symlink #{destination.to_s.bold} -> #{source.to_s.bold}".green
-    destination.make_symlink(source)
-  end
-
 end
+
+puts
+Dotfiles.all do |original, destiny|
+
+  if destiny.directory?
+    if !original.exist?
+      puts "  Creating directory #{original}"
+      original.mkdir unless Dotfiles::Runtime.dry_run?
+
+    elsif !original.directory?
+      puts "  WARN: #{original.to_s.bold} should really be a directory, but it isn't.".red
+    end
+
+  elsif destiny.file?
+    if !original.exist?
+      puts "  Creating new symlink"
+      puts "    from #{original}"
+      puts "    to   #{destiny}"
+      original.make_symlink destiny unless Dotfiles::Runtime.dry_run?
+
+    elsif original.symlink?
+      if original.realpath != destiny
+        puts "  Overwriting existing symlink"
+        puts "    from   #{original}"
+        puts "    was to #{original.realpath}"
+        puts "    now to #{destiny}"
+      else
+        next
+      end
+
+    else
+      puts "  Refusing to overwrite"
+      puts "    #{original}"
+    end
+
+    puts
+  end
+end
+
+puts "  Dotfiles updated."
+puts

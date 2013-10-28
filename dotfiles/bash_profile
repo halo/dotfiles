@@ -1,71 +1,50 @@
-export RBENV_ROOT="<%= @home_path %>/.biosphere/spheres/bukowskis/rbenv"
-export PATH="${RBENV_ROOT}/bin:$PATH"
-[[ -d "${RBENV_ROOT}/bin" ]] && eval "$(rbenv init -)"
-
-### CHEF MANAGED START ###
-
-# Adding the "bio" executable to your path.
-export PATH="/Users/zoo/.biosphere/core/bin:$PATH"
-
-# Loading Biosphere's bash_profile for easier de-/activation of spheres.
-[[ -s /Users/zoo/.biosphere/active/bash_profile ]] && source /Users/zoo/.biosphere/active/bash_profile
-
-### CHEF MANAGED STOP ###
-
-export PATH="~/.dotfiles/bin:$PATH"
-
-# Override git-config "core.editor" to enforce vim when using SSH
+# Override git-config "core.editor" to enforce it over SSH
 if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
 fi
 
-# Default prompt
-export PS1='\w\$ '
-
-# Git prompt
-if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-  export PS1='\w\$$(__git_ps1) '
-fi
-
-# File editing
-alias hosts='sudo mate /etc/hosts'
-alias sshconf='mate ~/.ssh/config'
-alias known='mate ~/.ssh/known_hosts'
-alias keys="open ~/.ssh"
-
-# Project Directories
-alias p="cd ~/Projects"
-alias pc="cd ~/Projects/chef-repo"
-alias pa="cd ~/Projects/auktion"
-
-# TextMate
-alias o="open ."
-alias m="mate"
-
 # Shell
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
-alias ls='ls -G'
 alias la='ls -lah'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+
+# Portable ls with colors
+if ls --color -d . >/dev/null 2>&1; then
+  alias ls='ls --color=auto'  # Linux
+elif ls -G -d . >/dev/null 2>&1; then
+  alias ls='ls -G'  # BSD/OS X
+fi
+
+# Ruby
+alias be='bundle exec'
 
 # Rails
-alias sc='script/console'
 alias tdev='tail -n 90 -f log/development.log'
+alias ttest='tail -n 90 -f log/test.log'
+alias g='be guard'
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"
 
-# Other:
-alias online="ping -c 1 www.sunet.se &> /dev/null && echo 'Online :)' || echo 'Offline :('"
-alias be="bundle exec"
+# Applications
+alias m="mate"
+
+# System
+alias hosts='sudo mate /etc/hosts'
+alias sshconf='mate ~/.ssh/config'
+alias keys="open ~/.ssh"
+alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+function diffx {
+  `/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
+}
+
+# Projects
+alias p="cd ~/Projects"
+alias pa="cd ~/Projects/auktion"
+alias pm="cd ~/Projects/market"
+alias pe="cd ~/Projects/express"
 
 # Git
 alias gl="git pull --rebase"
 alias gs="git status"
-alias gw="git show"
 alias gd="git diff"  # What's changed but not yet added?
 alias gdm="git diff | mate"
 alias gdc="git diff --cached"  # What's added but not yet committed?
@@ -75,15 +54,12 @@ alias gc="git commit -v"
 alias gam="git commit --amend"
 alias gco="git checkout"
 alias gg='git grep'
-alias go="git checkout"
 alias gb="git branch"
 alias gp='git push'
 alias gpp='git pull --rebase && git push'
-alias gppm='git pull origin master --rebase && git push origin master'
 alias gcp="git cherry-pick"
 alias gm='git merge'
 alias gr='git remote show origin'
-alias stats='git shortlog -s -n'
 
 function guser {
   if [ -z "$1" ]
@@ -100,7 +76,12 @@ function guser {
   fi
 }
 
-# Functions
-function diffx {
-  `/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
-}
+### BIOSPHERE MANAGED START ###
+
+# Adding the "bio" executable to your path.
+export PATH="~/.biosphere/core/bin:$PATH"
+
+# Loading Biosphere's bash_profile for easier de-/activation of spheres.
+[[ -s ~/.biosphere/augmentations/bash_profile ]] && source ~/.biosphere/augmentations/bash_profile
+
+### BIOSPHERE MANAGED STOP ###
