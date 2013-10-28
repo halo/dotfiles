@@ -27,7 +27,8 @@ alias g='be guard'
 alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"
 
 # Applications
-alias m="mate"
+alias m="mate ."
+alias o="open ."
 
 # System
 alias hosts='sudo mate /etc/hosts'
