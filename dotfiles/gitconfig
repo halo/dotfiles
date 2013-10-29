@@ -15,6 +15,7 @@
   uncommit = reset --soft HEAD^
   cut = !git branch --merged master | grep -v 'master$' | xargs git branch -d
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  teleport = !git reset $1 && git reset --soft HEAD{1} && git commit -m "Teleported to $1" && git reset --hard
 
 [push]
 	default = simple
