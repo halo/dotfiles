@@ -1,5 +1,10 @@
-# Default prompt
+# Prompt
 export PS1='\w\$ '
+
+if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+  export PS1='\w\$$(__git_ps1) '
+fi
 
 # Paths
 export PATH="~/.dotfiles/bin:$PATH"
@@ -27,14 +32,15 @@ export RUBYOPT=-Ku
 alias be='bundle exec'
 
 # Rails
+alias r='rails'
 alias tdev='tail -n 90 -f log/development.log'
 alias ttest='tail -n 90 -f log/test.log'
 alias g='be guard'
-alias rst="touch tmp/restart.txt && echo touched tmp/restart.txt"
+alias rst='touch tmp/restart.txt && echo touched tmp/restart.txt'
 
 # Applications
-alias m="mate ."
-alias o="open ."
+alias m='mate .'
+alias o='open .'
 
 # System
 alias hosts='sudo mate /etc/hosts'
@@ -58,7 +64,7 @@ alias gd="git diff"  # What's changed but not yet added?
 alias gdm="git diff | mate"
 alias gdc="git diff --cached"  # What's added but not yet committed?
 alias gdcm="git diff --cached | mate"
-alias ga='git add'
+alias ga='git add --all'
 alias gc="git commit -v"
 alias gam="git commit --amend"
 alias gco="git checkout"
