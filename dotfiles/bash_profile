@@ -1,8 +1,8 @@
 # Prompt
 export PS1='\w\$ '
 
-if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
   export PS1='\w\$$(__git_ps1) '
 fi
 
@@ -75,6 +75,10 @@ alias gpp='git pull --rebase && git push'
 alias gcp="git cherry-pick"
 alias gm='git merge'
 alias gr='git remote show origin'
+
+if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+fi
 
 function guser {
   if [ -z "$1" ]
