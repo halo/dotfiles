@@ -23,6 +23,7 @@ elif ls -G -d . >/dev/null 2>&1; then
 fi
 
 # Ruby
+export RUBYOPT=-Ku
 alias be='bundle exec'
 
 # Rails
