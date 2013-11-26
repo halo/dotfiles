@@ -16,7 +16,7 @@ if test -n "$SSH_CONNECTION"; then
 fi
 
 # Shell
-alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
+alias reload='(source $HOME/.bash_profile && echo "sourced $HOME/.bash_profile") || echo "Could not source $HOME/.bash_profile"'
 alias la='ls -lah'
 alias ..='cd ..'
 
