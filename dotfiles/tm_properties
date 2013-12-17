@@ -5,7 +5,9 @@ tabSize = 2
 fontSize = 11
 scmStatus = false
 
-fileBrowserGlob = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version}"
+includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.htaccess}"
+
+excludeFiles = "{tags,log/development.log,log/staging.log,log/production.log}"
 
 [ .git/COMMIT_EDITMSG ]
 softWrap         = true
