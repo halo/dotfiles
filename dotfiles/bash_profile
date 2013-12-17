@@ -39,8 +39,23 @@ alias g='be guard'
 alias rst='touch tmp/restart.txt && echo touched tmp/restart.txt'
 
 # Applications
-alias m='mate .'
-alias o='open .'
+function m {
+  if [ -z "$1" ]
+  then
+    mate .
+  else
+    mate $1
+  fi
+}
+
+function o {
+  if [ -z "$1" ]
+  then
+    open .
+  else
+    open $1
+  fi
+}
 
 # System
 alias hosts='sudo mate /etc/hosts'
