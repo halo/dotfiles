@@ -63,7 +63,16 @@ alias sshconf='mate ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
 function diffx {
-  `/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
+  `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
+}
+
+function defa {
+  defaults read > /tmp/defaults_a
+}
+
+function defb {
+  defaults read > /tmp/defaults_b
+  diff /tmp/defaults_a /tmp/defaults_b
 }
 
 # Projects
