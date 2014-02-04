@@ -99,6 +99,7 @@ alias gpp='git pull --rebase && git push'
 alias gcp="git cherry-pick"
 alias gm='git merge'
 alias gr='git remote show origin'
+alias gu='git unstage'
 
 if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
   source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
