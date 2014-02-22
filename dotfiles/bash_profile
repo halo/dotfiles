@@ -62,6 +62,20 @@ alias hosts='sudo mate /etc/hosts'
 alias sshconf='mate ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+
+function sshkey {
+  if [ -z "$1" ]
+  then
+    echo "USAGE: sshkey mykeyname"
+  else
+    ssh-keygen -t rsa -N '' -f ~/.ssh/$1
+    cat ~/.ssh/$1.pub | pbcopy
+    echo
+    echo "Generated key ~/.ssh/$1 and copied the public key to the clipboard."
+    echo
+  fi
+}
+
 function diffx {
   `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
 }
