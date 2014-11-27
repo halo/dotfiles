@@ -8,7 +8,7 @@ fi
 
 # Paths
 export PATH="~/.dotfiles/bin:$PATH"
-export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/"
+export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
 
 # Override git-config "core.editor" to enforce vim when using SSH
 if test -n "$SSH_CONNECTION"; then
@@ -80,6 +80,10 @@ function diffx {
   `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
 }
 
+function defs {
+  defa; sleep 2; defb
+}
+
 function defa {
   defaults read > /tmp/defaults_a
 }
@@ -96,23 +100,24 @@ alias pm="cd ~/Projects/market"
 alias pe="cd ~/Projects/express"
 
 # Git
-alias gl="git pull --rebase"
-alias gs="git status"
+alias ga='git add --all'
+alias gam="git commit --amend"
+alias gb="git branch"
+alias gc="git commit -v"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
 alias gd="git diff"  # What's changed but not yet added?
-alias gdm="git diff | mate"
 alias gdc="git diff --cached"  # What's added but not yet committed?
 alias gdcm="git diff --cached | mate"
-alias ga='git add --all'
-alias gc="git commit -v"
-alias gam="git commit --amend"
-alias gco="git checkout"
+alias gdm="git diff | mate"
 alias gg='git grep'
-alias gb="git branch"
+alias gl="git pull --rebase"
+alias gm='git merge'
 alias gp='git push'
 alias gpp='git pull --rebase && git push'
-alias gcp="git cherry-pick"
-alias gm='git merge'
 alias gr='git remote show origin'
+alias gs="git status"
+alias gt='git tag'
 alias gu='git unstage'
 
 if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
