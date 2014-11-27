@@ -57,11 +57,18 @@ function o {
   fi
 }
 
+function repeat {
+  while sleep 2; do
+    $@
+  done
+}
+
 # System
 alias hosts='sudo mate /etc/hosts'
 alias sshconf='mate ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+alias gogo="~/.biosphere/spheres/halo/go/bin/go-google-authenticator"
 
 function sshkey {
   if [ -z "$1" ]
