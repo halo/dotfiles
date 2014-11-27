@@ -1,0 +1,16 @@
+# https://github.com/mathiasbynens/dotfiles/issues/54
+
+com.apple.QuickTimePlayerX .mp3 viewer
+com.apple.QuickTimePlayerX .m4a viewer
+com.apple.QuickTimePlayerX .m4v viewer
+com.apple.QuickTimePlayerX .mp4 viewer
+
+com.macromates.TextMate .coffee editor
+com.macromates.TextMate .css editor
+com.macromates.TextMate .diff editor
+com.macromates.TextMate .patch editor
+com.macromates.TextMate .rb editor
+com.macromates.TextMate .sass editor
+com.macromates.TextMate .scss editor
+
+org.videolan.vlc .avi viewer
