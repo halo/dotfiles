@@ -146,6 +146,10 @@ function guser {
   fi
 }
 
+function ghalo {
+  guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
+}
+
 ### BIOSPHERE MANAGED START ###
 
 # Adding the "bio" executable to your path.
@@ -155,3 +159,6 @@ export PATH="~/.biosphere/core/bin:$PATH"
 [[ -s ~/.biosphere/augmentations/bash_profile ]] && source ~/.biosphere/augmentations/bash_profile
 
 ### BIOSPHERE MANAGED STOP ###
+
+# Local bin directory takes highest precedence
+export PATH="bin:$PATH"
