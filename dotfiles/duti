@@ -7,15 +7,15 @@ com.apple.QuickTimePlayerX .m4a all
 com.apple.QuickTimePlayerX .m4v all
 com.apple.QuickTimePlayerX .mp4 all
 
-com.macromates.TextMate .coffee all
-com.macromates.TextMate .css all
-com.macromates.TextMate .diff all
-com.macromates.TextMate .patch all
-com.macromates.TextMate .rb all
-com.macromates.TextMate .sass all
-com.macromates.TextMate .scss all
-com.macromates.TextMate .yml all
-com.macromates.TextMate .md all
-com.macromates.TextMate .css all
-com.macromates.TextMate plain-text all
-com.macromates.TextMate public.source-code all
+com.macromates.TextMate.preview .coffee all
+com.macromates.TextMate.preview .css all
+com.macromates.TextMate.preview .diff all
+com.macromates.TextMate.preview .patch all
+com.macromates.TextMate.preview .rb all
+com.macromates.TextMate.preview .sass all
+com.macromates.TextMate.preview .scss all
+com.macromates.TextMate.preview .yml all
+com.macromates.TextMate.preview .md all
+com.macromates.TextMate.preview .css all
+com.macromates.TextMate.preview plain-text all
+com.macromates.TextMate.preview public.source-code all
