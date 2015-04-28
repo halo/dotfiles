@@ -16,6 +16,7 @@ com.macromates.TextMate.preview .sass all
 com.macromates.TextMate.preview .scss all
 com.macromates.TextMate.preview .yml all
 com.macromates.TextMate.preview .md all
+com.macromates.TextMate.preview .slim all
 com.macromates.TextMate.preview .css all
 com.macromates.TextMate.preview plain-text all
 com.macromates.TextMate.preview public.source-code all
