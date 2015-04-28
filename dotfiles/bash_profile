@@ -15,10 +15,14 @@ if test -n "$SSH_CONNECTION"; then
   export GIT_EDITOR='vim'
 fi
 
+export EDITOR='mate'
+
 # Shell
 alias reload='(source $HOME/.bash_profile && echo "sourced $HOME/.bash_profile") || echo "Could not source $HOME/.bash_profile"'
 alias la='ls -lah'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Portable ls with colors
 if ls --color -d . >/dev/null 2>&1; then
@@ -28,7 +32,6 @@ elif ls -G -d . >/dev/null 2>&1; then
 fi
 
 # Ruby
-export RUBYOPT=-Ku
 alias be='bundle exec'
 
 # Rails
