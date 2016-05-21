@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+system 'sudo -v'
+
+puts
+print 'Applying macOS defaults'
+
+Dir[File.expand_path('../macos/**/*.bash', File.dirname(__FILE__))].each do |path|
+  if system path
+    print '.'
+  else
+    print %Q( \033[31m#{File.basename(path)}\033[0m )
+  end
+end
+
+puts
+puts 'Finished.'
+puts

@@ -9,6 +9,7 @@ fi
 # Paths
 export PATH="~/.dotfiles/bin:$PATH"
 export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
+export PATH="$PATH:/usr/libexec/ApplicationFirewall"
 
 # Override git-config "core.editor" to enforce vim when using SSH
 if test -n "$SSH_CONNECTION"; then
@@ -16,6 +17,9 @@ if test -n "$SSH_CONNECTION"; then
 fi
 
 export EDITOR='mate'
+
+# See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export HOMEBREW_NO_ANALYTICS=1
 
 # Shell
 alias reload='(source $HOME/.bash_profile && echo "sourced $HOME/.bash_profile") || echo "Could not source $HOME/.bash_profile"'
@@ -130,6 +134,10 @@ alias gs="git status"
 alias gt='git tag'
 alias gu='git unstage'
 
+function gbo {
+  git branch $1 && git checkout $1
+}
+
 if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
   source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
 fi
@@ -153,15 +161,16 @@ function ghalo {
   guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
 }
 
-### BIOSPHERE MANAGED START ###
-
-# Adding the "bio" executable to your path.
-export PATH="~/.biosphere/core/bin:$PATH"
-
-# Loading Biosphere's bash_profile for easier de-/activation of spheres.
-[[ -s ~/.biosphere/augmentations/bash_profile ]] && source ~/.biosphere/augmentations/bash_profile
-
-### BIOSPHERE MANAGED STOP ###
-
 # Local bin directory takes highest precedence
 export PATH="bin:$PATH"
+
+### BIOSPHERE MANAGED START ###
+
+# Adding the "bio" executable to your path. Just for your convenience.
+export PATH="$HOME/.biosphere/core/bin:$PATH"
+
+# Loading Biosphere shell additions (for clean and simple de-/activation of spheres).
+# These lines won't change and are safe to be commited to your dotfiles if you wish.
+[[ -s $HOME/.biosphere/augmentations/bash_profile ]] && source $HOME/.biosphere/augmentations/bash_profile
+
+### BIOSPHERE MANAGED STOP ###
