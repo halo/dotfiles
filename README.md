@@ -1,17 +1,19 @@
-# Dotfiles
-
-### Dependencies
-
-* Mac OS 1.7+
-
 ### Installation
 
-    git clone git://github.com/halo/dotfiles.git ~/.dotfiles
+Get the repository:
 
-### Running it
+```bash
+git clone https://github.com/halo/dotfiles.git ~/.dotfiles
+```
 
-    ~/.dotfiles/bin/dotfiles
+Add the executables to your $PATH:
 
-You could also add the binary to your `.bash_profile`:
+```bash
+# Add this line to ~/.bash_profile
+export PATH="~/.dotfiles/bin:$PATH"
+`
+### Usage
 
-    export PATH="~/.dotfiles/bin:$PATH"
+Run `dotfiles` in your Terminal to put all configuration files in place.
+
+Run `macos` to configure the operating system defaults.
