@@ -171,6 +171,6 @@ export PATH="$HOME/.biosphere/core/bin:$PATH"
 
 # Loading Biosphere shell additions (for clean and simple de-/activation of spheres).
 # These lines won't change and are safe to be commited to your dotfiles if you wish.
-[[ -s $HOME/.biosphere/augmentations/bash_profile ]] && source $HOME/.biosphere/augmentations/bash_profile
+[[ -s $HOME/.biosphere/augmentations/shell ]] && source $HOME/.biosphere/augmentations/shell
 
 ### BIOSPHERE MANAGED STOP ###
