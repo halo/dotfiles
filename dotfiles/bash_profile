@@ -7,7 +7,7 @@ if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-promp
 fi
 
 # Paths
-export PATH="~/.dotfiles/bin:$PATH"
+export PATH="$PATH:$HOME/.dotfiles/bin"
 export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
 export PATH="$PATH:/usr/libexec/ApplicationFirewall"
 
@@ -28,12 +28,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Portable ls with colors
-if ls --color -d . >/dev/null 2>&1; then
-  alias ls='ls --color=auto'  # Linux
-elif ls -G -d . >/dev/null 2>&1; then
-  alias ls='ls -G'  # BSD/OS X
-fi
+alias ls='ls -G'  # BSD/OS X
 
 # Ruby
 alias be='bundle exec'
@@ -75,7 +70,6 @@ alias hosts='sudo mate /etc/hosts'
 alias sshconf='mate ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
-alias gogo="~/.biosphere/spheres/halo/go/bin/go-google-authenticator"
 
 function sshkey {
   if [ -z "$1" ]
@@ -106,12 +100,6 @@ function defb {
   defaults read > /tmp/defaults_b
   diff /tmp/defaults_a /tmp/defaults_b
 }
-
-# Projects
-alias p="cd ~/Projects"
-alias pa="cd ~/Projects/auktion"
-alias pm="cd ~/Projects/market"
-alias pe="cd ~/Projects/express"
 
 # Git
 alias ga='git add --all'
