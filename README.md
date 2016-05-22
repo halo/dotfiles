@@ -11,7 +11,8 @@ Add the executables to your $PATH:
 ```bash
 # Add this line to ~/.bash_profile
 export PATH="~/.dotfiles/bin:$PATH"
-`
+```
+
 ### Usage
 
 Run `dotfiles` in your Terminal to put all configuration files in place.
