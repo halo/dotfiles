@@ -11,6 +11,7 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Save Panel -> Expand by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Document saving -> To disk, not iCloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -78,6 +79,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # New Windows open at home folder
 defaults write com.apple.finder NewWindowTarget PfHm
 
+# Disable "Get Info" and other animations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
 if [[ $USER == "orange" ]] || [[ $USER == "blue" ]]; then
   # User Library Directory -> Show
   chflags nohidden ~/Library
@@ -85,3 +89,13 @@ else
   # User Library Directory -> Hide
   chflags hidden ~/Library
 fi
+
+# Expand these panes in the "Get Info" for files and folders
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+	General -bool true \
+	OpenWith -bool false \
+	Preview -bool false \
+	Privileges -bool false \
+  Comments -bool false \
+  MetaData -bool false \
+  Name -bool false

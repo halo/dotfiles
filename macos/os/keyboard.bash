@@ -20,3 +20,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Illuminate built-in MacBook keyboard in low light -> Yes
 defaults write com.apple.BezelServices kDim -bool true
+
+# Disable press-and-hold for choosing accents
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false

@@ -33,3 +33,6 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Hot Corners -> Bottom Right → Mission Control
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+# Do not pop-animate the blue ring around a focused text-field
+defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false

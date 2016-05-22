@@ -11,3 +11,11 @@ defaults write com.apple.Terminal NewTabWorkingDirectoryBehavior -int 1
 
 # Use UTF-8
 defaults write com.apple.terminal StringEncodings -array 4
+
+# No audio bells, just visual
+/usr/libexec/PlistBuddy                                     \
+    -c "Delete :WindowSettings:Basic:Bell"                  \
+    -c "Add    :WindowSettings:Basic:Bell       bool false" \
+    -c "Delete :WindowSettings:Basic:VisualBell"            \
+    -c "Add    :WindowSettings:Basic:VisualBell bool true"  \
+    ~/Library/Preferences/com.apple.terminal.plist
