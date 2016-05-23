@@ -102,30 +102,30 @@ defaults write com.apple.finder ShowRecentTags -bool false
 
 sfltool dump-storage ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.FavoriteItems.sfl > /tmp/favorites.dump
 
-if ! pcregrep -M "file://$HOME\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME > /dev/null
 fi
 
-if ! pcregrep -M "file://$HOME/Desktop\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Desktop
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}/Desktop\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Desktop > /dev/null
 fi
 
-if ! pcregrep -M "file://$HOME/Downloads\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Downloads
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}/Downloads\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Downloads > /dev/null
 fi
 
-if ! pcregrep -M "file://$HOME/Documents\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Documents
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}/Documents\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Documents > /dev/null
 fi
 
-if ! pcregrep -M "file://$HOME/Pictures\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Pictures
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}/Pictures\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Pictures > /dev/null
 fi
 
-if ! pcregrep -M "file:///Applications\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file:///Applications
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file:///Applications\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file:///Applications > /dev/null
 fi
 
-if ! pcregrep -M "nwnode://domain-AirDrop\n" /tmp/favorites.dump > /dev/null; then
-  sfltool add-item com.apple.LSSharedFileList.FavoriteItems nwnode://domain-AirDrop
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("nwnode://domain-AirDrop\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems nwnode://domain-AirDrop > /dev/null
 fi
