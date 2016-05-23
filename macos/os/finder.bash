@@ -40,15 +40,6 @@ defaults write com.apple.finder FXPreferredViewStyle clmv
 # Airdrop -> Enable on Ethernet
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
-# Show on Desktop -> External Hard drives
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-
-# Show on Desktop -> Servers
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-
-# Show on Desktop -> USB Sticks
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
 # Hide from Desktop -> local Hard disks
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 
@@ -99,3 +90,42 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
   Comments -bool false \
   MetaData -bool false \
   Name -bool false
+
+# Show the sidebar
+defaults write com.apple.finder ShowSidebar -bool true
+
+# Hide Tags in the Sidebar
+defaults write com.apple.finder ShowRecentTags -bool false
+
+# Ensure that the home folder is in the favorites sidebar
+# sfltool dump-storage ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.FavoriteItems.sfl
+
+sfltool dump-storage ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.FavoriteItems.sfl > /tmp/favorites.dump
+
+if ! pcregrep -M "file://$HOME\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME
+fi
+
+if ! pcregrep -M "file://$HOME/Desktop\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Desktop
+fi
+
+if ! pcregrep -M "file://$HOME/Downloads\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Downloads
+fi
+
+if ! pcregrep -M "file://$HOME/Documents\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Documents
+fi
+
+if ! pcregrep -M "file://$HOME/Pictures\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Pictures
+fi
+
+if ! pcregrep -M "file:///Applications\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file:///Applications
+fi
+
+if ! pcregrep -M "nwnode://domain-AirDrop\n" /tmp/favorites.dump > /dev/null; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems nwnode://domain-AirDrop
+fi
