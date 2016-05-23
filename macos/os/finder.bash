@@ -102,6 +102,10 @@ defaults write com.apple.finder ShowRecentTags -bool false
 
 sfltool dump-storage ~/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.FavoriteItems.sfl > /tmp/favorites.dump
 
+if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file:///\n")'; then
+  sfltool add-item com.apple.LSSharedFileList.FavoriteItems file:/// > /dev/null
+fi
+
 if ruby -e 'abort if File.read("/tmp/favorites.dump").include?("file://#{ENV["HOME"]}\n")'; then
   sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME > /dev/null
 fi
