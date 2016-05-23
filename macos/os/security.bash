@@ -20,5 +20,6 @@ defaults write com.apple.alf allowsignedenabled -bool true
 # System Preferences -> Security -> Firewall -> Advanced -> Disable stealth mode
 defaults write com.apple.alf stealthenabled -bool false
 
-# Don't keep the FileVault password around in the firmware while sleeping
-sudo pmset -a destroyfvkeyonstandby 1
+# Keep the FileVault password around in the firmware while sleeping
+# Less secure but I don't want to enter the password twice
+sudo pmset -a destroyfvkeyonstandby 0
