@@ -134,10 +134,13 @@ defaults write com.apple.Terminal "Startup Window Settings" Halo
 
 # No audio bells, just visual
 /usr/libexec/PlistBuddy \
-  -c "Set :Window\ Settings:Halo:Bell bool false" \
-  -c "Set :Window\ Settings:Halo:VisualBell bool true" \
-  -c "Set :Window\ Settings:Halo:VisualBellOnlyWhenMuted bool false" \
-  ~/Library/Preferences/com.apple.terminal.plist > /dev/null 2>&1
+  -c "Delete :Window\ Settings:Halo:Bell" \
+  -c "Delete :Window\ Settings:Halo:VisualBell" \
+  -c "Delete :Window\ Settings:Halo:VisualBellOnlyWhenMuted" \
+  -c "Add :Window\ Settings:Halo:Bell bool false" \
+  -c "Add :Window\ Settings:Halo:VisualBell bool true" \
+  -c "Add :Window\ Settings:Halo:VisualBellOnlyWhenMuted bool false" \
+  $HOME/Library/Preferences/com.apple.terminal.plist > /dev/null 2>&1
 
 # Terminal itself overwrites everything on quit
 # So we need to read the settings once to synchronize with the cache
