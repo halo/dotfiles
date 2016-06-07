@@ -35,3 +35,12 @@ defaults write com.apple.dock launchanim -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+# Remove useless Items from the Dock
+i="$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Launchpad|Messages|Reminders|Maps|Facetime|iBooks/ {print NR}')"
+
+for j in `echo "$i" | tr " " "\n" | sort -gr`; do
+	PlistBuddy -c "Delete persistent-apps:$[$j-1]" ~/Library/Preferences/com.apple.dock.plist
+done
+
+killall Dock
