@@ -37,7 +37,7 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock showhidden -bool true
 
 # Remove useless Items from the Dock
-i="$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Launchpad|Messages|Reminders|Maps|Facetime|iBooks/ {print NR}')"
+i="$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Launchpad|Messages|Reminders|Maps|FaceTime|iBooks/ {print NR}')"
 
 for j in `echo "$i" | tr " " "\n" | sort -gr`; do
 	/usr/libexec/PlistBuddy -c "Delete persistent-apps:$[$j-1]" $HOME/Library/Preferences/com.apple.dock.plist
