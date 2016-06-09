@@ -40,7 +40,7 @@ defaults write com.apple.dock showhidden -bool true
 i="$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Launchpad|Messages|Reminders|Maps|Facetime|iBooks/ {print NR}')"
 
 for j in `echo "$i" | tr " " "\n" | sort -gr`; do
-	PlistBuddy -c "Delete persistent-apps:$[$j-1]" ~/Library/Preferences/com.apple.dock.plist
+	/usr/libexec/PlistBuddy -c "Delete persistent-apps:$[$j-1]" $HOME/Library/Preferences/com.apple.dock.plist
 done
 
 killall Dock
