@@ -83,10 +83,10 @@ fi
 
 # Expand these panes in the "Get Info" for files and folders
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-	General -bool true \
-	OpenWith -bool false \
-	Preview -bool false \
-	Privileges -bool false \
+  General -bool true \
+  OpenWith -bool false \
+  Preview -bool false \
+  Privileges -bool false \
   Comments -bool false \
   MetaData -bool false \
   Name -bool false
