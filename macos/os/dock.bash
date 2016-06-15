@@ -42,5 +42,3 @@ i="$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/
 for j in `echo "$i" | tr " " "\n" | sort -gr`; do
 	/usr/libexec/PlistBuddy -c "Delete persistent-apps:$[$j-1]" $HOME/Library/Preferences/com.apple.dock.plist
 done
-
-killall Dock
