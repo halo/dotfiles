@@ -1,5 +1,10 @@
 #!/usr/bin/ruby
 
+if Process.uid == 0
+  puts 'Do not use sudo to run `macos`'
+  abort
+end
+
 system 'sudo -v'
 
 puts
