@@ -1,16 +1,24 @@
+# Spacing and Wrapping
 softWrap = false
 softTabs = true
 tabSize = 2
 
+# Fontsize
 fontSize = 11
-scmStatus = false
+#scmStatus = false
 
 includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.htaccess}"
 
 excludeFiles = "{tags,log/development.log,log/staging.log,log/production.log,coverage/*}"
 excludeDirectories = "{$excludeDirectories,tmp}"
 
+theme = "82116FDC-DA11-4407-9A87-7A2E677C3686"
+
+[ *.md ]
+spellChecking = true
+spellingLanguage = "en"
+
 [ .git/COMMIT_EDITMSG ]
 softWrap         = true
 spellChecking    = true
-spellingLanguage = 'en'
+spellingLanguage = "en"
