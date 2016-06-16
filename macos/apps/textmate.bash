@@ -17,3 +17,20 @@ defaults write com.macromates.TextMate.preview fileBrowserPlacement right
 
 # Always show the tab bar
 defaults write com.macromates.TextMate.preview disableTabBarCollapsing -bool true
+
+# Set Environment variables
+defaults write com.macromates.TextMate.preview environmentVariables -array
+
+defaults write com.macromates.TextMate.preview environmentVariables -array-add \
+  "<dict>
+    <key>enabled</key><true/>
+    <key>name</key><string>TM_RUBY</string>
+    <key>value</key><string>$(which ruby)</string>
+  </dict>"
+
+defaults write com.macromates.TextMate.preview environmentVariables -array-add \
+  "<dict>
+    <key>enabled</key><true/>
+    <key>name</key><string>RBENV_VERSION</string>
+    <key>value</key><string>2.2.4</string>
+  </dict>"
