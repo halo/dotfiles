@@ -8,3 +8,6 @@ defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
+# Disable Junk filter
+defaults write com.apple.mail JunkMailBehavior -bool false
