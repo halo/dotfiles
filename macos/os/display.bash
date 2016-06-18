@@ -6,3 +6,6 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 # Dim the scren when on battery
 sudo pmset -a halfdim 0
 sudo pmset -b halfdim 1
+
+# Do not adjust brightness automatically
+defaults write com.apple.BezelServices dAuto -bool false

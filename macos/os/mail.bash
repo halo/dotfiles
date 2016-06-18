@@ -11,3 +11,9 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Disable Junk filter
 defaults write com.apple.mail JunkMailBehavior -bool false
+
+# Don't load remote resources in emails automatically
+defaults write com.apple.mail-shared DisableURLLoading -bool true
+
+# Compose plain-text mails
+defaults write com.apple.mail SendFormat Plain
