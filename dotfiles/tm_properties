@@ -5,7 +5,7 @@ tabSize = 2
 
 # Fontsize
 fontSize = 11
-#scmStatus = false
+scmStatus = false
 
 includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.htaccess}"
 
