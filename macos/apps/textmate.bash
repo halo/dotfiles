@@ -12,6 +12,12 @@ defaults write com.macromates.TextMate.preview findWrapAround -bool true
 # Tabs all the way through
 defaults write com.macromates.TextMate.preview tabsAboveDocument -bool false
 
+# Allow rather narrow tabs
+defaults write com.macromates.TextMate.preview tabItemMinWidth -int 50
+
+# Truncate the filename in the tabs
+defaults write com.macromates.TextMate.preview tabItemLineBreakStyle -int 2
+
 # Show file browser to the right
 defaults write com.macromates.TextMate.preview fileBrowserPlacement right
 
