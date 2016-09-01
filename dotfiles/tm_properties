@@ -7,7 +7,7 @@ tabSize = 2
 fontSize = 11
 scmStatus = false
 
-includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.htaccess}"
+includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.rubocop.yml}"
 
 excludeFiles = "{tags,log/development.log,log/staging.log,log/production.log,coverage/*}"
 excludeDirectories = "{$excludeDirectories,tmp}"
