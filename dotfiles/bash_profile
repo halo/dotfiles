@@ -121,6 +121,7 @@ alias gr='git remote show origin'
 alias gs="git status"
 alias gt='git tag'
 alias gu='git unstage'
+alias glg='git lg'
 
 function gbo {
   git branch $1 && git checkout $1

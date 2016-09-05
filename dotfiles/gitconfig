@@ -15,7 +15,7 @@ diff = auto
 unstage = reset HEAD .
 uncommit = reset --soft HEAD^
 cut = !git branch --merged master | grep -v 'master$' | xargs git branch -d
-graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 teleport = !"wrapper(){ green=`tput setaf 2`; red=`tput setaf 1`; normal=`tput sgr0`; if [ $# -eq 0 ]; then echo \"${red}You must provide a SHA as argument.${normal}\"; else echo \"\n${green}git reset $1${normal}\" && git reset $1 && echo \"\n${green}git reset --soft HEAD@{1}${normal}\" && git reset --soft HEAD@{1} && echo \"\n${green}git commit -m ...${normal}\" && git commit -m \"Teleported back to $1\" && echo \"\n${green}git reset --hard${normal}\" && git reset --hard; echo; fi; }; wrapper"
 
 [push]
