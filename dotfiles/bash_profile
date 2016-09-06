@@ -152,6 +152,7 @@ function ghalo {
 
 # Local bin directory takes highest precedence
 export PATH="bin:$PATH"
+export PATH="node_modules/.bin:$PATH"
 
 ### BIOSPHERE MANAGED START ###
 
