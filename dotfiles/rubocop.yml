@@ -21,6 +21,10 @@ Style/EmptyLinesAroundModuleBody:
 Style/Documentation:
   Enabled: false
 
-# UTF-8 in comments can improve readability
+# UTF-8 in comments can improve readability.
 Style/AsciiComments:
+  Enabled: false
+
+# `!casecmp.zero?` is simply unintelligable unintentional.
+Performance/Casecmp:
   Enabled: false
