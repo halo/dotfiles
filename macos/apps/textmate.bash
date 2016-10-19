@@ -40,3 +40,10 @@ defaults write com.macromates.TextMate.preview environmentVariables -array-add \
     <key>name</key><string>RBENV_VERSION</string>
     <key>value</key><string>2.2.4</string>
   </dict>"
+
+defaults write com.macromates.TextMate.preview environmentVariables -array-add \
+  "<dict>
+    <key>enabled</key><true/>
+    <key>name</key><string>TM_NODE</string>
+    <key>value</key><string>$(which node)</string>
+  </dict>"
