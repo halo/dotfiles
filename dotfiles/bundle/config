@@ -1,5 +1,5 @@
 ---
 BUNDLE_BUILD__THRIFT: "--with-cppflags=-D_FORTIFY_SOURCE=0"
-BUNDLE_WITHOUT: production:staging
+BUNDLE_WITHOUT: "production:staging"
 BUNDLE_BUILD__RUBY-OPENCV: "--with-opencv-dir=/Users/orange/.biosphere/spheres/halo/homebrew/opt/opencv"
 BUNDLER_EDITOR: "mate"
