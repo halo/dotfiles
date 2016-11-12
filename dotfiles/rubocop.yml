@@ -5,6 +5,10 @@ AllCops:
 Metrics/LineLength:
   Max: 130
 
+# `!casecmp.zero?` is simply unintelligable unintentional.
+Performance/Casecmp:
+  Enabled: false
+
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInLiteral:
   Enabled: false
@@ -17,14 +21,14 @@ Style/EmptyLinesAroundClassBody:
 Style/EmptyLinesAroundModuleBody:
   Enabled: false
 
-# Top-level class documentation is nice, but cumbersome when starting a new project.
-Style/Documentation:
-  Enabled: false
-
 # UTF-8 in comments can improve readability.
 Style/AsciiComments:
   Enabled: false
 
-# `!casecmp.zero?` is simply unintelligable unintentional.
-Performance/Casecmp:
+# Top-level class documentation is nice, but cumbersome when starting a new project.
+Style/Documentation:
+  Enabled: false
+
+# Too early to believe that Ruby 3 is significantly faster with this
+Style/FrozenStringLiteralComment:
   Enabled: false

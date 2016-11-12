@@ -1,0 +1,5 @@
+linters:
+
+  # Match line length of rubocop
+  LineLength:
+    max: 130
