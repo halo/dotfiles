@@ -34,11 +34,16 @@ alias ls='ls -G'  # BSD/OS X
 alias be='bundle exec'
 
 # Rails
-alias r='rails'
-alias tdev='tail -n 90 -f log/development.log'
-alias ttest='tail -n 90 -f log/test.log'
 alias g='be guard'
+alias mig='rake db:migrate'
+alias prep='RAILS_ENV=test rake db:environment:set; rake db:test:prepare'
+alias r='rails'
+alias rol='rake db:rollback'
 alias rst='touch tmp/restart.txt && echo touched tmp/restart.txt'
+alias tdev='tail -n 90 -f log/development.log'
+alias tmig='RAILS_ENV=test rake db:migrate'
+alias trol='RAILS_ENV=test rake db:rollback'
+alias ttest='tail -n 90 -f log/test.log'
 
 # Applications
 function m {
