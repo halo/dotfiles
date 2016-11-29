@@ -54,7 +54,12 @@ module Dotfiles
 end
 
 def homify(file)
-  File.write file, file.read.gsub('$HOME', ENV['HOME'])
+  old_content = File.read(file)
+  new_content = file.read.gsub('$HOME', ENV['HOME'])
+  return if old_content == new_content
+
+  File.write file, new_content
+  puts "  Interpolated $HOME in #{file}"
 end
 
 module Dotfiles
@@ -87,6 +92,11 @@ Dotfiles.all do |original, destiny|
 
   elsif destiny.file?
     if original.symlink?
+
+      if original.basename.to_s == '.gitconfig'
+        homify original
+      end
+
       next if original.exist? && original.realpath == destiny
       puts "  Overwriting existing symlink"
       puts "    from   #{original}"
