@@ -36,7 +36,7 @@ alias be='bundle exec'
 # Rails
 alias g='be guard'
 alias mig='rake db:migrate'
-alias prep='RAILS_ENV=test rake db:environment:set; rake db:test:prepare'
+alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:prepare'
 alias r='rails'
 alias rol='rake db:rollback'
 alias rst='touch tmp/restart.txt && echo touched tmp/restart.txt'
