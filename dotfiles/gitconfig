@@ -5,6 +5,7 @@
 # May be overriden by $GIT_EDITOR
 editor = mate -w
 hooksPath = $HOME/.githooks
+attributesfile = $HOME/.gitattributes
 
 [color]
 status = auto
