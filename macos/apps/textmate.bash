@@ -38,7 +38,7 @@ defaults write com.macromates.TextMate environmentVariables -array-add \
   "<dict>
     <key>enabled</key><true/>
     <key>name</key><string>RBENV_VERSION</string>
-    <key>value</key><string>2.3.1</string>
+    <key>value</key><string>2.3.3</string>
   </dict>"
 
 defaults write com.macromates.TextMate environmentVariables -array-add \
