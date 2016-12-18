@@ -1,0 +1,25 @@
+rules:
+
+  # Demand leading zeros in numers such as 0.5
+  # This makes them less ambiguous.
+  leading-zero:
+    - 2
+    -
+      include: true
+
+  # Enforce concentric definition order.
+  property-sort-order:
+    - 2
+    -
+      order: concentric
+
+  # Harry BEM style
+  class-name-format:
+    - 2
+    -
+      convention: hyphenatedbem
+
+  # Enforcing common-sense rules
+  empty-line-between-blocks: 2
+  single-line-per-selector: 2
+  no-duplicate-properties: 2
