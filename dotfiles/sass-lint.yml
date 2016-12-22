@@ -19,6 +19,10 @@ rules:
     -
       convention: hyphenatedbem
 
+  # Allow heavy nesting for strong specificity
+  nesting-depth:
+    - 0
+
   # Enforcing common-sense rules
   empty-line-between-blocks: 2
   single-line-per-selector: 2
