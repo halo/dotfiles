@@ -1,9 +1,17 @@
 AllCops:
   TargetRubyVersion: 2.2
+  DisplayCopNames: true
 
 # On an 11-inch screen this works fine.
 Metrics/LineLength:
   Max: 130
+
+# Tests and Rake tasks may have long blocks.
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
 
 # `!casecmp.zero?` is simply unintelligable unintentional.
 Performance/Casecmp:
