@@ -27,3 +27,4 @@ rules:
   empty-line-between-blocks: 2
   single-line-per-selector: 2
   no-duplicate-properties: 2
+  mixins-before-declarations: 2
