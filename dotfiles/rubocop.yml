@@ -17,6 +17,17 @@ Metrics/BlockLength:
 Performance/Casecmp:
   Enabled: false
 
+# Mostly following https://robots.thoughtbot.com/lets-not
+# which increases example length.
+RSpec/ExampleLength:
+  Enabled: false
+
+# Sometimes I'm checking the upper and lower boundary of a range.
+# Or sometimes I'm checking a value and its class type.
+# I generally find that I'm cautious here and don't need the warnings.
+RSpec/MultipleExpectations:
+  Max: 2
+
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInLiteral:
   Enabled: false
