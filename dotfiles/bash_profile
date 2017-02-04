@@ -157,10 +157,6 @@ function ghalo {
   guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
 }
 
-# Local bin directory takes highest precedence
-export PATH="bin:$PATH"
-export PATH="node_modules/.bin:$PATH"
-
 ### BIOSPHERE MANAGED START ###
 
 # Adding the "bio" executable to your path. Just for your convenience.
@@ -171,3 +167,10 @@ export PATH="$HOME/.biosphere/core/bin:$PATH"
 [[ -s $HOME/.biosphere/augmentations/shell ]] && source $HOME/.biosphere/augmentations/shell
 
 ### BIOSPHERE MANAGED STOP ###
+
+# Hm, I generally trust my `./bin` path, but not for *all* dependencies (yet).
+#export PATH="node_modules/.bin:$PATH"
+
+# Local bin directory takes highest precedence
+# Being careful as to when a bin directory is around I don't know the contents of ;)
+export PATH="bin:$PATH"
