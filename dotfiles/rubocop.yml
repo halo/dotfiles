@@ -35,10 +35,6 @@ Style/TrailingCommaInLiteral:
 # I'm not that picky. An empty line can even increase readability.
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-Style/EmptyLinesAroundModuleBody:
-  Enabled: false
 
 # UTF-8 in comments can improve readability.
 Style/AsciiComments:
