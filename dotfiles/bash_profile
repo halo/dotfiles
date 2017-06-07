@@ -31,6 +31,7 @@ alias ls='ls -G'  # Colors on macOS
 
 # Ruby
 alias be='bundle exec'
+alias bo='bundle open'
 
 # Rails
 alias g='be guard'
