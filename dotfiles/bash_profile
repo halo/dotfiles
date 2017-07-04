@@ -115,6 +115,7 @@ alias gam="git commit --amend"
 alias gb="git branch"
 alias gc="git commit -v"
 alias gco="git checkout"
+alias gcom="git checkout master"
 alias gcp="git cherry-pick"
 alias gd="git diff"  # What's changed but not yet added?
 alias gdc="git diff --cached"  # What's added but not yet committed?
