@@ -7,7 +7,7 @@ tabSize = 2
 fontSize = 11
 scmStatus = false
 
-includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.rubocop.yml,.env,.env.development,.env.test,.env.local,.env.development.local,.env.test.local,.watchmanconfig,.jshintrc}"
+includeFiles = "{*,.tm_properties,.htaccess,.gitignore,.gitkeep,.rspec,.travis.yml,.ruby-version,.rbenv-version,.rubocop.yml,.env,.env.development,.env.test,.env.local,.env.development.local,.env.test.local,.watchmanconfig,.jshintrc,.keep,.env.demo,.env.demo.local}"
 
 excludeFiles = "{tags,log/development.log,log/staging.log,log/production.log,coverage/*}"
 excludeDirectories = "{$excludeDirectories,tmp}"
