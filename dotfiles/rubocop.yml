@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.4
   DisplayCopNames: true
 
 # On an 11-inch screen this works fine.
@@ -22,11 +22,14 @@ Performance/Casecmp:
 RSpec/ExampleLength:
   Enabled: false
 
-# Sometimes I'm checking the upper and lower boundary of a range.
-# Or sometimes I'm checking a value and its class type.
-# I generally find that I'm cautious here and don't need the warnings.
+# Spanning multiple rows, it just adds noise to use `not_to`
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+# I may have PDF or otherwise graphics related specs
+# that combine many expectations in one spec for rendering convenience.
 RSpec/MultipleExpectations:
-  Max: 2
+  Enabled: false
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInLiteral:
