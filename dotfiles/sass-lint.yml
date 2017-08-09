@@ -1,5 +1,11 @@
 rules:
 
+  # Harry BEM style
+  class-name-format:
+    - 2
+    -
+      convention: hyphenatedbem
+
   # Demand leading zeros in numers such as 0.5
   # This makes them less ambiguous.
   leading-zero:
@@ -7,24 +13,16 @@ rules:
     -
       include: true
 
+  # Waiting for https://github.com/sasstools/sass-lint/issues/455
+  mixins-before-declarations: 0
+
   # Enforce concentric definition order.
   property-sort-order:
     - 2
     -
       order: concentric
 
-  # Harry BEM style
-  class-name-format:
-    - 2
-    -
-      convention: hyphenatedbem
-
-  # Allow heavy nesting for strong specificity
-  nesting-depth:
-    - 0
-
   # Enforcing common-sense rules
   empty-line-between-blocks: 2
   single-line-per-selector: 2
   no-duplicate-properties: 2
-  mixins-before-declarations: 2
