@@ -37,6 +37,13 @@ defaults write com.macromates.TextMate environmentVariables -array-add \
 defaults write com.macromates.TextMate environmentVariables -array-add \
   "<dict>
     <key>enabled</key><true/>
+    <key>name</key><string>TM_RUBOCOP</string>
+    <key>value</key><string>$(which rubocop)</string>
+  </dict>"
+
+defaults write com.macromates.TextMate environmentVariables -array-add \
+  "<dict>
+    <key>enabled</key><true/>
     <key>name</key><string>RBENV_VERSION</string>
     <key>value</key><string>2.4.1</string>
   </dict>"
