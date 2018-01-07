@@ -3,4 +3,5 @@ BUNDLE_BUILD__THRIFT: "--with-cppflags=-D_FORTIFY_SOURCE=0"
 BUNDLE_WITHOUT: "production:staging"
 BUNDLE_BUILD__RUBY-OPENCV: "--with-opencv-dir=$(brew --prefix opencv)"
 BUNDLER_EDITOR: "mate"
-BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries --with-xml2-include=$(brew --prefix libxml2)/include/libxml2"
+
