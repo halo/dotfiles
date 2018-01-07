@@ -54,3 +54,10 @@ defaults write com.macromates.TextMate environmentVariables -array-add \
     <key>name</key><string>TM_NODE</string>
     <key>value</key><string>$(which node)</string>
   </dict>"
+
+defaults write com.macromates.TextMate environmentVariables -array-add \
+  "<dict>
+    <key>enabled</key><true/>
+    <key>name</key><string>TM_SASS_LINT</string>
+    <key>value</key><string>$(which sass-lint)</string>
+  </dict>"
