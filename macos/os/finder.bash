@@ -46,6 +46,9 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Disable Quick Look animations
+defaults write -g QLPanelAnimationDuration -float 0
+
 # Allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
@@ -58,8 +61,8 @@ defaults write com.apple.finder FXDefaultSearchScope SCcf
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Enable spring loading for directories
-defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+# Disable spring loading for directories, this is just annoying
+defaults write NSGlobalDomain com.apple.springing.enabled -bool false
 
 # Remove spring loading delay for directories
 defaults write NSGlobalDomain com.apple.springing.delay -float 0

@@ -101,3 +101,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.Safari PrintHeadersAndFooters -bool false
 defaults write com.apple.Safari WebKitShouldPrintBackgroundsPreferenceKey -bool false
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2ShouldPrintBackgrounds -bool false
+
+# Render page as soon as possible
+defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
