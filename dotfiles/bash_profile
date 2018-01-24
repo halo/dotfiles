@@ -17,6 +17,7 @@ if test -n "$SSH_CONNECTION"; then
 fi
 
 export EDITOR='mate'
+export HISTCONTROL=erasedups
 
 # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -158,6 +159,10 @@ function guser {
 function ghalo {
   guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
 }
+
+if [[ -s ~/.bash_profile.local ]]; then
+  source ~/.bash_profile.local
+fi
 
 ### BIOSPHERE MANAGED START ###
 
