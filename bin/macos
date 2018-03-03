@@ -5,6 +5,8 @@ if Process.uid == 0
   abort
 end
 
+# If there is a TTY, this will bring up a password prompt.
+# Otherwise, commands starting with sudo will simply silently fail.
 system 'sudo -v'
 
 puts
