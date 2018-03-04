@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Don't mess with my Tabs
 defaults write com.macromates.TextMate disableTabReordering -bool true
 
