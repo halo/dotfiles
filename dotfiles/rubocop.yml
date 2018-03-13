@@ -32,7 +32,9 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 # I'm not that picky. An empty line can even increase readability.
