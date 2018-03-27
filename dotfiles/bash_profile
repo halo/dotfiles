@@ -74,6 +74,8 @@ function repeat {
   done
 }
 
+[ -f $HOME/.biosphere/spheres/default/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.biosphere/spheres/default/homebrew/etc/profile.d/autojump.sh
+
 # System
 alias hosts='sudo mate /etc/hosts'
 alias sshconf='mate ~/.ssh/config'
