@@ -145,4 +145,3 @@ defaults write com.apple.Terminal "Startup Window Settings" Halo
 # Terminal itself overwrites everything on quit
 # So we need to read the settings once to synchronize with the cache
 defaults read $HOME/Library/Preferences/com.apple.Terminal.plist > /dev/null
-
