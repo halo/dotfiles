@@ -2,7 +2,7 @@ AllCops:
   TargetRubyVersion: 2.4
   DisplayCopNames: true
 
-# On an 11-inch screen this works fine.
+# Even on an small screen this works fine.
 Metrics/LineLength:
   Max: 130
 
@@ -35,14 +35,6 @@ RSpec/MultipleExpectations:
 Style/TrailingCommaInArrayLiteral:
   Enabled: false
 Style/TrailingCommaInHashLiteral:
-  Enabled: false
-
-# I'm not that picky. An empty line can even increase readability.
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# UTF-8 in comments can improve readability.
-Style/AsciiComments:
   Enabled: false
 
 # Top-level class documentation is nice, but cumbersome when starting a new project.
