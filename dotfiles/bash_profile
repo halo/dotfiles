@@ -49,6 +49,10 @@ alias ttest='tail -n 90 -f log/test.log'
 # Node
 alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
 
+# Tools
+alias yv='youtube-dl --recode-video mp4'
+alias ya='youtube-dl --extract-audio'
+
 # Applications
 function m {
   if [ -z "$1" ]
