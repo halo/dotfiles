@@ -171,6 +171,8 @@ if [[ -s ~/.bash_profile.local ]]; then
   source ~/.bash_profile.local
 fi
 
+export PGDATA="$(brew --prefix)/var/postgres"
+
 ### BIOSPHERE MANAGED START ###
 
 # Adding the "bio" executable to your path. Just for your convenience.
