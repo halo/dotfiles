@@ -22,6 +22,15 @@ defaults write com.macromates.TextMate fileBrowserPlacement right
 # Always show the tab bar
 defaults write com.macromates.TextMate disableTabBarCollapsing -bool true
 
+# Deactivate Command + H shortcut
+defaults write com.macromates.TextMate NSUserKeyEquivalents -dict-add "Hide TextMate" "@~^$\\U00b4"
+
+# Deactivate Command + Shift + C shortcut
+defaults write com.macromates.TextMate NSUserKeyEquivalents -dict-add "Computer" "@~^$\\U00b4"
+
+# Deactivate Command + Shift + H shortcut
+defaults write com.macromates.TextMate NSUserKeyEquivalents -dict-add "Home" "@~^$\\U00b4"
+
 # Set Environment variables
 defaults write com.macromates.TextMate environmentVariables -array
 

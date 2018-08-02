@@ -4,7 +4,11 @@
 defaults write com.apple.Terminal NewTabWorkingDirectoryBehavior -int 1
 
 # Use UTF-8
-defaults write com.apple.terminal StringEncodings -array 4
+defaults write com.apple.Terminal StringEncodings -array 4
+
+# Toggle through Tabs with Option + Command + Left/Right
+defaults write com.apple.Terminal NSUserKeyEquivalents -dict-add "Show Next Tab" "@~\\U2192"
+defaults write com.apple.Terminal NSUserKeyEquivalents -dict-add "Show Previous Tab" "@~\\U2190"
 
 # Create the halo Theme in a temporary folder
 # This is a pure dump of the Terminal -> Themes -> Export
