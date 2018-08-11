@@ -53,7 +53,7 @@ alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
 
 # Tools
 alias yv='youtube-dl --recode-video mp4'
-alias ya='youtube-dl --extract-audio'
+alias ya='youtube-dl --extract-audio --audio-format mp3'
 
 # Applications
 function m {
