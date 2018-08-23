@@ -1,0 +1,57 @@
+source 'https://rubygems.org'
+ruby '2.4.1'
+
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+group :development, :test, :demo do
+  # Needs to be loaded first
+  # See https://github.com/bkeepers/dotenv#note-on-load-order
+  gem 'dotenv-rails'
+end
+
+gem 'bootsnap', require: false
+gem 'passenger'
+gem 'pg'
+gem 'protocool'
+gem 'pundit'
+gem 'rails'
+gem 'rails-i18n'
+gem 'sassc-rails'
+gem 'simple_form'
+gem 'slim-rails'
+gem 'sprockets', '4.0.0.beta8'
+gem 'uglifier'
+gem 'webpacker', '~> 3.0', require: false
+
+group :development do
+  gem 'guard-livereload', require: false
+  gem 'guard-rspec', require: false
+  gem 'pry-rails'
+  gem 'rack-livereload'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+end
+
+group :development, :test do
+  gem 'bullet'
+  gem 'faker'
+  gem 'puma'
+  gem 'rb-readline'
+  gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_bot_rails'
+  gem 'selenium-webdriver'
+  gem 'timecop'
+  gem 'vcr'
+  gem 'webmock'
+
+  # Circle CI and Travis usually have their own chromedriver executable.
+  # Locally you might want to use the binary shipped with the `chromedriver-helper` gem.
+  install_if -> { !ENV.key?('CI') } do
+    gem 'chromedriver-helper'
+  end
+end
