@@ -13,6 +13,7 @@ com.macromates.TextMate .css all
 com.macromates.TextMate .css all
 com.macromates.TextMate .diff all
 com.macromates.TextMate .erb all
+com.macromates.TextMate .hbs all
 com.macromates.TextMate .haml all
 com.macromates.TextMate .js all
 com.macromates.TextMate .md all
