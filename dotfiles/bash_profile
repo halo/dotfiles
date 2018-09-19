@@ -54,6 +54,7 @@ alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
 # Tools
 alias yv='youtube-dl --recode-video mp4'
 alias ya='youtube-dl --extract-audio --audio-format mp3'
+alias switch='heroku accounts:set'
 
 # Applications
 function m {
@@ -172,8 +173,6 @@ if [[ -s ~/.bash_profile.local ]]; then
   source ~/.bash_profile.local
 fi
 
-export PGDATA="$(brew --prefix)/var/postgres"
-
 ### BIOSPHERE MANAGED START ###
 
 # Adding the "bio" executable to your path. Just for your convenience.
@@ -191,3 +190,5 @@ export PATH="$HOME/.biosphere/core/bin:$PATH"
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of ;)
 export PATH="bin:$PATH"
+
+export PGDATA="$(brew --prefix)/var/postgres"
