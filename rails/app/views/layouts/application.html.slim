@@ -1,0 +1,12 @@
+doctype html
+
+html lang=I18n.locale
+  head
+    = render 'layouts/meta'
+    title= content_for?(:title) ? "#{content_for(:title)} | <%= app_name %>" : '<%= app_name %>'
+    = stylesheet_link_tag :application, media: :all
+
+  body
+    = yield
+
+    = javascript_include_tag :application

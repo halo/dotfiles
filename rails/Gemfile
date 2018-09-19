@@ -9,11 +9,13 @@ group :development, :test, :demo do
   gem 'dotenv-rails'
 end
 
+gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'passenger'
 gem 'pg'
 gem 'protocool'
 gem 'pundit'
+gem 'rack-host-redirect'
 gem 'rails'
 gem 'rails-i18n'
 gem 'sassc-rails'
@@ -26,6 +28,7 @@ gem 'webpacker', '~> 3.0', require: false
 group :development do
   gem 'guard-livereload', require: false
   gem 'guard-rspec', require: false
+  gem 'letter_opener'
   gem 'pry-rails'
   gem 'rack-livereload'
   gem 'spring'

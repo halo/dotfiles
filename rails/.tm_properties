@@ -1,0 +1,4 @@
+# Configuration for TextMate
+
+excludeInFolderSearch = "{$excludeInFolderSearch,spec/cassettes,node_modules/**/*,app/assets/fonts,*.mmdb}"
+excludeFiles = "{$excludeFiles,log/*,node_modules/**/*,public/assets/**/*,public/assets-test/**/*,public/packs/**/*,public/packs-test/**/*,spec/status.txt,spec/cassettes}"

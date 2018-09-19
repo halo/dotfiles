@@ -1,0 +1,105 @@
+version: 2
+
+jobs:
+
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
+        environment:
+          PGUSER: <%= app_name %>
+          RACK_ENV: test
+
+      - image: circleci/postgres:10.1-alpine
+        environment:
+          POSTGRES_USER: <%= app_name %>
+          POSTGRES_DB: <%= app_name %>_test
+          POSTGRES_PASSWORD: ""
+
+      - image: redis:3.2-alpine
+
+    working_directory: ~/<%= app_name %>
+
+    steps:
+      - run:
+          name: Update apt-get for modern postgres-client
+          command: sudo apt-get update
+
+      - run:
+          name: Install aptitude because it has more helpful error messages
+          command: sudo apt-get install --assume-yes aptitude
+
+      - run:
+          name: Install Postgres Client
+          command: sudo aptitude -y install libpq-dev postgresql-client
+
+      - run:
+          name: Upgrade Chrome to be on par with development machine
+          command: |
+            sudo aptitude -y install libappindicator3-1
+            wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /tmp
+            sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
+            sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
+
+      - run:
+          name: Upgrade chromedriver to be on par with development machine
+          command: |
+            wget -N http://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip -P /tmp
+            unzip /tmp/chromedriver_linux64.zip -d /tmp
+            sudo mv -f /tmp/chromedriver /usr/local/bin/chromedriver
+            sudo chown root:root /usr/local/bin/chromedriver
+            sudo chmod 0755 /usr/local/bin/chromedriver
+            /usr/local/bin/chromedriver --version
+
+      - checkout
+
+      - restore_cache:
+          name: Restore Bundler Cache
+          key: <%= app_name %>-bundle-{{ checksum "Gemfile.lock" }}
+
+      - restore_cache:
+          name: Restore Yarn Cache
+          key: <%= app_name %>-yarn-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Bundle Install
+          command: bundle install --path=vendor/bundle --jobs=4 --retry=3
+
+      - run:
+          name: Yarn Install
+          command: yarn install
+
+      - save_cache:
+          key: <%= app_name %>-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - save_cache:
+          key: <%= app_name %>-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: Create Database
+          command: bundle exec rake db:create
+
+      - run:
+          name: Load Database Schema
+          command: bundle exec rake db:structure:load
+
+      - run:
+          name: Precompile assets for feature tests
+          command: bundle exec rake assets:precompile
+
+      - run:
+          name: Create Rspec directory
+          command: mkdir rspec
+
+      - run:
+          name: Run Tests
+          command: |
+            bundle exec rspec --format progress \
+                              --format RspecJunitFormatter \
+                              --out rspec/rspec.xml
+
+      - store_test_results:
+          path: rspec
