@@ -41,12 +41,11 @@ alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:
 alias r='rails'
 alias c='rails console'
 alias rol='rake db:rollback'
-alias rst='passenger-config restart-app .; touch tmp/restart.txt && echo touched tmp/restart.txt'
+alias rst='passenger-config restart-app .; touch tmp/restart.txt; bin/spring stop && echo Application restarted.'
 alias tdev='tail -n 90 -f log/development.log'
 alias tmig='RAILS_ENV=test rake db:migrate'
 alias trol='RAILS_ENV=test rake db:rollback'
 alias ttest='tail -n 90 -f log/test.log'
-alias ss='spring stop'
 
 # Node
 alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
