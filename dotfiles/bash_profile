@@ -24,13 +24,14 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # Shell
 alias reload='(source $HOME/.bash_profile && echo "sourced $HOME/.bash_profile") || echo "Could not source $HOME/.bash_profile"'
-alias la='ls -lah'
+alias la='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -G'  # Colors on macOS
 
 # Ruby
+alias b='bundle'
 alias be='bundle exec'
 alias bo='bundle open'
 
