@@ -136,6 +136,7 @@ alias gl="git pull --rebase"
 alias gm='git merge'
 alias gp='git push'
 alias gpp='git pull --rebase && git push'
+alias gpo='git push origin'
 alias gr='git remote show origin'
 alias gs="git status"
 alias gt='git tag'
