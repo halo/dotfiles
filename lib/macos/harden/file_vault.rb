@@ -1,4 +1,4 @@
-module Macos
+module MacOS
   module Harden
     class FileVault
       def call
@@ -16,11 +16,11 @@ module Macos
       end
 
       def command
-        TTY::Command.new(printer: :null).run '/usr/bin/fdesetup', 'status'
+        MacOS::Command.new ['/usr/bin/fdesetup', 'status']
       end
 
       def spinner
-        @spinner ||= Macos::Spinner.new('Checking if FileVault is enabled...')
+        @spinner ||= Check.new('Checking if FileVault is enabled...')
       end
     end
   end

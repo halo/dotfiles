@@ -1,5 +1,5 @@
-module Macos
-  module Os
+module MacOS
+  module OS
     class Pmset
       def get(mode:, key:)
         case mode
@@ -11,13 +11,13 @@ module Macos
 
       def set(mode:, key:, value:)
         modifier = mode == :charger ? '-c' : '-b'
-        Macos::Command.new(['/usr/bin/pmset', modifier, key, value], sudo: true).run
+        Command::Sudo.new('/usr/bin/pmset', modifier, key, value).run
       end
 
       private
 
       def settings
-        @settings ||= Macos::Command.new(['/usr/bin/pmset', '-g', 'custom']).out
+        @settings ||= Command.new('/usr/bin/pmset', '-g', 'custom').out
       end
 
       def battery(value)

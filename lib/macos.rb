@@ -8,22 +8,21 @@ require 'tty-platform'
 
 require 'macos/runtime'
 require 'macos/command'
-require 'macos/spinner'
+require 'macos/check'
 
+require 'macos/os/defaults'
 require 'macos/os/pmset'
 require 'macos/os/system_preferences'
+require 'macos/os/systemsetup'
 
 require 'macos/customize'
 require 'macos/harden'
 
-module Macos
+module MacOS
   def self.call
     puts
-    puts Pastel.new.bold ' Hardening'
-    Macos::Harden.call
-    puts
-    puts Pastel.new.bold ' Customizing'
-    Macos::Customize.call
+    MacOS::Harden.call
+    MacOS::Customize.call
     puts
   end
 

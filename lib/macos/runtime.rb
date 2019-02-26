@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Macos
+module MacOS
   module Runtime
     def self.privileged?
       Process.uid == 0

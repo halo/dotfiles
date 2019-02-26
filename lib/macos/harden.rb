@@ -1,9 +1,9 @@
 require 'macos/harden/file_vault'
 
-module Macos
+module MacOS
   module Harden
     def self.call
-      Macos::Harden::FileVault.new.call
+      # MacOS::Harden::FileVault.new.call
     end
   end
 end
