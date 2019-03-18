@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'tty-command'
+gem 'tty-platform'
+gem 'tty-prompt'
+gem 'tty-spinner'
