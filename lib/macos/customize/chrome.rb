@@ -63,7 +63,9 @@ module MacOS
           program_arguments: ['/bin/ln', '-s', plist_path.to_s, managed_preferences_path.to_s],
           run_at_load: true,
           # This is not recursive because creating the file only triggers one more creation (which doesn't change anything any more)
-          watch_paths: [managed_preferences_path.to_s]
+          watch_paths: [managed_preferences_path.to_s],
+          # False means, run the job when the network goes down.
+          network_state: false,
         )
       end
 
