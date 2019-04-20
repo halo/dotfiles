@@ -6,6 +6,7 @@ GEM
     pastel (0.7.2)
       equatable (~> 0.5.0)
       tty-color (~> 0.4.0)
+    plist (3.5.0)
     timers (4.3.0)
     tty-color (0.4.3)
     tty-command (0.8.2)
@@ -31,6 +32,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  plist
   tty-command
   tty-platform
   tty-prompt

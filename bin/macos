@@ -1,25 +1,6 @@
 #!/usr/bin/ruby
 
-if Process.uid == 0
-  puts 'Do not use sudo to run `macos`'
-  abort
-end
+$LOAD_PATH << File.expand_path('../lib', __dir__)
+require 'macos'
 
-# If there is a TTY, this will bring up a password prompt.
-# Otherwise, commands starting with sudo will simply silently fail.
-system 'sudo -v'
-
-puts
-print 'Applying macOS defaults'
-
-Dir[File.expand_path('../macos/**/*.bash', File.dirname(__FILE__))].each do |path|
-  if system path
-    print '.'
-  else
-    print %Q( \033[31m#{File.basename(path)}\033[0m )
-  end
-end
-
-puts
-puts 'Finished.'
-puts
+MacOS.call

@@ -1,5 +1,5 @@
 module MacOS
-  module Harden
+  module Customize
     class FileVault
       def call
         if enabled?
@@ -20,7 +20,7 @@ module MacOS
       end
 
       def spinner
-        @spinner ||= Check.new('Checking if FileVault is enabled...')
+        @spinner ||= Check.new(good: 'Checking if FileVault is enabled...')
       end
     end
   end

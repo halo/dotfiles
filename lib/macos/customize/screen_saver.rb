@@ -41,7 +41,7 @@ module MacOS
 
       def message
         check = Check.new good: 'Screen saver message is blank'
-        setting = OS::Defaults::Dict.new(current_host: true, domain: 'com.apple.screensaver.Basic', key: 'MESSAGE')
+        setting = OS::Defaults::String.new(current_host: true, domain: 'com.apple.screensaver.Basic', key: 'MESSAGE')
 
         if setting.match(expected_string: '\240')
           check.pass!

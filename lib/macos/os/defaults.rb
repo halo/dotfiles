@@ -37,8 +37,12 @@ module MacOS
       end
 
       class String < Base
-        def set(string)
-          Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-string', value).run
+        def set!(string)
+          Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-string', string).run
+        end
+
+        def get
+          Command.new('/usr/bin/defaults', *options, 'read', domain, key).out(allow_failure: true)
         end
       end
 
@@ -65,7 +69,6 @@ module MacOS
           Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-dict', *values).run
         end
       end
-
     end
   end
 end

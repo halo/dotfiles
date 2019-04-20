@@ -3,9 +3,9 @@ module MacOS
     class Sudo < Command
       def command!(allow_failure: false)
         if allow_failure
-          TTY::Command.new(printer: :null).run!('/usr/bin/sudo', *args)
+          TTY::Command.new(printer: printer).run!('/usr/bin/sudo', *args)
         else
-          TTY::Command.new(printer: :null).run('/usr/bin/sudo', *args)
+          TTY::Command.new(printer: printer).run('/usr/bin/sudo', *args)
         end
       end
     end
@@ -19,7 +19,7 @@ module MacOS
     end
 
     def run(*args)
-      command
+      command(*args)
     end
 
     def include?(string)
@@ -30,15 +30,19 @@ module MacOS
 
     attr_reader :args, :sudo
 
+    def printer
+      Runtime.debug_mode? ? :pretty : :null
+    end
+
     def command(allow_failure: false)
       @command ||= command!(allow_failure: allow_failure)
     end
 
     def command!(allow_failure: false)
       if allow_failure
-        TTY::Command.new(printer: :null).run!(*args)
+        TTY::Command.new(printer: printer).run!(*args)
       else
-        TTY::Command.new(printer: :null).run(*args)
+        TTY::Command.new(printer: printer).run(*args)
       end
     end
   end

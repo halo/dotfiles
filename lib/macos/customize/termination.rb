@@ -11,6 +11,7 @@ module MacOS
       def restart_after_freeze
         check = Check.new good: 'Automatically restart when the system freezes'
 
+        return check.needs_sudo! unless Runtime.sudo_mode?
         if OS::Systemsetup.match(key: 'restartfreeze', expected_string: 'Restart After Freeze: On')
           check.pass!
         else

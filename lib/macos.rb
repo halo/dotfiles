@@ -1,6 +1,7 @@
 require 'founder'
 Founder.install logger: ::Logger.new('/dev/null')
 
+require 'plist'
 require 'tty-prompt'
 require 'tty-command'
 require 'tty-spinner'
@@ -11,18 +12,25 @@ require 'macos/command'
 require 'macos/check'
 
 require 'macos/os/defaults'
+require 'macos/os/global_daemon'
 require 'macos/os/pmset'
 require 'macos/os/system_preferences'
 require 'macos/os/systemsetup'
 
-require 'macos/customize'
-require 'macos/harden'
+require 'macos/customize/energy'
+require 'macos/customize/chrome'
+require 'macos/customize/file_vault'
+require 'macos/customize/screen_saver'
+require 'macos/customize/termination'
 
 module MacOS
   def self.call
     puts
-    MacOS::Harden.call
-    MacOS::Customize.call
+    #MacOS::Customize::FileVault.new.call
+    MacOS::Customize::Energy.new.call
+    MacOS::Customize::Termination.new.call
+    MacOS::Customize::ScreenSaver.new.call
+    MacOS::Customize::Chrome.new.call
     puts
   end
 
