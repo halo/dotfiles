@@ -109,7 +109,7 @@ module MacOS
           DefaultWebUsbGuardSetting: 2,
           # Startpage.com
           DefaultSearchProviderEnabled: true,
-          DefaultSearchProviderSearchURL: 'https://www.startpage.com/do/dsearch?query={searchTerms}',
+          DefaultSearchProviderSearchURL: 'https://www.google.com/search?query={searchTerms}',
           # Disable Chromes internal password manager
           PasswordManagerEnabled: false,
           # Use system print dialog
