@@ -15,7 +15,6 @@ diff = auto
 [alias]
 unstage = reset HEAD .
 uncommit = reset --soft HEAD^
-cut = !"wrapper(){ git branch --merged master | grep -v 'master$' | xargs git branch -d; git branch --list | tr -d ' *' | grep -v '^master$' | while read branch ; do [[ -z `git diff master..$branch` ]] && git branch -D $branch; done }; wrapper"
 lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 # Create a commit that inverts everything back to a specified SHA.
