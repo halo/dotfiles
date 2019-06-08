@@ -21,7 +21,6 @@ require 'macos/os/system_preferences'
 require 'macos/os/systemsetup'
 
 require 'macos/customize/energy'
-require 'macos/customize/chrome'
 require 'macos/customize/chromex'
 require 'macos/customize/file_vault'
 require 'macos/customize/screen_saver'
@@ -34,7 +33,6 @@ module MacOS
     MacOS::Customize::Energy.new.call
     MacOS::Customize::Termination.new.call
     MacOS::Customize::ScreenSaver.new.call
-    MacOS::Customize::Chrome.new.call
     # MacOS::Customize::Chromex.new.call
     puts
   end
