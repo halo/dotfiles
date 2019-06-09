@@ -32,12 +32,8 @@ module MacOS
     # MacOS::Customize::FileVault.new.call
     MacOS::Customize::Energy.new.call
     MacOS::Customize::Termination.new.call
-    MacOS::Customize::ScreenSaver.new.call
+    #MacOS::Customize::ScreenSaver.new.call
     # MacOS::Customize::Chromex.new.call
     puts
-  end
-
-  def self.sudo?
-
   end
 end
