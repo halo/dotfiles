@@ -7,6 +7,7 @@ require 'git/query/initialized_repository'
 require 'git/query/local_branches'
 
 require 'git/cli/checkout_master'
+require 'git/cli/delete_branch'
 
 require 'git/requires/initialized_repository'
 require 'git/requires/clean_working_tree'
