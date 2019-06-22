@@ -26,7 +26,7 @@ module MacOS
       end
 
       def suffix_separator
-        "'s Mac"
+        "’s Mac"
       end
     end
   end
