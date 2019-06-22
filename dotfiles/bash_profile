@@ -83,7 +83,7 @@ function repeat {
   done
 }
 
-[ -f $HOME/.biosphere/spheres/default/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.biosphere/spheres/default/homebrew/etc/profile.d/autojump.sh
+[ -f $HOME/.managed/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.managed/homebrew/etc/profile.d/autojump.sh
 
 # System
 alias hosts='sudo mate /etc/hosts'
@@ -176,22 +176,27 @@ if [[ -s ~/.bash_profile.local ]]; then
   source ~/.bash_profile.local
 fi
 
-### BIOSPHERE MANAGED START ###
-
-# Adding the "bio" executable to your path. Just for your convenience.
-export PATH="$HOME/.biosphere/core/bin:$PATH"
-
-# Loading Biosphere shell additions (for clean and simple de-/activation of spheres).
-# These lines won't change and are safe to be commited to your dotfiles if you wish.
-[[ -s $HOME/.biosphere/augmentations/shell ]] && source $HOME/.biosphere/augmentations/shell
-
-### BIOSPHERE MANAGED STOP ###
-
 # Hm, I generally trust my `./bin` path, but not for *all* dependencies (yet).
-#export PATH="node_modules/.bin:$PATH"
+# export PATH="node_modules/.bin:$PATH"
+
+# Load Homebrew binaries
+export PATH="/Users/orange/.managed/homebrew/bin:$PATH"
+export PATH="/Users/orange/.managed/homebrew/sbin:$PATH"
+
+# Initialize rbenv
+export RBENV_ROOT="/Users/orange/.rbenv"
+test -x /Users/orange/.managed/homebrew/bin/rbenv && eval "$(/Users/orange/.managed/homebrew/bin/rbenv init -)"
+
+# Configuring PostgreSQL, if installed via homebrew
+export PGDATA="$(brew --prefix)/var/postgres"
+
+# Git fancy
+if [[ -s /Users/orange/.managed/homebrew/etc/bash_completion.d/git-prompt.sh ]]; then
+  source /Users/orange/.managed/homebrew/etc/bash_completion.d/git-prompt.sh
+  export PS1='\w\$$(__git_ps1) '
+fi
 
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of ;)
 export PATH="bin:$PATH"
 
-export PGDATA="$(brew --prefix)/var/postgres"
