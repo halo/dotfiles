@@ -23,9 +23,3 @@ defaults write com.apple.BezelServices kDim -bool true
 
 # Disable press-and-hold for choosing accents
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Deactivate Option + Command + H shortcut I accidentally hit
-defaults write -globalDomain NSUserKeyEquivalents -dict-add "Hide Others" "@~^$\\U00b4"
-
-# Deactivate Control + Command + F shortcut I accidentally hit
-defaults write -globalDomain NSUserKeyEquivalents -dict-add "Enter Full Screen" "@~^$\\U00b4"

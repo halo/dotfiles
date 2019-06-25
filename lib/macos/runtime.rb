@@ -16,6 +16,10 @@ module MacOS
       command_line_arguments.delete '--sudo'
     end
 
+    def self.apply_mode?
+      command_line_arguments.delete '--apply'
+    end
+
     def self.help_mode?
       command_line_arguments.delete '--help'
     end

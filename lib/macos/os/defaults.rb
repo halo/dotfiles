@@ -2,6 +2,8 @@ module MacOS
   module OS
     class Defaults
       class Base
+        attr_reader :key
+
         def initialize(domain: :global, key:, current_host: false)
           @domain = domain
           @key = key
@@ -14,7 +16,7 @@ module MacOS
 
         private
 
-        attr_reader :key, :datatype, :current_host
+        attr_reader :datatype, :current_host
 
         def domain
           @domain == :global ? '-g' : @domain
@@ -67,6 +69,10 @@ module MacOS
 
         def set!(*values)
           Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-dict', *values).run
+        end
+
+        def add!(key:, value:)
+          Command.new('/usr/bin/defaults', *options, 'write', domain, self.key, '-dict-add', key, value).run
         end
       end
     end
