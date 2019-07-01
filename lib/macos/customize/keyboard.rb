@@ -1,6 +1,7 @@
 module MacOS
   module Customize
     class Keyboard
+      # See https://apple.stackexchange.com/a/55729
       #  @ = command
       #  ^ = control
       #  ~ = option
@@ -18,6 +19,9 @@ module MacOS
         set_shortcut caption: 'Previous Tab', keycode: "~@←"
         set_shortcut caption: 'Show Previous Tab', keycode: "~@←"
         set_shortcut caption: 'Select Previous Tab', keycode: "~@←"
+
+        # Making Safari behave like Chrome
+        set_shortcut caption: 'Clear History...', keycode: "$@⌫"
 
         system 'killall Finder' if @restart_finder && Runtime.apply_mode?
       end

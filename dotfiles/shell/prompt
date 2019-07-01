@@ -1,0 +1,9 @@
+if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+  GIT_INFO='$(__git_ps1)'
+fi
+
+FAINT='\033[2m'
+RESET='$(tput sgr0)'
+
+export PS1="${FAINT}\w${GIT_INFO}${RESET} "

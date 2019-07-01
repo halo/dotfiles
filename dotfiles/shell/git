@@ -1,0 +1,55 @@
+alias ga='git add --all'
+alias gam="git commit --amend"
+alias gb="git branch"
+alias gc="git commit -v"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gcp="git cherry-pick"
+
+# Remove `+` and `-` from start of diff lines; just rely upon color.
+# See https://github.com/holman/dotfiles/blob/7b8b643640e636d499fc4eaaf4de57d5bd8c2261/git/aliases.zsh#L14-L15
+
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'  # What's changed but not yet added?
+alias gdc='git diff --cached --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'  # What's added but not yet committed?
+alias gdcm="git diff --cached | mate"
+alias gdm="git diff | mate"
+alias gg='git grep'
+alias gl="git pull --rebase --prune"
+alias gm='git merge'
+alias gp='git push'
+alias gpp='git pull --rebase && git push'
+alias gpo='git push origin'
+alias gr='git remote show origin'
+alias gs="git status -sb"
+alias gt='git tag'
+alias gu='git unstage'
+alias glg='git lg'
+
+function gbo {
+  git branch $1 && git checkout $1
+}
+
+
+function guser {
+  if [ -z "$1" ]
+  then
+  echo "Current git configuration:"
+    git config --get user.name
+    git config --get user.email
+  else
+    echo "New git configuration:"
+    git config user.name $1
+    git config user.email $2
+    git config --get user.name
+    git config --get user.email
+  fi
+}
+
+function ghalo {
+  guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
+}
+
+# Override git-config "core.editor" to enforce vim when using SSH
+if test -n "$SSH_CONNECTION"; then
+  export GIT_EDITOR='vim'
+fi

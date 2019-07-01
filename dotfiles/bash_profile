@@ -1,10 +1,13 @@
-# Prompt
-export PS1='\w\$ '
+source $HOME/.shell/prompt
 
-if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]]; then
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
-  export PS1='\w\$$(__git_ps1) '
-fi
+source $HOME/.shell/git
+source $HOME/.shell/shell
+source $HOME/.shell/ruby
+source $HOME/.shell/rails
+source $HOME/.shell/general
+
+# TODO
+# activate githooks
 
 # Paths
 export PATH="$PATH:$HOME/.dotfiles/bin"
@@ -12,172 +15,18 @@ export PATH="$PATH:$HOME/.gitbin"
 export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
 export PATH="$PATH:/usr/libexec/ApplicationFirewall"
 
-# Override git-config "core.editor" to enforce vim when using SSH
-if test -n "$SSH_CONNECTION"; then
-  export GIT_EDITOR='vim'
-fi
-
 export EDITOR='mate'
 export HISTCONTROL=erasedups
 
 # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
-# Shell
-alias reload='(source $HOME/.bash_profile && echo "sourced $HOME/.bash_profile") || echo "Could not source $HOME/.bash_profile"'
-alias la='ls -lAh'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias ls='ls -G'  # Colors on macOS
-
-# Ruby
-alias b='bundle'
-alias be='bundle exec'
-alias bo='bundle open'
-
-# Rails
-alias g='be guard'
-alias mig='rake db:migrate'
-alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:prepare'
-alias r='rails'
-alias c='rails console'
-alias rol='rake db:rollback'
-alias rst='passenger-config restart-app .; touch tmp/restart.txt; bin/spring stop && echo Application restarted.'
-alias tdev='tail -n 90 -f log/development.log'
-alias tmig='RAILS_ENV=test rake db:migrate'
-alias trol='RAILS_ENV=test rake db:rollback'
-alias ttest='tail -n 90 -f log/test.log'
-
-# Node
-alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
-
-# Tools
-alias yv='youtube-dl --recode-video mp4'
-alias ya='youtube-dl --extract-audio --audio-format m4a'
-alias mp3m4a='for f in *.mp3; do ffmpeg -i "$f" -c:v copy -c:a aac "$f.m4a"; done'
-alias switch='heroku accounts:set'
-
-# Applications
-function m {
-  if [ -z "$1" ]
-  then
-    mate .
-  else
-    mate $1
-  fi
-}
-
-function o {
-  if [ -z "$1" ]
-  then
-    open .
-  else
-    open $1
-  fi
-}
-
-function repeat {
-  while sleep 2; do
-    $@
-  done
-}
-
 [ -f $HOME/.managed/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.managed/homebrew/etc/profile.d/autojump.sh
 
-# System
-alias hosts='sudo mate /etc/hosts'
-alias sshconf='mate ~/.ssh/config'
-alias keys="open ~/.ssh"
-alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
-
-function sshkey {
-  if [ -z "$1" ]
-  then
-    echo "USAGE: sshkey mykeyname"
-  else
-    ssh-keygen -t rsa -N '' -f ~/.ssh/$1
-    cat ~/.ssh/$1.pub | pbcopy
-    echo
-    echo "Generated key ~/.ssh/$1 and copied the public key to the clipboard."
-    echo
-  fi
-}
-
-function diffx {
-  `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
-}
-
-function defs {
-  defa; sleep 2; defb
-}
-
-function defa {
-  defaults read > /tmp/defaults_a
-}
-
-function defb {
-  defaults read > /tmp/defaults_b
-  diff /tmp/defaults_a /tmp/defaults_b
-}
-
-# Git
-alias ga='git add --all'
-alias gam="git commit --amend"
-alias gb="git branch"
-alias gc="git commit -v"
-alias gco="git checkout"
-alias gcom="git checkout master"
-alias gcp="git cherry-pick"
-alias gd="git diff"  # What's changed but not yet added?
-alias gdc="git diff --cached"  # What's added but not yet committed?
-alias gdcm="git diff --cached | mate"
-alias gdm="git diff | mate"
-alias gg='git grep'
-alias gl="git pull --rebase"
-alias gm='git merge'
-alias gp='git push'
-alias gpp='git pull --rebase && git push'
-alias gpo='git push origin'
-alias gr='git remote show origin'
-alias gs="git status"
-alias gt='git tag'
-alias gu='git unstage'
-alias glg='git lg'
-
-function gbo {
-  git branch $1 && git checkout $1
-}
-
-if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]]; then
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-fi
-
-function guser {
-  if [ -z "$1" ]
-  then
-  echo "Current git configuration:"
-    git config --get user.name
-    git config --get user.email
-  else
-    echo "New git configuration:"
-    git config user.name $1
-    git config user.email $2
-    git config --get user.name
-    git config --get user.email
-  fi
-}
-
-function ghalo {
-  guser halo $(echo "Z2l0aHViQHBvc3Rlby5vcmc=" | openssl enc -d -base64)
-}
 
 if [[ -s ~/.bash_profile.local ]]; then
   source ~/.bash_profile.local
 fi
-
-# Hm, I generally trust my `./bin` path, but not for *all* dependencies (yet).
-# export PATH="node_modules/.bin:$PATH"
 
 # Load Homebrew binaries
 export PATH="$HOME/.managed/homebrew/bin:$PATH"
@@ -186,15 +35,6 @@ export PATH="$HOME/.managed/homebrew/sbin:$PATH"
 # Initialize rbenv
 export RBENV_ROOT="$HOME/.rbenv"
 test -x $HOME/.managed/homebrew/bin/rbenv && eval "$($HOME/.managed/homebrew/bin/rbenv init -)"
-
-# Configuring PostgreSQL, if installed via homebrew
-export PGDATA="$(brew --prefix)/var/postgres"
-
-# Git fancy
-if [[ -s $HOME/.managed/homebrew/etc/bash_completion.d/git-prompt.sh ]]; then
-  source $HOME/.managed/homebrew/etc/bash_completion.d/git-prompt.sh
-  export PS1='\w\$$(__git_ps1) '
-fi
 
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of ;)

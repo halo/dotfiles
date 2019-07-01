@@ -1,0 +1,66 @@
+alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
+alias yv='youtube-dl --recode-video mp4'
+alias ya='youtube-dl --extract-audio --audio-format m4a'
+alias mp3m4a='for f in *.mp3; do ffmpeg -i "$f" -c:v copy -c:a aac "$f.m4a"; done'
+alias switch='heroku accounts:set'
+
+
+# Applications
+function m {
+  if [ -z "$1" ]
+  then
+    mate .
+  else
+    mate $1
+  fi
+}
+
+function o {
+  if [ -z "$1" ]
+  then
+    open .
+  else
+    open $1
+  fi
+}
+
+alias hosts='sudo mate /etc/hosts'
+alias sshconf='mate ~/.ssh/config'
+alias keys="open ~/.ssh"
+alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+
+function sshkey {
+  if [ -z "$1" ]
+  then
+    echo "USAGE: sshkey mykeyname"
+  else
+    ssh-keygen -t rsa -N '' -f ~/.ssh/$1
+    cat ~/.ssh/$1.pub | pbcopy
+    echo
+    echo "Generated key ~/.ssh/$1 and copied the public key to the clipboard."
+    echo
+  fi
+}
+
+function diffx {
+  `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
+}
+
+function defs {
+  defa; sleep 2; defb
+}
+
+function defa {
+  defaults read > /tmp/defaults_a
+}
+
+function defb {
+  defaults read > /tmp/defaults_b
+  diff /tmp/defaults_a /tmp/defaults_b
+}
+
+function repeat {
+  while sleep 2; do
+    $@
+  done
+}

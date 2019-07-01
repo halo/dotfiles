@@ -1,0 +1,6 @@
+alias reload='(source /Users/orange/.bash_profile && echo "sourced /Users/orange/.bash_profile") || echo "Could not source /Users/orange/.bash_profile"'
+alias la='ls -lAh'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ls='ls -G'  # Colors on macOS
