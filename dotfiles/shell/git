@@ -9,8 +9,6 @@ alias gcp="git cherry-pick"
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 # See https://github.com/holman/dotfiles/blob/7b8b643640e636d499fc4eaaf4de57d5bd8c2261/git/aliases.zsh#L14-L15
 
-alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'  # What's changed but not yet added?
-alias gdc='git diff --cached --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'  # What's added but not yet committed?
 alias gdcm="git diff --cached | mate"
 alias gdm="git diff | mate"
 alias gg='git grep'
@@ -29,6 +27,15 @@ function gbo {
   git branch $1 && git checkout $1
 }
 
+function gd {
+  # What's changed but not been added?
+  git diff --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
+}
+
+function gdc {
+  # What's added but not yet committed?
+  git diff --cached --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
+}
 
 function guser {
   if [ -z "$1" ]
