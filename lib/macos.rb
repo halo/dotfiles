@@ -23,6 +23,7 @@ require 'macos/os/systemsetup'
 require 'macos/customize/energy'
 require 'macos/customize/chromex'
 require 'macos/customize/file_vault'
+require 'macos/customize/finder_favorites'
 require 'macos/customize/sharing'
 require 'macos/customize/keyboard'
 require 'macos/customize/screen_saver'
@@ -36,6 +37,7 @@ module MacOS
     MacOS::Customize::Termination.new.call
     MacOS::Customize::Sharing.new.call
     MacOS::Customize::Keyboard.new.call
+    MacOS::Customize::FinderFavorites.new.call
     #MacOS::Customize::ScreenSaver.new.call
     # MacOS::Customize::Chromex.new.call
     puts

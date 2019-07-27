@@ -37,7 +37,7 @@ module MacOS
         check = Check.new good: %("#{caption}" shortcut is #{readable_keycode})
 
         setting = OS::Defaults::Dict.new(domain: app, key: 'NSUserKeyEquivalents')
-        puts setting.get
+
         if setting.match(expected_string: expected_output(caption: caption, keycode: keycode))
           check.pass!
         else

@@ -23,9 +23,10 @@ module MacOS
     end
 
     def conflict!(message)
-      spinner.update title: Pastel.new.yellow("#{good} (#{message}")
+      spinner.update title: Pastel.new.yellow("#{good} (#{message})")
       spinner.stop
     end
+
     # Cannot be performed while System Preferences is open.
     def system_preferences_conflict!
       spinner.update title: Pastel.new.yellow("#{good} (please quit System Preferences first)")
