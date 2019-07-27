@@ -1,3 +1,4 @@
 alias b='bundle'
 alias be='bundle exec'
 alias bo='bundle open'
+alias bu='bundle update'

@@ -3,7 +3,7 @@ if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-promp
   GIT_INFO='$(__git_ps1)'
 fi
 
-FAINT='\033[2m'
-RESET='$(tput sgr0)'
+FAINT='\[\033[2m\]'
+RESET="\[\033[0m\]"
 
 export PS1="${FAINT}\w${GIT_INFO}${RESET} "
