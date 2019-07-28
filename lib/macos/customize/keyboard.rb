@@ -49,8 +49,12 @@ module MacOS
 
       def expected_output(caption:, keycode:)
         return '' if keycode == '\0'
-        keycodes = keycode.split('')
-        keycodes[-1] = "\\\\U#{keycodes.last.ord.to_s(16)}"
+
+        keycodes = keycode.split('').map do |code|
+          next code if %w[@ ^ ~ $ r].include?(code)
+          "\\\\U#{code.ord.to_s(16)}"
+        end
+
         %("#{caption}" = "#{keycodes.join}")
       end
     end
