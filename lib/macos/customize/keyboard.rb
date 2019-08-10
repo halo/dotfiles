@@ -27,6 +27,9 @@ module MacOS
         # I use this feature very often but it has no shortcut
         set_shortcut app: 'com.apple.Preview', caption: 'Adjust Size...', keycode: "$@r"
 
+        # I accidentally press CMD + Enter and I don't want it to go to fullscreen..
+        set_shortcut app: 'com.googlecode.iterm2', caption: 'Toggle Full Screen', keycode: '\0'
+
         system 'killall Finder' if @restart_finder && Runtime.apply_mode?
       end
 
@@ -48,14 +51,19 @@ module MacOS
       end
 
       def expected_output(caption:, keycode:)
-        return '' if keycode == '\0'
+        return %(#{escape_caption(caption)} = "") if keycode == '\0'
 
         keycodes = keycode.split('').map do |code|
           next code if %w[@ ^ ~ $ r].include?(code)
           "\\\\U#{code.ord.to_s(16)}"
         end
 
-        %("#{caption}" = "#{keycodes.join}")
+        %(#{escape_caption(caption)} = "#{keycodes.join}")
+      end
+
+      def escape_caption(caption)
+        return caption unless caption.include?(' ')
+        %("#{caption}")
       end
     end
   end

@@ -11,6 +11,8 @@ module MacOS
         end
 
         def match(expected_string:)
+          return get == '' if expected_string == ''
+
           get.include? expected_string
         end
 
