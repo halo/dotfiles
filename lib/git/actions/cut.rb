@@ -6,7 +6,23 @@ module Git
         Git::Requires::InitializedRepository.call
         Git::Requires::CleanWorkingTree.call
         Git::CLI::CheckoutMaster.call
+        delete_merged_branches
+        delete_squashed_branches
+      end
 
+      private
+
+      def delete_merged_branches
+        Git::Query::MergedLocalBranches.each do |branch|
+          if Git::Runtime.dry_mode?
+            puts "Branch #{branch} is merged into master and can be deleted"
+          else
+            Git::CLI::ForceDeleteBranch.call(branch)
+          end
+        end
+      end
+
+      def delete_squashed_branches
         Git::Query::LocalBranches.each do |branch|
           # Find best common ancestor of branch and master
           base = `git merge-base master #{branch}`.chomp
@@ -22,7 +38,7 @@ module Git
           if Git::Runtime.dry_mode?
             puts "Branch #{branch} is merged into master and can be deleted"
           else
-            Git::CLI::DeleteBranch.call(branch)
+            Git::CLI::ForceDeleteBranch.call(branch)
           end
         end
       end

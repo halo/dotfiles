@@ -1,6 +1,6 @@
 module Git
   module CLI
-    module DeleteBranch
+    module ForceDeleteBranch
       def self.call(name)
         puts "Deleting branch #{name}"
         return if Git::Runtime.dry_mode?
