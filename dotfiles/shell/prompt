@@ -1,9 +1,44 @@
+# -------------
+# DOCUMENTATION
+# -------------
+
+# Interpolation and color effects: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+# Color codes: https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+
+# ---------
+# VARIABLES
+# ---------
+
 if [[ -s /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]]; then
   source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+
+  # Need to be single-quote to ensure re-evaluation
+  # See https://unix.stackexchange.com/a/14267
   GIT_INFO='$(__git_ps1)'
 fi
 
-FAINT='\[\033[2m\]'
-RESET="\[\033[0m\]"
+DARK_GRAY_FOREGROUND="%{%F{242}%}"
+CURRENT_WORKING_DIR="%~"
+PROMPT_SIGN='\$'
+PROMPT_SIGN='%(!.#.$)'
+RESET_COLORS="%{$reset_color%}"
 
-export PS1="${FAINT}\w${GIT_INFO}${RESET} "
+# ----------
+# PARAMETERS
+# ----------
+
+# See http://zsh.sourceforge.net/Doc/Release/Parameters.html
+
+export PROMPT="${DARK_GRAY_FOREGROUND}${CURRENT_WORKING_DIR}${PROMPT_SIGN}${GIT_INFO} ${RESET_COLORS}"
+
+# -------
+# OPTIONS
+# -------
+
+# See http://zsh.sourceforge.net/Doc/Release/Options.html
+
+# Enable `${}` substitution in the PROMPT env variable.
+setopt PROMPT_SUBST
+
+# Allow `#` to act as comment (when typing in commands)
+setopt INTERACTIVE_COMMENTS

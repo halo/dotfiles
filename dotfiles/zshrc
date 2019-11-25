@@ -1,0 +1,43 @@
+source $HOME/.shell/prompt
+
+source $HOME/.shell/history
+source $HOME/.shell/git
+source $HOME/.shell/shell
+source $HOME/.shell/ruby
+source $HOME/.shell/rails
+source $HOME/.shell/general
+
+# TODO
+# activate githooks
+
+# Paths
+export PATH="$PATH:$HOME/.dotfiles/bin"
+export PATH="$PATH:$HOME/.gitbin"
+export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
+export PATH="$PATH:/usr/libexec/ApplicationFirewall"
+
+export EDITOR='mate'
+export HISTCONTROL=erasedups
+
+# See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
+export HOMEBREW_NO_ANALYTICS=1
+
+[ -f $HOME/.managed/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.managed/homebrew/etc/profile.d/autojump.sh
+
+
+if [[ -s ~/.bash_profile.local ]]; then
+  source ~/.bash_profile.local
+fi
+
+# Load Homebrew binaries
+export PATH="$HOME/.managed/homebrew/bin:$PATH"
+export PATH="$HOME/.managed/homebrew/sbin:$PATH"
+
+# Initialize rbenv
+export RBENV_ROOT="$HOME/.rbenv"
+test -x $HOME/.managed/homebrew/bin/rbenv && eval "$($HOME/.managed/homebrew/bin/rbenv init -)"
+
+# Local bin directory takes highest precedence
+# Being careful as to when a bin directory is around I don't know the contents of ;)
+export PATH="bin:$PATH"
+

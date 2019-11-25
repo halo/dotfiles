@@ -1,0 +1,29 @@
+# ----------
+# PARAMETERS
+# ----------
+
+# See http://zsh.sourceforge.net/Doc/Release/Parameters.html
+
+# Where to save the history
+export HISTFILE="/Users/orange/.history"
+
+# How many commands are saved in RAM (shell's internal history list)
+export HISTSIZE=20000
+
+# How many commands are saved in $HISTFILE
+export SAVEHIST=25000
+
+# -------
+# OPTIONS
+# -------
+
+# See http://zsh.sourceforge.net/Doc/Release/Options.html
+
+# Immediately append commands to history instead of when closing the session
+setopt SHARE_HISTORY
+
+# Do not append duplicates commands to the history
+setopt HIST_IGNORE_DUPS
+
+# Remove superfluous blanks from each command line being added to the history list
+setopt HIST_REDUCE_BLANKS
