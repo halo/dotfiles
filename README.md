@@ -9,7 +9,7 @@ git clone https://github.com/halo/dotfiles.git ~/.dotfiles
 Add the executables to your $PATH:
 
 ```bash
-# Add this line to ~/.bash_profile
+# Add this line to ~/.zshrc
 export PATH="~/.dotfiles/bin:$PATH"
 ```
 

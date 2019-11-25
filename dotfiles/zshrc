@@ -25,8 +25,8 @@ export HOMEBREW_NO_ANALYTICS=1
 [ -f $HOME/.managed/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.managed/homebrew/etc/profile.d/autojump.sh
 
 
-if [[ -s ~/.bash_profile.local ]]; then
-  source ~/.bash_profile.local
+if [[ -s ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
 fi
 
 # Load Homebrew binaries

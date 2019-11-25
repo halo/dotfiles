@@ -1,4 +1,4 @@
-alias reload='(source /Users/orange/.bash_profile && echo "sourced /Users/orange/.bash_profile") || echo "Could not source /Users/orange/.bash_profile"'
+alias reload='(source /Users/orange/.zshrc && echo "sourced /Users/orange/.zshrc") || echo "Could not source /Users/orange/.zshrc"'
 alias la='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
