@@ -1,11 +1,13 @@
-source $HOME/.shell/prompt
-
-source $HOME/.shell/history
-source $HOME/.shell/git
-source $HOME/.shell/shell
-source $HOME/.shell/ruby
-source $HOME/.shell/rails
+source $HOME/.shell/autocompletion
 source $HOME/.shell/general
+source $HOME/.shell/git
+source $HOME/.shell/history
+source $HOME/.shell/hooks
+source $HOME/.shell/prompt
+source $HOME/.shell/rails
+source $HOME/.shell/ruby
+source $HOME/.shell/shell
+
 
 # TODO
 # activate githooks

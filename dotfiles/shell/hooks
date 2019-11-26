@@ -1,0 +1,4 @@
+chpwd() {
+  [[ -t 1 ]] || return
+  echo -ne "\e]1;$(basename $PWD)\a"
+}
