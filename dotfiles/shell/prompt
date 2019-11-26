@@ -19,7 +19,7 @@ fi
 
 DARK_GRAY_FOREGROUND="%{%F{242}%}"
 CURRENT_WORKING_DIR="%~"
-PROMPT_SIGN='$(sudo -n true 2>/dev/null && echo "#" || echo "%#")'
+PROMPT_SIGN='$(sudo -n true 2>/dev/null && echo "#" || echo "$")'
 WHITE_FOREGROUND="%{%F{015}%}"
 
 
