@@ -19,9 +19,9 @@ fi
 
 DARK_GRAY_FOREGROUND="%{%F{242}%}"
 CURRENT_WORKING_DIR="%~"
-PROMPT_SIGN='\$'
-PROMPT_SIGN='%(!.#.$)'
-RESET_COLORS="%{$reset_color%}"
+PROMPT_SIGN='$(sudo -n true 2>/dev/null && echo "#" || echo "%#")'
+WHITE_FOREGROUND="%{%F{015}%}"
+
 
 # ----------
 # PARAMETERS
@@ -29,7 +29,7 @@ RESET_COLORS="%{$reset_color%}"
 
 # See http://zsh.sourceforge.net/Doc/Release/Parameters.html
 
-export PROMPT="${DARK_GRAY_FOREGROUND}${CURRENT_WORKING_DIR}${PROMPT_SIGN}${GIT_INFO} ${RESET_COLORS}"
+export PROMPT="${DARK_GRAY_FOREGROUND}${CURRENT_WORKING_DIR}${PROMPT_SIGN}${GIT_INFO} ${WHITE_FOREGROUND}"
 
 # -------
 # OPTIONS
