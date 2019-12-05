@@ -30,4 +30,4 @@ big = !"wrapper(){ IFS=$'\\n'; objects=`git verify-pack -v .git/objects/pack/pac
 conflict = !"wrapper(){ git ls-files -u | cut -f2- | uniq }; wrapper"
 
 [push]
-default = simple
+default = current
