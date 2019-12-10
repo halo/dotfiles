@@ -5,7 +5,7 @@
 # See http://zsh.sourceforge.net/Doc/Release/Parameters.html
 
 # Where to save the history
-export HISTFILE="/Users/orange/.history"
+export HISTFILE="$HOME/.history"
 
 # How many commands are saved in RAM (shell's internal history list)
 export HISTSIZE=20000
