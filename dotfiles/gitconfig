@@ -4,8 +4,8 @@
 [core]
 # May be overriden by $GIT_EDITOR
 editor = mate -w
-hooksPath = /Users/orange/.githooks
-attributesfile = /Users/orange/.gitattributes
+hooksPath = ~/.githooks
+attributesfile = ~/.gitattributes
 
 [color]
 status = auto
