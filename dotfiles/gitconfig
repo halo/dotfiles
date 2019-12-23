@@ -3,7 +3,7 @@
 
 [core]
 # May be overriden by $GIT_EDITOR
-editor = mate -w
+editor = code --wait
 hooksPath = ~/.githooks
 attributesfile = ~/.gitattributes
 

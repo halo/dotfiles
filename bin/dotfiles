@@ -75,12 +75,14 @@ module Dotfiles
 
       yield original, destiny
     end
+
+    yield home_path.join('Library', 'Application Support', 'Code', 'User', 'keybindings.json'), home_path.join('.vscode', 'keybindings.json')
+    yield home_path.join('Library', 'Application Support', 'Code', 'User', 'settings.json'), home_path.join('.vscode', 'settings.json')
   end
 end
 
 puts
 Dotfiles.all do |original, destiny|
-
   if destiny.directory?
     if !original.exist?
       puts "  Creating directory #{original}"
@@ -92,7 +94,7 @@ Dotfiles.all do |original, destiny|
 
   elsif destiny.file?
     if original.symlink?
-
+    
       if original.basename.to_s == '.gitconfig'
         homify original
       end

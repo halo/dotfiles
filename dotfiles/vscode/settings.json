@@ -1,0 +1,14 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "ruby.useLanguageServer": true,
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.interpreter.commandPath": "~/.rbenv/shims/ruby",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "workbench.sideBar.location": "right",
+  "workbench.tips.enabled": false,
+  "window.nativeTabs": true,
+  "workbench.startupEditor": "newUntitledFile"
+}
