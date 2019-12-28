@@ -6,8 +6,8 @@ source $HOME/.shell/hooks
 source $HOME/.shell/prompt
 source $HOME/.shell/rails
 source $HOME/.shell/ruby
+source $HOME/.shell/rbenv
 source $HOME/.shell/shell
-
 
 # TODO
 # activate githooks
@@ -24,20 +24,19 @@ export HISTCONTROL=erasedups
 # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
-[ -f $HOME/.managed/homebrew/etc/profile.d/autojump.sh ] && source $HOME/.managed/homebrew/etc/profile.d/autojump.sh
-
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 if [[ -s ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
 
 # Load Homebrew binaries
-export PATH="$HOME/.managed/homebrew/bin:$PATH"
-export PATH="$HOME/.managed/homebrew/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # Initialize rbenv
 export RBENV_ROOT="$HOME/.rbenv"
-test -x $HOME/.managed/homebrew/bin/rbenv && eval "$($HOME/.managed/homebrew/bin/rbenv init -)"
+test -x /usr/local/bin/rbenv && eval "$(/usr/local/bin/rbenv init -)"
 
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of ;)

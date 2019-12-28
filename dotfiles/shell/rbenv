@@ -1,0 +1,2 @@
+export RBENV_ROOT="/Users/orange/.rbenv"
+test -x /usr/local/bin/rbenv && eval "$(/usr/local/bin/rbenv init -)"
