@@ -1,5 +1,6 @@
 require 'founder'
-Founder.install logger: ::Logger.new('/dev/null')
+Founder.config.debug = ENV['DEBUG']
+Founder.install
 
 require 'json'
 require 'pathname'
