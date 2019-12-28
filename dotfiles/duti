@@ -3,6 +3,7 @@
 org.videolan.vlc .avi all
 
 com.apple.QuickTimePlayerX .m4a all
+com.apple.QuickTimePlayerX .m4b all
 com.apple.QuickTimePlayerX .m4p all
 com.apple.QuickTimePlayerX .m4v all
 com.apple.QuickTimePlayerX .mp3 all
@@ -10,12 +11,12 @@ com.apple.QuickTimePlayerX .mp4 all
 
 com.microsoft.VSCode .coffee all
 com.microsoft.VSCode .css all
-com.microsoft.VSCode .css all
 com.microsoft.VSCode .diff all
 com.microsoft.VSCode .erb all
-com.microsoft.VSCode .hbs all
 com.microsoft.VSCode .haml all
+com.microsoft.VSCode .hbs all
 com.microsoft.VSCode .js all
+com.microsoft.VSCode .json all
 com.microsoft.VSCode .md all
 com.microsoft.VSCode .patch all
 com.microsoft.VSCode .rake all
