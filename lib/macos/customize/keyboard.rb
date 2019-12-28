@@ -22,7 +22,8 @@ module MacOS
         set_shortcut caption: 'Select Previous Tab', keycode: "~@←"
 
         # Making Safari behave like Chrome in this respect
-        set_shortcut app: 'com.apple.Safari', caption: 'Clear History...', keycode: "$@⌫"
+        # set_shortcut app: 'com.apple.Safari', caption: 'Clear History...', keycode: "$@⌫" # Does not work on Catalina
+        set_shortcut caption: 'Clear History...', keycode: "$@⌫"
 
         # I use this feature very often but it has no shortcut
         set_shortcut app: 'com.apple.Preview', caption: 'Adjust Size...', keycode: "$@r"
