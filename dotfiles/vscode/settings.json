@@ -15,5 +15,7 @@
   "window.nativeTabs": true,
   "workbench.startupEditor": "newUntitledFile",
   "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "explorer.confirmDelete": false,
+  "editor.minimap.enabled": false
 }
