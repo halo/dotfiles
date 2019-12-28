@@ -38,6 +38,10 @@ module MacOS
         def on!
           Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-bool', 'true').run
         end
+
+        def off!
+          Command.new('/usr/bin/defaults', *options, 'write', domain, key, '-bool', 'false').run
+        end
       end
 
       class String < Base

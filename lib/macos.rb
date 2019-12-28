@@ -27,6 +27,7 @@ require 'macos/customize/file_vault'
 require 'macos/customize/finder_favorites'
 require 'macos/customize/sharing'
 require 'macos/customize/keyboard'
+require 'macos/customize/trackpad'
 require 'macos/customize/screen_saver'
 require 'macos/customize/termination'
 
@@ -38,7 +39,8 @@ module MacOS
     MacOS::Customize::Termination.new.call
     MacOS::Customize::Sharing.new.call
     MacOS::Customize::Keyboard.new.call
-    MacOS::Customize::FinderFavorites.new.call
+    MacOS::Customize::Trackpad.new.call
+    #MacOS::Customize::FinderFavorites.new.call
     #MacOS::Customize::ScreenSaver.new.call
     # MacOS::Customize::Chromex.new.call
     puts
