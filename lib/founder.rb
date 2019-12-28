@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright (c) 2019-2020 halo - https://github.com/halo/founder
+# Copyright (c) 2019 halo - https://github.com/halo/founder
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -141,7 +141,6 @@ module Founder
     def load_bundler
       logger.debug { "Adding bundler to $LOAD_PATH from `#{config.bundler_lib_path}`" }
       $LOAD_PATH.unshift config.bundler_lib_path.to_s
-      logger.debug { "This is your $LOAD_PATH: `#{$LOAD_PATH}`" }
       require 'bundler/cli'
       require 'bundler/cli/install'
       logger.debug { 'Bundler is now loaded.' }
@@ -186,7 +185,7 @@ end
 module Founder
   # To identify later which code version you copy-and-pasted.
   def self.version
-    '0.0.3'
+    '0.0.2'
   end
 
   def self.install
