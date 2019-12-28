@@ -7,8 +7,9 @@
   "ruby.interpreter.commandPath": "~/.rbenv/shims/ruby",
   "ruby.lint": {
     "rubocop": true
-  },  
+  },
   "editor.detectIndentation": false,
+  "editor.folding": false,
   "editor.tabSize": 2,
   "workbench.sideBar.location": "right",
   "workbench.tips.enabled": false,
@@ -17,5 +18,8 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.renderIndentGuides": false,
+  "editor.renderLineHighlight": "none",
   "editor.minimap.enabled": false
 }
