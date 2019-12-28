@@ -18,5 +18,9 @@
   {
     "key": "cmd+5",
     "command": "workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "cmd+i",
+    "command": "editor.action.reindentlines"
   }
 ]
