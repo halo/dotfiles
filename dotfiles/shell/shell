@@ -4,3 +4,19 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -G'  # Colors on macOS
+
+ddump () {
+   defaults read > /tmp/dump1
+   printf "OK, do something! "
+   sleep 1
+   printf "3..."
+   sleep 1
+   printf "2..."
+   sleep 1
+   echo "1..."
+   sleep 1
+   echo "Comparing..."
+   defaults read > /tmp/dump2
+   echo
+   diff /tmp/dump1 /tmp/dump2
+}
