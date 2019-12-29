@@ -4,4 +4,3 @@
 --skip-turbolinks
 --skip-test
 --skip-system-test
---template=~/.dotfiles/rails/template.rb

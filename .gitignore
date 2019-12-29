@@ -1,4 +1,4 @@
 .DS_Store
-/vendor/**/*
-!/vendor/Gemfile
-!/vendor/Gemfile.lock
+/macos/vendor/**/*
+!/macos/vendor/Gemfile
+!/macos/vendor/Gemfile.lock

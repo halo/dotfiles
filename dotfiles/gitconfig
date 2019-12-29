@@ -1,5 +1,5 @@
 [user]
-# Keep it local to each repo to avoid mistakes.
+# Keep user configuration local to each repo to avoid mistakes.
 
 [core]
 # May be overriden by $GIT_EDITOR

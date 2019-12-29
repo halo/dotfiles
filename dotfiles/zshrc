@@ -1,44 +1,19 @@
-source $HOME/.shell/autocompletion
-source $HOME/.shell/general
-source $HOME/.shell/git
-source $HOME/.shell/history
-source $HOME/.shell/hooks
-source $HOME/.shell/prompt
-source $HOME/.shell/rails
-source $HOME/.shell/ruby
-source $HOME/.shell/rbenv
-source $HOME/.shell/shell
-
-# TODO
-# activate githooks
+# Shell
+source $HOME/.dotfiles/shell/autocompletion
+source $HOME/.dotfiles/shell/general
+source $HOME/.dotfiles/shell/git
+source $HOME/.dotfiles/shell/history
+source $HOME/.dotfiles/shell/homebrew
+source $HOME/.dotfiles/shell/hooks
+source $HOME/.dotfiles/shell/prompt
+source $HOME/.dotfiles/shell/rails
+source $HOME/.dotfiles/shell/ruby
+source $HOME/.dotfiles/shell/rbenv
+source $HOME/.dotfiles/shell/shell
 
 # Paths
 export PATH="$PATH:$HOME/.dotfiles/bin"
-export PATH="$PATH:$HOME/.gitbin"
-export PATH="$PATH:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources"
-export PATH="$PATH:/usr/libexec/ApplicationFirewall"
+export PATH="$PATH:$HOME/.dotfiles/git/bin"
+export PATH="$PATH:$HOME/.dotfiles/macos/bin"
 
-export EDITOR='mate'
-export HISTCONTROL=erasedups
-
-# See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
-export HOMEBREW_NO_ANALYTICS=1
-
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-if [[ -s ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
-fi
-
-# Load Homebrew binaries
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-
-# Initialize rbenv
-export RBENV_ROOT="$HOME/.rbenv"
-test -x /usr/local/bin/rbenv && eval "$(/usr/local/bin/rbenv init -)"
-
-# Local bin directory takes highest precedence
-# Being careful as to when a bin directory is around I don't know the contents of ;)
-export PATH="bin:$PATH"
-
+[ -s ~/.zshrc.local ] && source ~/.zshrc.local

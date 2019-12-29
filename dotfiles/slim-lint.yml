@@ -2,4 +2,4 @@ linters:
 
   # Match line length of rubocop
   LineLength:
-    max: 130
+    max: 120

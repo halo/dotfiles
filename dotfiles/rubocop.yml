@@ -1,10 +1,11 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.7
   DisplayCopNames: true
 
-# Even on an small screen this works fine.
+# My goal is 100, I'm decreasing this over time
+# until I feel comfortable with it.
 Metrics/LineLength:
-  Max: 130
+  Max: 120
 
 # Tests and Rake tasks may have long blocks.
 Metrics/BlockLength:
@@ -12,10 +13,6 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '**/*.rake'
     - 'spec/**/*.rb'
-
-# `!casecmp.zero?` is simply unintelligable unintentional.
-Performance/Casecmp:
-  Enabled: false
 
 # Mostly following https://robots.thoughtbot.com/lets-not
 # which increases example length.
@@ -37,6 +34,6 @@ Style/TrailingCommaInHashLiteral:
 Style/Documentation:
   Enabled: false
 
-# Too early to believe that Ruby 3 is significantly faster with this
+# Wait until we get closer to Ruby 3 first.
 Style/FrozenStringLiteralComment:
   Enabled: false

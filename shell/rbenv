@@ -1,0 +1,3 @@
+export RBENV_ROOT="$HOME/.rbenv"
+
+[ -x /usr/local/bin/rbenv ] && eval "$(/usr/local/bin/rbenv init -)"
