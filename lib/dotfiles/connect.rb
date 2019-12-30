@@ -16,47 +16,47 @@ module Dotfiles
       say caption
 
       if already_connected?
-        whisper "  Symlink `#{link}` already points to file `#{file}`"
+        whisper "  Symlink `#{unexpand(link)}` already points to file `#{unexpand(file)}`"
         return
       end
 
       if link.symlink?
-        whisper "  Deleting existing symlink `#{link}`..."
+        whisper "  Deleting existing symlink `#{unexpand(link)}`..."
         delete
       end
 
       if link.directory? && link.empty?
-        whisper "  Deleting empty directory `#{link}`..."
+        whisper "  Deleting empty directory `#{unexpand(link)}`..."
         delete
       end
 
       if link.file? && link.empty?
-        whisper "  Deleting empty file `#{link}`..."
+        whisper "  Deleting empty file `#{unexpand(link)}`..."
         delete
       end
 
       if link.file?
         if Dotfiles.force?
-          warn "  Deleting existing file `#{link}`..."
+          warn "  Deleting existing file `#{unexpand(link)}`..."
           delete
         else
-          scream "  Not touching existing file `#{link}`. Use --force to delete it."
+          scream "  Not touching existing file `#{unexpand(link)}`. Use --force to delete it."
           return
         end
       end
 
       if link.directory?
-        scream "  Not touching existing directory `#{link}`. Please delete it manually."
+        scream "  Not touching existing directory `#{unexpand(link)}`. Please delete it manually."
         return
       end
 
       directory = link.parent
       unless directory.exist?
-        whisper "  Creating necessary directory `#{directory}`..."
+        whisper "  Creating necessary directory `#{unexpand(directory)}`..."
         directory.mkpath unless Dotfiles.dry?
       end
 
-      success "  Pointing symlink `#{link}` to file `#{file}`..."
+      success "  Pointing symlink `#{unexpand(link)}` to file `#{unexpand(file)}`..."
       link.make_symlink(file) unless Dotfiles.dry?
 
 
@@ -90,6 +90,11 @@ module Dotfiles
 
     def scream(message)
       puts Pastel.new.red(message)
+    end
+
+    def unexpand(path)
+      home = Pathname.new('~').expand_path
+      "~/#{path.relative_path_from(home)}"
     end
   end
 end
