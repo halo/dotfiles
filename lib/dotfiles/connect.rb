@@ -20,6 +20,11 @@ module Dotfiles
         return
       end
 
+      if link.symlink?
+        whisper "  Deleting existing symlink `#{link}`..."
+        delete
+      end
+
       if link.directory? && link.empty?
         whisper "  Deleting empty directory `#{link}`..."
         delete
@@ -60,7 +65,7 @@ module Dotfiles
     private
 
     def already_connected?
-      link.symlink? && link.realpath == file
+      link.symlink? && link.exist? && link.realpath == file
     end
 
     def delete
