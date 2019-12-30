@@ -1,33 +1,41 @@
-[user]
-# Keep user configuration local to each repo to avoid mistakes.
+[alias]
+  unstage = reset HEAD .
+  uncommit = reset --soft HEAD^
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-[core]
-# May be overriden by $GIT_EDITOR
-editor = code --wait
-hooksPath = ~/.githooks
-attributesfile = ~/.gitattributes
+  # Create a commit that inverts everything back to a specified SHA.
+  # Usage: git teleport 62aa4a
+  teleport = !"wrapper(){ green=`tput setaf 2`; red=`tput setaf 1`; normal=`tput sgr0`; if [ $# -eq 0 ]; then echo \"${red}You must provide a SHA as argument.${normal}\"; else echo \"\n${green}git reset $1${normal}\" && git reset $1 && echo \"\n${green}git reset --soft HEAD@{1}${normal}\" && git reset --soft HEAD@{1} && echo \"\n${green}git commit -m ...${normal}\" && git commit -m \"Teleported back to $1\" && echo \"\n${green}git reset --hard${normal}\" && git reset --hard; echo; fi; }; wrapper"
+
+  # Reveal the largest files in git history.
+  # See https://gist.github.com/debreczeni/2578052
+  # Usage: git big
+  big = !"wrapper(){ IFS=$'\\n'; objects=`git verify-pack -v .git/objects/pack/pack-*.idx | grep -Ev \"non delta|chain length|git/objects\" | tr -s \" \" | sort -k3gr | head -n30`; output=\"size,SHA,location\"; for y in $objects; do size=$((`echo $y | cut -f 3 -d ' '`/1024)); sha=`echo $y | cut -f 1 -d ' '`; other=`git rev-list --all --objects | grep $sha`; output=\"${output}\\n${size},${other}\"; done; echo -e $output | column -t -s ', '; }; wrapper"
+
+  # Reveal files that right now have some >>>> CONFLICT
+  conflict = !"wrapper(){ git ls-files -u | cut -f2- | uniq }; wrapper"
 
 [color]
-status = auto
-branch = auto
-diff = auto
+  status = auto
+  branch = auto
+  diff = auto
 
-[alias]
-unstage = reset HEAD .
-uncommit = reset --soft HEAD^
-lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+  # May be overriden by $GIT_EDITOR
+  editor = code --wait
+  hooksPath = ~/.githooks
+  attributesfile = ~/.gitattributes
 
-# Create a commit that inverts everything back to a specified SHA.
-# Usage: git teleport 62aa4a
-teleport = !"wrapper(){ green=`tput setaf 2`; red=`tput setaf 1`; normal=`tput sgr0`; if [ $# -eq 0 ]; then echo \"${red}You must provide a SHA as argument.${normal}\"; else echo \"\n${green}git reset $1${normal}\" && git reset $1 && echo \"\n${green}git reset --soft HEAD@{1}${normal}\" && git reset --soft HEAD@{1} && echo \"\n${green}git commit -m ...${normal}\" && git commit -m \"Teleported back to $1\" && echo \"\n${green}git reset --hard${normal}\" && git reset --hard; echo; fi; }; wrapper"
+[diff]
+  # Experimental and slow, but more readable
+  compactionHeuristic = true
+  algorithm = patience
 
-# Reveal the largest files in git history.
-# See https://gist.github.com/debreczeni/2578052
-# Usage: git big
-big = !"wrapper(){ IFS=$'\\n'; objects=`git verify-pack -v .git/objects/pack/pack-*.idx | grep -Ev \"non delta|chain length|git/objects\" | tr -s \" \" | sort -k3gr | head -n30`; output=\"size,SHA,location\"; for y in $objects; do size=$((`echo $y | cut -f 3 -d ' '`/1024)); sha=`echo $y | cut -f 1 -d ' '`; other=`git rev-list --all --objects | grep $sha`; output=\"${output}\\n${size},${other}\"; done; echo -e $output | column -t -s ', '; }; wrapper"
-
-# Reveal files that right now have some >>>> CONFLICT
-conflict = !"wrapper(){ git ls-files -u | cut -f2- | uniq }; wrapper"
+[pull]
+  default = current
 
 [push]
-default = current
+  default = current
+
+[user]
+  # Keep user configuration local to each repo to avoid mistakes.

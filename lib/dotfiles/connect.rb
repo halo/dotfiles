@@ -1,0 +1,90 @@
+module Dotfiles
+  class Connect
+    def self.call(caption:, file:, link:)
+      new(caption: caption, file: file, link: link).call
+    end
+
+    attr_reader :caption, :file, :link
+
+    def initialize(caption:, file:, link:)
+      @caption = caption
+      @file = file
+      @link = link
+    end
+
+    def call
+      say caption
+
+      if already_connected?
+        whisper "  Symlink `#{link}` already points to file `#{file}`"
+        return
+      end
+
+      if link.directory? && link.empty?
+        whisper "  Deleting empty directory `#{link}`..."
+        delete
+      end
+
+      if link.file? && link.empty?
+        whisper "  Deleting empty file `#{link}`..."
+        delete
+      end
+
+      if link.file?
+        if Dotfiles.force?
+          warn "  Deleting existing file `#{link}`..."
+          delete
+        else
+          scream "  Not touching existing file `#{link}`. Use --force to delete it."
+          return
+        end
+      end
+
+      if link.directory?
+        scream "  Not touching existing directory `#{link}`. Please delete it manually."
+        return
+      end
+
+      directory = link.parent
+      unless directory.exist?
+        whisper "  Creating necessary directory `#{directory}`..."
+        directory.mkpath unless Dotfiles.dry?
+      end
+
+      success "  Pointing symlink `#{link}` to file `#{file}`..."
+      link.make_symlink(file) unless Dotfiles.dry?
+
+
+    end
+
+    private
+
+    def already_connected?
+      link.symlink? && link.realpath == file
+    end
+
+    def delete
+      link.delete unless Dotfiles.dry?
+    end
+
+    def say(message)
+      puts Pastel.new.bold(message)
+    end
+
+    def whisper(message)
+      puts Pastel.new.dim(message)
+    end
+
+    def warn(message)
+      puts Pastel.new.yellow(message)
+    end
+
+    def success(message)
+      puts Pastel.new.green(message)
+    end
+
+    def scream(message)
+      puts Pastel.new.red(message)
+    end
+  end
+end

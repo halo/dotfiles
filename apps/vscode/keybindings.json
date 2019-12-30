@@ -21,6 +21,7 @@
   },
   {
     "key": "cmd+i",
-    "command": "editor.action.reindentlines"
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
   }
 ]

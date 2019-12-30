@@ -1,18 +1,22 @@
+#require:
+#  - rubocop-rails
+#  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
 
 # My goal is 100, I'm decreasing this over time
 # until I feel comfortable with it.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 # Tests and Rake tasks may have long blocks.
 Metrics/BlockLength:
   Exclude:
-    - 'Rakefile'
+    - '**/Rakefile'
     - '**/*.rake'
-    - 'spec/**/*.rb'
+    - '**/spec/**/*.rb'
 
 # Mostly following https://robots.thoughtbot.com/lets-not
 # which increases example length.

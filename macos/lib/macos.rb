@@ -1,6 +1,4 @@
-require 'founder'
-Founder.config.debug = ENV['DEBUG']
-Founder.install
+require_relative '../../vendor/install'
 
 require 'json'
 require 'pathname'

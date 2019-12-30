@@ -1,0 +1,28 @@
+{
+  "private": {
+    "prefix": ["p"],
+    "body": [
+      "private",
+      "",
+      "$0"
+    ]
+  },
+  "Read accessor": {
+    "prefix": ["r"],
+    "body": [
+      "attr_reader :$0"
+    ]
+  },
+  "Write accessor": {
+    "prefix": ["w"],
+    "body": [
+      "attr_writer :$0"
+    ]
+  },
+  "Read-Write accessor": {
+    "prefix": ["rw"],
+    "body": [
+      "attr_accessor :$0"
+    ]
+  }
+}
