@@ -7,6 +7,7 @@ require 'dotfiles/connect'
 require 'dotfiles/files'
 
 require 'dotfiles/apps/alfred'
+require 'dotfiles/apps/stepmania'
 require 'dotfiles/apps/vscode'
 
 module Dotfiles
@@ -14,6 +15,7 @@ module Dotfiles
     puts
     Files.new.call
     Apps::Alfred.new.call
+    Apps::Stepmania.new.call
     Apps::Vscode.new.call
     puts
   end

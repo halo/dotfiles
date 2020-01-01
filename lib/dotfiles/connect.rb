@@ -21,7 +21,7 @@ module Dotfiles
       end
 
       if link.symlink?
-        whisper "  Deleting existing symlink `#{unexpand(link)}`..."
+        whisper "  Deleting existing symlink `#{unexpand(link)}` which points to `#{unexpand(link.readlink)}`..."
         delete
       end
 
@@ -94,6 +94,7 @@ module Dotfiles
 
     def unexpand(path)
       home = Pathname.new('~').expand_path
+      return path if path.relative_path_from(home).to_s.start_with?('..')
       "~/#{path.relative_path_from(home)}"
     end
   end
