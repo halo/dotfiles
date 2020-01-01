@@ -5,12 +5,15 @@ require 'pathname'
 
 require 'dotfiles/connect'
 require 'dotfiles/files'
+
+require 'dotfiles/apps/alfred'
 require 'dotfiles/apps/vscode'
 
 module Dotfiles
   def self.call
     puts
     Files.new.call
+    Apps::Alfred.new.call
     Apps::Vscode.new.call
     puts
   end

@@ -7,7 +7,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write -g InitialKeyRepeat -int 10
 
 # Keyboard repeat rate -> Blazingly Fast
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write -g KeyRepeat -int 1
 
 # Keyboard illumination -> Turn off after 5 min of inactivity
 defaults write com.apple.BezelServices kDimTime -int 300
