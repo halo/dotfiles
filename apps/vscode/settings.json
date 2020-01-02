@@ -20,6 +20,7 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "window.nativeTabs": true,
+  "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false
