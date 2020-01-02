@@ -1,0 +1,4 @@
+require: rubocop-rails
+
+Rails:
+  Enabled: true

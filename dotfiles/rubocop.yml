@@ -1,7 +1,3 @@
-#require:
-#  - rubocop-rails
-#  - rubocop-rspec
-
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
@@ -17,16 +13,6 @@ Metrics/BlockLength:
     - '**/Rakefile'
     - '**/*.rake'
     - '**/spec/**/*.rb'
-
-# Mostly following https://robots.thoughtbot.com/lets-not
-# which increases example length.
-RSpec/ExampleLength:
-  Enabled: false
-
-# I may have PDF or otherwise graphics related specs
-# that combine many expectations in one spec for rendering convenience.
-RSpec/MultipleExpectations:
-  Enabled: false
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInArrayLiteral:

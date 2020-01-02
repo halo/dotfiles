@@ -6,7 +6,7 @@ module Dotfiles
                      file: local.join('halo.json'),
                      link: remote.join('DynamicProfiles/halo.json')
 
-        puts Pastel.new.bold "iTerm2 Preferences"
+        puts Pastel.new.bold 'iTerm2 Preferences'
         puts Pastel.new.dim "  Pointing to `#{local}`"
         system "/usr/bin/defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string '#{local}'"
         system '/usr/bin/defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true'
@@ -26,4 +26,3 @@ module Dotfiles
     end
   end
 end
-

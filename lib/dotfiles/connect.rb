@@ -65,8 +65,6 @@ module Dotfiles
         success "  Pointing symlink `#{unexpand(link)}` to file `#{unexpand(file)}`..."
         link.make_symlink(file) unless Dotfiles.dry?
       end
-
-
     end
 
     private
@@ -102,6 +100,7 @@ module Dotfiles
     def unexpand(path)
       home = Pathname.new('~').expand_path
       return path if path.relative_path_from(home).to_s.start_with?('..')
+
       "~/#{path.relative_path_from(home)}"
     end
   end
