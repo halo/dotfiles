@@ -1,15 +1,16 @@
 module Dotfiles
   class Connect
-    def self.call(caption:, file:, link:)
-      new(caption: caption, file: file, link: link).call
+    def self.call(caption:, file:, link:, force: false)
+      new(caption: caption, file: file, link: link, force: force).call
     end
 
-    attr_reader :caption, :file, :link
+    attr_reader :caption, :file, :link, :force
 
-    def initialize(caption:, file:, link:)
+    def initialize(caption:, file:, link:, force:)
       @caption = caption
       @file = file
       @link = link
+      @force = force
     end
 
     def call
@@ -36,7 +37,7 @@ module Dotfiles
       end
 
       if link.file?
-        if Dotfiles.force?
+        if Dotfiles.force? || force
           warn "  Deleting existing file `#{unexpand(link)}`..."
           delete
         else

@@ -4,11 +4,13 @@ module Dotfiles
       def call
         Connect.call caption: 'StepMania Keymaps',
                      file: local.join('Keymaps.ini'),
-                     link: remote.join('Keymaps.ini')
+                     link: remote.join('Keymaps.ini'),
+                     force: true
 
-        Connect.call caption: 'StepMania Keymaps',
+        Connect.call caption: 'StepMania Preferences',
                      file: local.join('Preferences.ini'),
-                     link: remote.join('Preferences.ini')
+                     link: remote.join('Preferences.ini'),
+                     force: true
       end
 
       private
