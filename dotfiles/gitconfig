@@ -31,6 +31,9 @@
   compactionHeuristic = true
   algorithm = patience
 
+[diff "plist"]
+  textconv = plutil -convert xml1 -o -
+
 [pull]
   default = current
 
