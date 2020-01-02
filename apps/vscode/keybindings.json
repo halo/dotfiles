@@ -23,5 +23,10 @@
     "key": "cmd+i",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
