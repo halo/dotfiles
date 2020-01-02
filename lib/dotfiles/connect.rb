@@ -1,22 +1,23 @@
 module Dotfiles
   class Connect
-    def self.call(caption:, file:, link:, force: false)
-      new(caption: caption, file: file, link: link, force: force).call
+    def self.call(caption:, file:, link:, force: false, copy: false)
+      new(caption: caption, file: file, link: link, force: force, copy: copy).call
     end
 
-    attr_reader :caption, :file, :link, :force
+    attr_reader :caption, :file, :link, :force, :copy
 
-    def initialize(caption:, file:, link:, force:)
+    def initialize(caption:, file:, link:, force:, copy:)
       @caption = caption
       @file = file
       @link = link
       @force = force
+      @copy = copy
     end
 
     def call
       say caption
 
-      if already_connected?
+      if already_connected? && !copy
         whisper "  Symlink `#{unexpand(link)}` already points to file `#{unexpand(file)}`"
         return
       end
@@ -57,8 +58,13 @@ module Dotfiles
         directory.mkpath unless Dotfiles.dry?
       end
 
-      success "  Pointing symlink `#{unexpand(link)}` to file `#{unexpand(file)}`..."
-      link.make_symlink(file) unless Dotfiles.dry?
+      if copy
+        success "  Copying file `#{unexpand(link)}` to `#{unexpand(file)}`..."
+        FileUtils.cp(file.to_s, link.to_s) unless Dotfiles.dry?
+      else
+        success "  Pointing symlink `#{unexpand(link)}` to file `#{unexpand(file)}`..."
+        link.make_symlink(file) unless Dotfiles.dry?
+      end
 
 
     end

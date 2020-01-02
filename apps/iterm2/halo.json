@@ -1,0 +1,36 @@
+{
+  "Profiles": [
+    {
+      "Name": "halo",
+      "Guid": "D14DE862-0A24-49C7-98A0-6C142658AF31",
+
+      "Keyboard Map" : {
+        "0xf702-0x300000" : {
+          "Action" : 11,
+          "Text" : "0x1"
+        },
+        "0xf703-0x300000" : {
+          "Action" : 11,
+          "Text" : "0x5"
+        },
+        "0xf702-0x280000" : {
+          "Action" : 10,
+          "Text" : "b"
+        },
+        "0xf703-0x280000" : {
+          "Action" : 10,
+          "Text" : "f"
+        },
+        "0x7f-0x100000" : {
+          "Action" : 11,
+          "Text" : "0x15"
+        },
+        "0x7f-0x80000" : {
+          "Action" : 11,
+          "Text" : "0x1b 0x7f"
+        }
+      }
+
+    }
+  ]
+}
