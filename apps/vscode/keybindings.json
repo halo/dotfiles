@@ -28,5 +28,9 @@
     "key": "alt+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+2",
+    "command": "editor.togglequotes"
   }
 ]
