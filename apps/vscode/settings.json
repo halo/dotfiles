@@ -5,6 +5,8 @@
   "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
   "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
