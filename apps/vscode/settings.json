@@ -4,6 +4,9 @@
   "editor.minimap.enabled": false,
   "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
+  "editor.rulers": [
+    120
+  ],
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
@@ -22,6 +25,9 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "window.nativeTabs": true,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#333333"
+  },
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
