@@ -2,17 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <!-- Load colors and keys and such from separate profile.json -->
-	<key>Default Bookmark Guid</key>
-	<string>D14DE862-0A24-49C7-98A0-6C142658AF31</string>
-
-  <!--
-	<key>AlternateMouseScroll</key>
-	<true/>
-  -->
 
   <!-- Don't warn when quitting iTerm, this can prevent a reboot -->
 	<key>PromptOnQuit</key>
+	<false/>
+	<key>OnlyWhenMoreTabs</key>
 	<false/>
 
   <!-- And don't warn about changed preferences -->
