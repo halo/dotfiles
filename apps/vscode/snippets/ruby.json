@@ -1,28 +1,164 @@
 {
-  "private": {
-    "prefix": ["p"],
+  "class end 📙": {
+    "prefix": [
+      "cla"
+    ],
+    "body": [
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}",
+      "  $0",
+      "end"
+    ]
+  },
+  "class 📙": {
+    "prefix": [
+      "cla"
+    ],
+    "body": [
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
+    ]
+  },
+  "module end 📙": {
+    "prefix": [
+      "mod"
+    ],
+    "body": [
+      "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}",
+      "  $0",
+      "end"
+    ]
+  },
+  "module 📙": {
+    "prefix": [
+      "mod"
+    ],
+    "body": [
+      "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
+    ]
+  },
+  "private 📙": {
+    "prefix": [
+      "p"
+    ],
     "body": [
       "private",
       "",
       "$0"
     ]
   },
-  "Read accessor": {
-    "prefix": ["r"],
+  "instance variable assignment 📙": {
+    "prefix": [
+      "var"
+    ],
+    "body": [
+      "@${1:variable} = ${1:variable}"
+    ]
+  },
+  "Read accessor 📙": {
+    "prefix": [
+      "r"
+    ],
     "body": [
       "attr_reader :$0"
     ]
   },
-  "Write accessor": {
-    "prefix": ["w"],
+  "Write accessor 📙": {
+    "prefix": [
+      "w"
+    ],
     "body": [
       "attr_writer :$0"
     ]
   },
-  "Read-Write accessor": {
-    "prefix": ["rw"],
+  "Read-Write accessor 📙": {
+    "prefix": [
+      "rw"
+    ],
     "body": [
       "attr_accessor :$0"
+    ]
+  },
+  "RSpec require and describe 📙": {
+    "prefix": [
+      "reqr"
+    ],
+    "body": [
+      "require 'rails_helper'",
+      "",
+      "RSpec.describe ${TM_DIRECTORY/.+\\/spec\\/[^\\/]+\\/(.*)\\/*(.*)\\/*(.*)/${1:/pascalcase}${2:/pascalcase}/g}::${TM_FILENAME_BASE/(.*)_spec/${1:/pascalcase}/g} do",
+      "  $0",
+      "end"
+    ]
+  },
+  "RSpec describe 📙": {
+    "prefix": [
+      "des"
+    ],
+    "body": [
+      "describe '$1' do",
+      "  $0",
+      "end"
+    ]
+  },
+  "RSpec context 📙": {
+    "prefix": [
+      "con"
+    ],
+    "body": [
+      "context '$1' do",
+      "  $0",
+      "end"
+    ]
+  },
+  "RSpec it 📙": {
+    "prefix": [
+      "it"
+    ],
+    "body": [
+      "it '$1' do",
+      "  $0",
+      "end"
+    ]
+  },
+  "RSpec expect 📙": {
+    "prefix": [
+      "exp"
+    ],
+    "body": [
+      "expect($1).to "
+    ]
+  },
+  "RSpec expect inline block 📙": {
+    "prefix": [
+      "exp"
+    ],
+    "body": [
+      "expect { $1 }.to "
+    ]
+  },
+  "RSpec expect block 📙": {
+    "prefix": [
+      "exp"
+    ],
+    "body": [
+      "expect do",
+      "  $1",
+      "end.to $0",
+    ]
+  },
+  "described_class 📙": {
+    "prefix": [
+      "dc"
+    ],
+    "body": [
+      "described_class"
+    ]
+  },
+  "RSpec be_instance_of 📙": {
+    "prefix": [
+      "bi"
+    ],
+    "body": [
+      "be_instance_of "
     ]
   }
 }
