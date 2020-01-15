@@ -13,6 +13,7 @@ Metrics/BlockLength:
     - '**/Rakefile'
     - '**/*.rake'
     - '**/spec/**/*.rb'
+    - '**/config/routes.rb'
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInArrayLiteral:
