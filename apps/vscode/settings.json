@@ -31,5 +31,8 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.tips.enabled": false
+  "workbench.tips.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false
 }
