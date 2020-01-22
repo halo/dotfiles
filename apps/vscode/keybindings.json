@@ -43,8 +43,18 @@
     "when": "textInputFocus"
   },
   {
+    "key": "alt+right",
+    "command": "-cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
     "key": "alt+left",
     "command": "cursorWordPartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "-cursorWordStartLeft",
     "when": "textInputFocus"
   },
   {
@@ -53,8 +63,36 @@
     "when": "textInputFocus"
   },
   {
+    "key": "shift+alt+right",
+    "command": "-cursorWordEndRightSelect",
+    "when": "textInputFocus"
+  },
+  {
     "key": "shift+alt+left",
     "command": "cursorWordPartLeftSelect",
     "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "-cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "cursorWordStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "cursorWordEndRightSelect"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "cursorWordStartLeftSelect"
   }
 ]
