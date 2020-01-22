@@ -1,7 +1,7 @@
 {
-  "class end 📙": {
+  "class end": {
     "prefix": [
-      "cla"
+      "class"
     ],
     "body": [
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}",
@@ -9,7 +9,7 @@
       "end"
     ]
   },
-  "class 📙": {
+  "class": {
     "prefix": [
       "cla"
     ],
@@ -17,9 +17,9 @@
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
     ]
   },
-  "module end 📙": {
+  "module": {
     "prefix": [
-      "mod"
+      "module"
     ],
     "body": [
       "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}",
@@ -27,7 +27,7 @@
       "end"
     ]
   },
-  "module 📙": {
+  "module": {
     "prefix": [
       "mod"
     ],
@@ -35,7 +35,7 @@
       "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
     ]
   },
-  "private 📙": {
+  "private": {
     "prefix": [
       "p"
     ],
@@ -45,7 +45,7 @@
       "$0"
     ]
   },
-  "instance variable assignment 📙": {
+  "instance variable assignment": {
     "prefix": [
       "var"
     ],
@@ -53,7 +53,7 @@
       "@${1:variable} = ${1:variable}"
     ]
   },
-  "Read accessor 📙": {
+  "Read accessor": {
     "prefix": [
       "r"
     ],
@@ -61,7 +61,7 @@
       "attr_reader :$0"
     ]
   },
-  "Write accessor 📙": {
+  "Write accessor": {
     "prefix": [
       "w"
     ],
@@ -69,7 +69,7 @@
       "attr_writer :$0"
     ]
   },
-  "Read-Write accessor 📙": {
+  "Read-Write accessor": {
     "prefix": [
       "rw"
     ],
@@ -77,7 +77,7 @@
       "attr_accessor :$0"
     ]
   },
-  "RSpec require and describe 📙": {
+  "RSpec require and describe": {
     "prefix": [
       "reqr"
     ],
@@ -89,7 +89,7 @@
       "end"
     ]
   },
-  "RSpec describe 📙": {
+  "describe": {
     "prefix": [
       "des"
     ],
@@ -99,9 +99,9 @@
       "end"
     ]
   },
-  "RSpec context 📙": {
+  "context": {
     "prefix": [
-      "con"
+      "context"
     ],
     "body": [
       "context '$1' do",
@@ -109,7 +109,7 @@
       "end"
     ]
   },
-  "RSpec it 📙": {
+  "it": {
     "prefix": [
       "it"
     ],
@@ -119,7 +119,7 @@
       "end"
     ]
   },
-  "RSpec expect 📙": {
+  "expect": {
     "prefix": [
       "exp"
     ],
@@ -127,17 +127,9 @@
       "expect($1).to "
     ]
   },
-  "RSpec expect inline block 📙": {
+  "expect block": {
     "prefix": [
-      "exp"
-    ],
-    "body": [
-      "expect { $1 }.to "
-    ]
-  },
-  "RSpec expect block 📙": {
-    "prefix": [
-      "exp"
+      "expect do"
     ],
     "body": [
       "expect do",
@@ -145,7 +137,7 @@
       "end.to $0",
     ]
   },
-  "described_class 📙": {
+  "described_class": {
     "prefix": [
       "dc"
     ],
@@ -153,9 +145,10 @@
       "described_class"
     ]
   },
-  "RSpec be_instance_of 📙": {
+  "be_instance_of": {
     "prefix": [
-      "bi"
+      "bi",
+      "be_instance_of"
     ],
     "body": [
       "be_instance_of "
