@@ -78,21 +78,21 @@
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+alt+right",
+    "key": "ctrl+right",
     "command": "cursorWordEndRight",
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+alt+left",
+    "key": "ctrl+left",
     "command": "cursorWordStartLeft",
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+shift+alt+right",
+    "key": "ctrl+shift+right",
     "command": "cursorWordEndRightSelect"
   },
   {
-    "key": "ctrl+shift+alt+left",
+    "key": "ctrl+shift+left",
     "command": "cursorWordStartLeftSelect"
   }
 ]
