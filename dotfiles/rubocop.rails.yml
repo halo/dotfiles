@@ -2,3 +2,11 @@ require: rubocop-rails
 
 Rails:
   Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - demo
+    - staging
+    - production
