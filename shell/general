@@ -10,12 +10,12 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
 # Applications
-function m {
+function x {
   if [ -z "$1" ]
   then
-    mate .
+    /usr/local/bin/code --new-window .
   else
-    mate $1
+    /usr/local/bin/code --new-window $1
   fi
 }
 
@@ -28,8 +28,8 @@ function o {
   fi
 }
 
-alias hosts='sudo mate /etc/hosts'
-alias sshconf='mate ~/.ssh/config'
+alias hosts='sudo /usr/local/bin/code --new-window /etc/hosts'
+alias sshconf='/usr/local/bin/code --new-window ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
 
