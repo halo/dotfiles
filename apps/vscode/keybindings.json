@@ -1,4 +1,5 @@
 [
+  // Jump to tabs using Command + Tab number
   {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
@@ -19,25 +20,33 @@
     "key": "cmd+5",
     "command": "workbench.action.openEditorAtIndex5"
   },
+  // Prettify document with `Command + i`
+  // `i` stands for indentation in my world :)
   {
     "key": "cmd+i",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
   },
+  // By default this selects the next match of the selected word.
+  // But I really need `Command + d` to mean "duplicate" as everywhere else in macOS.
   {
     "key": "cmd+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
   },
+  // So I nee to move the original "select next match" function somewhere else.
   {
     "key": "alt+d",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
   },
+  // This is a hotkey for the extension `britesnow.vscode-toggle-quotes`
   {
     "key": "shift+cmd+2",
     "command": "editor.togglequotes"
   },
+  // After changing `keybindings.json` or `settings.json` you can apply the changes
+  // by pressing `Shift + Command + r` instead of restarting VSCode
   {
     "key": "shift+cmd+r",
     "command": "workbench.action.reloadWindow"
