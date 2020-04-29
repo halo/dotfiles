@@ -1,7 +1,7 @@
 module Git
   module Prompt
     def self.error(message)
-      puts stylize :red, message
+      $stderr.puts stylize :red, message
     end
 
     def self.stylize(style, message)
