@@ -39,5 +39,10 @@
   "workbench.tips.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false
+  "gitlens.codeLens.authors.enabled": false,
+  "window.zoomLevel": 0,
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.mode.active": "zen"
 }
