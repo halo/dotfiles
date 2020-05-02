@@ -5,6 +5,7 @@ module Git
     class InitializedRepository
       def self.call
         return if Git::Query::InitializedRepository.call
+
         Git::Prompt.error 'This is not a git repository.'
         abort
       end

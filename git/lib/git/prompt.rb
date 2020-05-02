@@ -1,5 +1,17 @@
 module Git
   module Prompt
+    def self.separator
+      puts
+    end
+
+    def self.info(message)
+      puts stylize :bold, message
+    end
+
+    def self.warn(message)
+      puts stylize :yellow, message
+    end
+
     def self.error(message)
       $stderr.puts stylize :red, message
     end

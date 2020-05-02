@@ -5,9 +5,11 @@ module Git
       def call
         Git::Requires::InitializedRepository.call
         Git::Requires::CleanWorkingTree.call
+        current_branch = Git::Query::CurrentBranchName.call
         Git::CLI::CheckoutMaster.call
         delete_merged_branches
         delete_squashed_branches
+        Git::CLI::CheckoutBranch.call(name: current_branch)
       end
 
       private
@@ -15,7 +17,7 @@ module Git
       def delete_merged_branches
         Git::Query::MergedLocalBranches.each do |branch|
           if Git::Runtime.dry_mode?
-            puts "Branch #{branch} is merged into master and can be deleted"
+            Prompt.info "Branch #{branch} is merged into master and can be deleted"
           else
             Git::CLI::ForceDeleteBranch.call(branch)
           end
@@ -36,7 +38,7 @@ module Git
           next unless diff.start_with?('-')
 
           if Git::Runtime.dry_mode?
-            puts "Branch #{branch} is merged into master and can be deleted"
+            Prompt.info "Branch #{branch} is merged into master and can be deleted"
           else
             Git::CLI::ForceDeleteBranch.call(branch)
           end

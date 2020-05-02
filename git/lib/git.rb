@@ -7,6 +7,7 @@ require 'git/query/initialized_repository'
 require 'git/query/local_branches'
 require 'git/query/merged_local_branches'
 
+require 'git/cli/checkout_branch'
 require 'git/cli/checkout_master'
 require 'git/cli/safely_delete_branch'
 require 'git/cli/force_delete_branch'
