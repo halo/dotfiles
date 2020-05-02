@@ -16,6 +16,7 @@ module Git
 
       def delete_merged_branches
         Git::Query::MergedLocalBranches.each do |branch|
+          Prompt.debug "Processing merged local branch #{branch}..."
           if Git::Runtime.dry_mode?
             Prompt.info "Branch #{branch} is merged into master and can be deleted"
           else
@@ -26,6 +27,7 @@ module Git
 
       def delete_squashed_branches
         Git::Query::LocalBranches.each do |branch|
+          Prompt.debug "Processing local branch #{branch}..."
           # Find best common ancestor of branch and master
           base = `git merge-base master #{branch}`.chomp
           # What is this?

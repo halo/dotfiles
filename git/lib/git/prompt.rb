@@ -4,6 +4,12 @@ module Git
       puts
     end
 
+    def self.debug(message)
+      return unless ::Git::Runtime.debug_mode?
+
+      puts stylize :magenta, message
+    end
+
     def self.info(message)
       puts stylize :bold, message
     end
