@@ -5,7 +5,9 @@ alias mp3m4a='for f in *.mp3; do ffmpeg -i "$f" -c:v copy -c:a aac "$f.m4a"; don
 alias switch='heroku accounts:set'
 
 # Allow URI schemes to be pasted without need for escaping
-# See https://stackoverflow.com/a/45554127
+# See https://github.com/zsh-users/zsh/blob/master/Functions/Zle/url-quote-magic
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
