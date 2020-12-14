@@ -44,5 +44,8 @@
   "gitlens.blame.highlight.enabled": false,
   "gitlens.blame.heatmap.enabled": false,
   "gitlens.hovers.currentLine.enabled": false,
-  "gitlens.mode.active": "zen"
+  "gitlens.mode.active": "zen",
+  "gitlens.menus.editorGroup.compare": false,
+  "gitlens.menus.editorGroup.blame": false,
+  "explorer.autoReveal": false
 }
