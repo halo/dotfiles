@@ -1,6 +1,6 @@
 alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
-alias yv='youtube-dl --recode-video mp4'
-alias ya='youtube-dl --extract-audio --audio-format m4a'
+alias yv='youtube-dl --ignore-errors --recode-video mp4'
+alias ya='youtube-dl --ignore-errors --extract-audio --audio-format m4a'
 alias mp3m4a='for f in *.mp3; do ffmpeg -i "$f" -c:v copy -c:a aac "$f.m4a"; done'
 alias switch='heroku accounts:set'
 
