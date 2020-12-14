@@ -48,7 +48,7 @@
   // After changing `keybindings.json` or `settings.json` you can apply the changes
   // by pressing `Shift + Command + r` instead of restarting VSCode
   {
-    "key": "shift+cmd+r",
+    "key": "ctrl+alt+cmd+r",
     "command": "workbench.action.reloadWindow"
   },
   {
@@ -108,5 +108,9 @@
   {
     "key": "ctrl+shift+left",
     "command": "cursorWordStartLeftSelect"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.files.action.showActiveFileInExplorer"
   }
 ]
