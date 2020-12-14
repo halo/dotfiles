@@ -22,6 +22,10 @@ module MacOS
         set_shortcut caption: 'Show Previous Tab', keycode: "~@←"
         set_shortcut caption: 'Select Previous Tab', keycode: "~@←"
 
+        # Export in Quicktime and Pages
+        # set_shortcut caption: 'Export To', keycode: "$@e"
+        # set_shortcut caption: 'Export As', keycode: "$@e"
+
         # Making Safari behave like Chrome in this respect
         # set_shortcut app: 'com.apple.Safari', caption: 'Clear History...', keycode: "$@⌫" # Does not work on Catalina
         set_shortcut caption: 'Clear History...', keycode: "$@⌫"
