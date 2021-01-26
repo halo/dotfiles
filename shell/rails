@@ -1,14 +1,25 @@
-alias g='be guard'
-alias mig='rake db:migrate'
-alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:prepare'
+# Start Guard. Clear terminal before each run.
+# See https://github.com/guard/guard
+alias g='bundle exec guard --clear'
+
+# Ruby on Rails shortcuts.
 alias r='rails'
-alias rr='rails routes | grep '
 alias c='rails console'
+alias s='rails server'
+alias rst='passenger-config restart-app . > /dev/null; touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && echo Application restarted.'
+
+alias rr='rails routes | grep '
+
+alias mig='rake db:migrate'
 alias rol='rake db:rollback'
-alias rst='passenger-config restart-app .; touch tmp/restart.txt; bin/spring stop && echo Application restarted.'
-alias tdev='tail -n 90 -f log/development.log'
+
 alias tmig='RAILS_ENV=test rake db:migrate'
 alias trol='RAILS_ENV=test rake db:rollback'
-alias ttest='tail -n 90 -f log/test.log'
+alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:prepare'
 
+alias tdev='tail -n 90 -f log/development.log'
+alias ttest='tail -n 90 -f log/test.log'
+alias tdemo='tail -n 90 -f log/demo.log'
+
+# Heroku shortcuts.
 alias h='heroku'
