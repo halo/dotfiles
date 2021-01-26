@@ -27,14 +27,12 @@ require 'macos/customize/sharing'
 require 'macos/customize/keyboard'
 require 'macos/customize/trackpad'
 require 'macos/customize/screen_saver'
-require 'macos/customize/termination'
 
 module MacOS
   def self.call
     puts
     # MacOS::Customize::FileVault.new.call
     MacOS::Customize::Energy.new.call
-    MacOS::Customize::Termination.new.call
     MacOS::Customize::Sharing.new.call
     MacOS::Customize::Keyboard.new.call
     MacOS::Customize::Trackpad.new.call
