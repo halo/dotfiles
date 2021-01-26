@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
+  NewCops: enable
 
 # My goal is 100, I'm decreasing this over time
 # until I feel comfortable with it.
