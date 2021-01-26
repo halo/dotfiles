@@ -24,7 +24,6 @@
   "ruby.lint": {
     "rubocop": true
   },
-  "ruby.useLanguageServer": true,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "window.nativeTabs": true,
@@ -47,5 +46,6 @@
   "gitlens.mode.active": "zen",
   "gitlens.menus.editorGroup.compare": false,
   "gitlens.menus.editorGroup.blame": false,
-  "explorer.autoReveal": false
+  "explorer.autoReveal": false,
+  "editor.acceptSuggestionOnEnter": "off"
 }
