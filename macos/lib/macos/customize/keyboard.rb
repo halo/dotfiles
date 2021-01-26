@@ -9,8 +9,13 @@ module MacOS
       #  \0 = NULL
       def call
         # Deactivate these undoable shortcuts
-        set_shortcut caption: 'Hide Others', keycode: '\0'
+        set_shortcut caption: 'Hide Finder', keycode: '\0'
+        set_shortcut caption: 'Hide Google Chrome', keycode: '\0'
+        set_shortcut caption: 'Hide Mail', keycode: '\0'
+        set_shortcut caption: 'Hide Safari', keycode: '\0'
         set_shortcut caption: 'Hide Visual Studio Code', keycode: '\0'
+
+        set_shortcut caption: 'Hide Others', keycode: '\0'
         set_shortcut caption: 'Enter Full Screen', keycode: '\0'
         set_shortcut caption: 'Minimize', keycode: '\0'
 
