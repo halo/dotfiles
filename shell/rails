@@ -6,7 +6,7 @@ alias g='bundle exec guard --clear'
 alias r='rails'
 alias c='rails console'
 alias s='rails server'
-alias rst='passenger-config restart-app . > /dev/null; touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && echo Application restarted.'
+alias rst='touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && echo Application restarted.'
 
 alias rr='rails routes | grep '
 
