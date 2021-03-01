@@ -59,7 +59,7 @@ module Dotfiles
       end
 
       if copy
-        success "  Copying file `#{unexpand(link)}` to `#{unexpand(file)}`..."
+        success "  Copying file `#{unexpand(file)}` to `#{unexpand(link)}`..."
         FileUtils.cp(file.to_s, link.to_s) unless Dotfiles.dry?
       else
         success "  Pointing symlink `#{unexpand(link)}` to file `#{unexpand(file)}`..."
