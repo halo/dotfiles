@@ -1,6 +1,6 @@
-# Start Guard. Clear terminal before each run.
+# Start Guard.
 # See https://github.com/guard/guard
-alias g='bundle exec guard --clear'
+alias g='bundle exec guard'
 
 # Ruby on Rails shortcuts.
 alias r='rails'
