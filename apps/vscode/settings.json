@@ -39,7 +39,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "window.zoomLevel": 0,
   "gitlens.blame.highlight.enabled": false,
   "gitlens.blame.heatmap.enabled": false,
   "gitlens.hovers.currentLine.enabled": false,
@@ -47,5 +46,20 @@
   "gitlens.menus.editorGroup.compare": false,
   "gitlens.menus.editorGroup.blame": false,
   "explorer.autoReveal": false,
-  "editor.acceptSuggestionOnEnter": "off"
+  "editor.acceptSuggestionOnEnter": "off",
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.decorations.badges": true,
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+  "editor.glyphMargin": false
 }
