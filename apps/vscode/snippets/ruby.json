@@ -129,7 +129,7 @@
   },
   "expect block": {
     "prefix": [
-      "expect do"
+      "expd"
     ],
     "body": [
       "expect do",
@@ -143,6 +143,14 @@
     ],
     "body": [
       "described_class"
+    ]
+  },
+  "include MethodObject": {
+    "prefix": [
+      "imo"
+    ],
+    "body": [
+      "include MethodObject$0"
     ]
   },
   "be_instance_of": {
