@@ -1,3 +1,6 @@
+# Note: Use this instead:
+# https://bundler.io/guides/bundler_in_a_single_file_ruby_script.html
+
 # MIT License
 #
 # Copyright (c) 2019 halo - https://github.com/halo/founder
