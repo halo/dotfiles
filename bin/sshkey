@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+require 'etc'
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'tty-command'
+  gem 'tty-prompt'
+end
+
+prompt = TTY::Prompt.new(interrupt: :exit)
+prompt.say ' '
+
+device_name = prompt.ask('What is the name of this device?', default: Etc.getlogin) do |input|
+  input.validate(/\A[a-z]+\z/, 'Invalid device name')
+end
+
+choices = %w[github amazon raspberry digitalocean Custom...].sort
+service_name = prompt.select('What is the name of the service you connect to?', choices)
+
+if service_name == 'Custom...'
+  service_name = prompt.ask('What is the name of the service you connect to?') do |input|
+    input.validate(/\A[a-z]+\z/, 'Invalid service name')
+  end
+end
+
+account_name = prompt.ask("What is your username at #{service_name}?") do |input|
+  input.validate(/\A[a-z]+\z/, 'Invalid username')
+end
+prompt.say ' '
+
+key_name = [device_name, account_name, service_name].join('.')
+private_key_path = "#{File.expand_path('~')}/.ssh/#{key_name}"
+public_key_path = "#{private_key_path}.pub"
+
+command = ['/usr/bin/ssh-keygen']
+command << '-t' << 'ed25519' # See https://security.stackexchange.com/a/183637
+command << '-a' << '100'
+command << '-f' << private_key_path
+command << '-C' << key_name
+
+TTY::Command.new(uuid: false).run(*command)
+TTY::Command.new(uuid: false).run("cat #{public_key_path} | pbcopy", printer: :null)
+
+prompt.say ' '
+prompt.ok "Key generated at #{private_key_path}"
+prompt.say ' '
+
+
+# # See https://security.stackexchange.com/a/144044
+# function sshkey {
+#   if [ -z "$1" ]
+#   then
+#     echo "USAGE: sshkey mykeyname"
+#   else
+#     # Add `-N ''` to generate a key without passphrase.
+#     $command="ssh-keygen -t ed25519 -a 100 -f ~/.ssh/$1"
+#     echo $command
+#     cat ~/.ssh/$1.pub | pbcopy
+#     echo
+#     echo "Generated key ~/.ssh/$1 and copied the public key to the clipboard."
+#     echo
+#   fi
+# }
