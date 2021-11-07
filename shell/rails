@@ -10,12 +10,12 @@ alias rst='touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && ech
 
 alias rr='rails routes | grep '
 
-alias mig='rake db:migrate'
-alias rol='rake db:rollback'
+alias mig='bundle exec rake db:migrate'
+alias rol='bundle exec rake db:rollback'
 
-alias tmig='RAILS_ENV=test rake db:migrate'
-alias trol='RAILS_ENV=test rake db:rollback'
-alias prep='RAILS_ENV=test rake db:environment:set; RAILS_ENV=test rake db:test:prepare'
+alias tmig='RAILS_ENV=test bundle exec rake db:migrate'
+alias trol='RAILS_ENV=test bundle exec rake db:rollback'
+alias prep='RAILS_ENV=test bundle exec rake db:environment:set; RAILS_ENV=test bundle exec rake db:test:prepare'
 
 alias tdev='tail -n 90 -f log/development.log'
 alias ttest='tail -n 90 -f log/test.log'
