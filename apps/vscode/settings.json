@@ -17,10 +17,8 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "ruby.codeCompletion": "rcodetools",
   "ruby.format": "rubocop",
   "ruby.intellisense": "rubyLocate",
-  "ruby.interpreter.commandPath": "~/.rbenv/shims/ruby",
   "ruby.lint": {
     "rubocop": true
   },
@@ -61,5 +59,14 @@
     "latex",
     "plaintext"
   ],
-  "editor.glyphMargin": false
+  "editor.glyphMargin": false,
+  "clipboard.size": 50,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "window.zoomLevel": -1,
+  "editor.renderWhitespace": "all",
+  "workbench.editor.untitled.hint": "hidden",
 }
