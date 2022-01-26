@@ -1,2 +1,5 @@
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+
 # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
