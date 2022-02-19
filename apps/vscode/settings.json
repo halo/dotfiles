@@ -25,13 +25,13 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "window.nativeTabs": true,
+  "window.openFilesInNewWindow": "on",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#333333"
   },
   // Closing a tab selectes the neighboring tab, not one recently used.
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -60,13 +60,17 @@
     "plaintext"
   ],
   "editor.glyphMargin": false,
-  "clipboard.size": 50,
+  "clipboard.size": 25,
   "security.workspace.trust.untrustedFiles": "open",
   "[ruby]": {
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "editor.bracketPairColorization.enabled": true,
-  "window.zoomLevel": -1,
   "editor.renderWhitespace": "all",
   "workbench.editor.untitled.hint": "hidden",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "explorer.confirmUndo": "verbose",
+  "workbench.sideBar.location": "right",
+  "editor.autoIndent": "advanced",
+  "editor.snippetSuggestions": "top",
 }
