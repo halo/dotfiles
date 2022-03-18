@@ -12,6 +12,7 @@ source $HOME/.dotfiles/shell/rbenv
 source $HOME/.dotfiles/shell/shell
 
 # Paths
+export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 export PATH="$PATH:$HOME/.dotfiles/git/bin"
 export PATH="$PATH:$HOME/.dotfiles/macos/bin"
