@@ -1,0 +1,6 @@
+export frum_ROOT="$HOME/.frum"
+
+[ -x /usr/local/bin/frum ] && eval "$(/usr/local/bin/frum init)"
+
+# Apple Silicon
+[ -x /otp/local/bin/frum ] && eval "$(/otp/local/bin/frum init)"

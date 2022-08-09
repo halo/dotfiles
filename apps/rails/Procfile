@@ -1,5 +1,0 @@
-# Heroku boot instructions
-
-web: bundle exec passenger start --port $PORT --max-pool-size $PASSENGER_MAX_POOL_SIZE
-# worker: bundle exec sidekiq --concurrency 3 --timeout 8
-release: bundle exec rake db:migrate

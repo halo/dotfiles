@@ -13,7 +13,7 @@ Metrics/BlockLength:
   Exclude:
     - '**/Rakefile'
     - '**/*.rake'
-    - '**/spec/**/*.rb'
+    - '**/spec/**/*_spec.rb'
     - '**/config/routes.rb'
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.

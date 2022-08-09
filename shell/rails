@@ -3,12 +3,10 @@
 alias g='bundle exec guard'
 
 # Ruby on Rails shortcuts.
-alias r='rails'
-alias c='rails console'
-alias s='rails server'
+alias r='bin/rails'
 alias rst='touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && echo Application restarted.'
 
-alias rr='rails routes | grep '
+alias rr='bin/rails routes | grep '
 
 alias mig='bundle exec rake db:migrate'
 alias rol='bundle exec rake db:rollback'
