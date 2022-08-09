@@ -1,5 +1,3 @@
-require_relative '../vendor/install'
-
 require 'pastel'
 require 'pathname'
 

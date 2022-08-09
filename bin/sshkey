@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
-require 'etc'
 require 'bundler/inline'
 
 gemfile do
-  source 'https://rubygems.org'
-  gem 'tty-command'
-  gem 'tty-prompt'
+  eval File.read(File.expand_path('../Gemfile', __dir__))
 end
+
+require 'etc'
 
 prompt = TTY::Prompt.new(interrupt: :exit)
 prompt.say ' '
