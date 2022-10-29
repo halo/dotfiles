@@ -1,0 +1,4 @@
+default:
+  filename: "{title} s{season}e{episode} {episodename} {id}.{ext}"
+  silent_semi: true
+  thumbnail: true
