@@ -3,3 +3,4 @@
 !/vendor/*.rb
 !/vendor/Gemfile
 !/vendor/Gemfile.lock
+.history
