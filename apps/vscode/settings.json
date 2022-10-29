@@ -50,14 +50,15 @@
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
   "spellright.language": [
-    "en"
+    "en",
+    "de",
+    "sv"
   ],
   "spellright.documentTypes": [
     "markdown",
     "latex",
     "plaintext"
   ],
-  "editor.glyphMargin": false,
   "clipboard.size": 25,
   "security.workspace.trust.untrustedFiles": "open",
   "[ruby]": {
@@ -85,4 +86,26 @@
     "*_component.rb": "${capture}_component.*",
     "Gemfile": "Gemfile.lock"
   },
+  "ruby.rubocop.executePath": "/Users/orange/.frum/versions/3.1.2/bin/",
+  "testExplorer.useNativeTesting": true,
+  "rubyTestExplorer.filePattern": [
+    "*_test.rb",
+    "*_spec.rb"
+  ],
+  "rubyTestExplorer.logpanel": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "OPTIMIZE"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "window.zoomLevel": 1,
+  "testing.autoRun.mode": "rerun",
 }
