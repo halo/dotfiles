@@ -89,6 +89,16 @@
       "end"
     ]
   },
+  "test": {
+    "prefix": [
+      "t"
+    ],
+    "body": [
+      "test '$1' do",
+      "  $0",
+      "end"
+    ]
+  },
   "describe": {
     "prefix": [
       "des"
