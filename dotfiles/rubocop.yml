@@ -1,5 +1,4 @@
 AllCops:
-  TargetRubyVersion: 2.7
   DisplayCopNames: true
   NewCops: enable
 
@@ -14,7 +13,12 @@ Metrics/BlockLength:
     - '**/Rakefile'
     - '**/*.rake'
     - '**/spec/**/*_spec.rb'
+    - '**/test/**/*_test.rb'
     - '**/config/routes.rb'
+
+Metrics/ClassLength:
+  Exclude:
+    - '**/test/**/*_test.rb'
 
 # The trailing comma prevents brain cells from dying on copy-paste errors.
 Style/TrailingCommaInArrayLiteral:
@@ -26,6 +30,6 @@ Style/TrailingCommaInHashLiteral:
 Style/Documentation:
   Enabled: false
 
-# Wait until we get closer to Ruby 3 first.
+# Questionable, to say the least. Abandoned in Ruby 3 and then unknown.
 Style/FrozenStringLiteralComment:
   Enabled: false
