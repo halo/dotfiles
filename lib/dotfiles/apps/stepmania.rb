@@ -13,6 +13,8 @@ module Dotfiles
                      link: remote.join('Preferences.ini'),
                      force: true,
                      copy: true
+      rescue Errno::EACCES
+        puts "Ignoring #{local} due to permissions."
       end
 
       private

@@ -19,9 +19,9 @@ zle -N self-insert url-quote-magic
 function x {
   if [ -z "$1" ]
   then
-    /usr/local/bin/code --new-window .
+    code --new-window .
   else
-    /usr/local/bin/code --new-window $1
+    code --new-window $1
   fi
 }
 
@@ -34,8 +34,8 @@ function o {
   fi
 }
 
-alias hosts='sudo /usr/local/bin/code --new-window /etc/hosts'
-alias sshconf='/usr/local/bin/code --new-window ~/.ssh/config'
+alias hosts='sudo code --new-window /etc/hosts'
+alias sshconf='code --new-window ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
 
@@ -68,6 +68,7 @@ export EDITOR='code'
 export HISTCONTROL=erasedups
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of ;)
