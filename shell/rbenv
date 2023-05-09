@@ -1,0 +1,5 @@
+# Intel
+[ -x /usr/local/bin/rbenv ] && eval "$(/usr/local/bin/rbenv init - zsh)"
+
+# Apple Silicon
+[ -x /opt/homebrew/bin/rbenv ] && eval "$(/opt/homebrew/bin/rbenv init - zsh)"

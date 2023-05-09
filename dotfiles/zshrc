@@ -1,6 +1,5 @@
 # Shell
 source $HOME/.dotfiles/shell/autocompletion
-source $HOME/.dotfiles/shell/frum
 source $HOME/.dotfiles/shell/general
 source $HOME/.dotfiles/shell/git
 source $HOME/.dotfiles/shell/history
@@ -8,6 +7,7 @@ source $HOME/.dotfiles/shell/homebrew
 source $HOME/.dotfiles/shell/hooks
 source $HOME/.dotfiles/shell/prompt
 source $HOME/.dotfiles/shell/rails
+source $HOME/.dotfiles/shell/rbenv
 source $HOME/.dotfiles/shell/ruby
 source $HOME/.dotfiles/shell/shell
 
