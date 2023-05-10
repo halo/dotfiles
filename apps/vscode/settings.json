@@ -86,7 +86,7 @@
     "*_component.rb": "${capture}_component.*",
     "Gemfile": "Gemfile.lock"
   },
-  "ruby.rubocop.executePath": "/Users/orange/.frum/versions/3.1.2/bin/",
+  "ruby.rubocop.executePath": "/Users/darkorange/.rbenv/versions/3.2.1/bin/",
   "testExplorer.useNativeTesting": true,
   "rubyTestExplorer.filePattern": [
     "*_test.rb",
@@ -106,6 +106,5 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "window.zoomLevel": 1,
   "testing.autoRun.mode": "rerun",
 }
