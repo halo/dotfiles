@@ -2,10 +2,10 @@ AllCops:
   DisplayCopNames: true
   NewCops: enable
 
-# My goal is 100, I'm decreasing this over time
-# until I feel comfortable with it.
+# I keep the length as short as possible without having too much pain.
+# 80 is too much pain, but many disagree.
 Layout/LineLength:
-  Max: 120
+  Max: 100
 
 # Tests and Rake tasks may have long blocks.
 Metrics/BlockLength:
@@ -25,11 +25,13 @@ Style/TrailingCommaInArrayLiteral:
   Enabled: false
 Style/TrailingCommaInHashLiteral:
   Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 
 # Top-level class documentation is nice, but cumbersome when starting a new project.
 Style/Documentation:
   Enabled: false
 
-# Questionable, to say the least. Abandoned in Ruby 3 and then unknown.
+# Questionable, to say the least. Abandoned for Ruby 3 and then unknown.
 Style/FrozenStringLiteralComment:
   Enabled: false
