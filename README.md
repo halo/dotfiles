@@ -18,3 +18,14 @@ export PATH="~/.dotfiles/bin:$PATH"
 Run `dotfiles` in your Terminal to put all configuration files in place.
 
 Run `macos` to configure the operating system defaults.
+
+### Caveats
+
+```bash
+export PATH=/opt/homebrew/bin:$PATH
+rbenv install 3.2.2
+eval "$(rbenv init - zsh)"
+rbenv global 3.2.2
+rbenv shell 3.2.2
+~/.dotfiles/bin/dotfiles
+```
