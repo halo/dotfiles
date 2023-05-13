@@ -69,8 +69,3 @@ export HISTCONTROL=erasedups
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-# Local bin directory takes highest precedence
-# Being careful as to when a bin directory is around I don't know the contents of ;)
-export PATH="bin:$PATH"
-

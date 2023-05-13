@@ -12,9 +12,14 @@ source $HOME/.dotfiles/shell/ruby
 source $HOME/.dotfiles/shell/shell
 
 # Paths
-export PATH="$PATH:/opt/homebrew/bin"
+export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 export PATH="$PATH:$HOME/.dotfiles/git/bin"
 export PATH="$PATH:$HOME/.dotfiles/macos/bin"
+export PATH="$PATH:$HOME/Code/filing/filing/bin"
+
+# Local bin directory takes highest precedence
+# Being careful as to when a bin directory is around I don't know the contents of ;)
+export PATH="bin:$PATH"
 
 [ -s ~/.zshrc.local ] && source ~/.zshrc.local
