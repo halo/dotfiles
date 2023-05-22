@@ -24,7 +24,7 @@ module Dotfiles
       end
 
       def remote
-        Pathname.new('/').join('Applications', 'StepMania', 'Save')
+        Pathname.new('/').join('Applications', 'Outfox', 'Save')
       end
     end
   end
