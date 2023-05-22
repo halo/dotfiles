@@ -62,7 +62,7 @@
   "clipboard.size": 25,
   "security.workspace.trust.untrustedFiles": "open",
   "[ruby]": {
-    "editor.defaultFormatter": "misogi.ruby-rubocop"
+    "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived"
   },
   "editor.bracketPairColorization.enabled": true,
   "editor.renderWhitespace": "all",
@@ -86,7 +86,7 @@
     "*_component.rb": "${capture}_component.*",
     "Gemfile": "Gemfile.lock"
   },
-  "ruby.rubocop.executePath": "/Users/darkorange/.rbenv/versions/3.2.1/bin/",
+  "ruby.rubocop.executePath": "/Users/orange/.rbenv/versions/3.2.2/bin/",
   "testExplorer.useNativeTesting": true,
   "rubyTestExplorer.filePattern": [
     "*_test.rb",
@@ -107,4 +107,9 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "testing.autoRun.mode": "rerun",
+  "hediet.vscode-drawio.resizeImages": null,
+  "workbench.colorTheme": "Monokai Dimmed",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.banner": "never",
+  "ruby.rubocop.useServer": true,
 }
