@@ -4,13 +4,14 @@
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.rulers": [
-    120
+
+    100
   ],
   "editor.tabSize": 2,
   // Ideally, when toggled on, I prefer "bounded".
   // But the default must be off, so I choose "off" here.
   "editor.wordWrap": "off",
-  "editor.wordWrapColumn": 120,
+  "editor.wordWrapColumn": 100,
 
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -112,4 +113,5 @@
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.banner": "never",
   "ruby.rubocop.useServer": true,
+  "extensions.ignoreRecommendations": true,
 }
