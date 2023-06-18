@@ -4,7 +4,6 @@
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.rulers": [
-
     100
   ],
   "editor.tabSize": 2,
@@ -22,8 +21,6 @@
   "ruby.lint": {
     "rubocop": true
   },
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
   "window.nativeTabs": true,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#333333"
@@ -114,4 +111,5 @@
   "security.workspace.trust.banner": "never",
   "ruby.rubocop.useServer": true,
   "extensions.ignoreRecommendations": true,
+  "telemetry.telemetryLevel": "off",
 }
