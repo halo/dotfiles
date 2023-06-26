@@ -112,4 +112,8 @@
   "ruby.rubocop.useServer": true,
   "extensions.ignoreRecommendations": true,
   "telemetry.telemetryLevel": "off",
+  "files.exclude": {
+    ".history/": true,
+    ".sass-cache/": true
+  },
 }
