@@ -23,8 +23,10 @@ com.microsoft.VSCode .rake all
 com.microsoft.VSCode .rb all
 com.microsoft.VSCode .sass all
 com.microsoft.VSCode .scss all
+com.microsoft.VSCode .sh all
 com.microsoft.VSCode .slim all
 com.microsoft.VSCode .txt all
+com.microsoft.VSCode .xml all
 com.microsoft.VSCode .yml all
 
 com.microsoft.VSCode plain-text all
