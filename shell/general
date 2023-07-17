@@ -1,11 +1,3 @@
-alias sl='sass-lint --config ~/.sass-lint.yml --verbose --no-exit'
-alias yv='youtube-dl --no-check-certificate --no-overwrites --ignore-errors --recode-video mp4'
-alias ya='youtube-dl --no-check-certificate --no-overwrites --ignore-errors --extract-audio --audio-format m4a'
-# --download-archive archive.txt
-# See https://askubuntu.com/a/1023975
-alias yy='for n in *.*; do if [[ "$n" =~ -[-_0-9a-zA-Z]{11}.*$ ]]; then echo "youtube ${n: -15: 11}" >> downloaded.txt; fi; done'
-
-alias mp3m4a='for f in *.mp3; do ffmpeg -i "$f" -c:v copy -c:a aac "$f.m4a"; done'
 alias switch='heroku accounts:set'
 
 # Allow URI schemes to be pasted without need for escaping

@@ -5,6 +5,7 @@ source $HOME/.dotfiles/shell/git
 source $HOME/.dotfiles/shell/history
 source $HOME/.dotfiles/shell/homebrew
 source $HOME/.dotfiles/shell/hooks
+source $HOME/.dotfiles/shell/media
 source $HOME/.dotfiles/shell/prompt
 source $HOME/.dotfiles/shell/rails
 source $HOME/.dotfiles/shell/rbenv
