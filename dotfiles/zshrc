@@ -9,6 +9,7 @@ source $HOME/.dotfiles/shell/media
 source $HOME/.dotfiles/shell/prompt
 source $HOME/.dotfiles/shell/rails
 source $HOME/.dotfiles/shell/rbenv
+source $HOME/.dotfiles/shell/rspec
 source $HOME/.dotfiles/shell/ruby
 source $HOME/.dotfiles/shell/shell
 
