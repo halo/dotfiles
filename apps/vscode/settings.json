@@ -2,7 +2,6 @@
   // ------ WINDOW ------
   "window.nativeTabs": true,
   "window.openFoldersInNewWindow": "on",
-  "window.zoomLevel": -1,
   // ------ EDITOR ------
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoIndent": "advanced",
@@ -71,5 +70,5 @@
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  },
+  }
 }
