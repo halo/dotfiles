@@ -1,78 +1,44 @@
 {
+  // ------ WINDOW ------
+  "window.nativeTabs": true,
+  "window.openFoldersInNewWindow": "on",
+  "window.zoomLevel": -1,
+  // ------ EDITOR ------
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.autoIndent": "advanced",
+  "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
   "editor.folding": false,
+  "editor.guides.indentation": false,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [
     100
   ],
+  "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
   // Ideally, when toggled on, I prefer "bounded".
   // But the default must be off, so I choose "off" here.
   "editor.wordWrap": "off",
   "editor.wordWrapColumn": 100,
-
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "ruby.format": "rubocop",
-  "ruby.intellisense": "rubyLocate",
-  "ruby.lint": {
-    "rubocop": true
-  },
-  "window.nativeTabs": true,
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#333333"
-  },
+  // ------ WORKBENCH ------
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true,
   // Closing a tab selectes the neighboring tab, not one recently used.
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.wrapTabs": true,
+  "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.blame.highlight.enabled": false,
-  "gitlens.blame.heatmap.enabled": false,
-  "gitlens.hovers.currentLine.enabled": false,
-  "gitlens.mode.active": "zen",
-  "gitlens.menus.editorGroup.compare": false,
-  "gitlens.menus.editorGroup.blame": false,
+  // ------ EXPLORER ------
   "explorer.autoReveal": false,
-  "editor.acceptSuggestionOnEnter": "off",
-  "workbench.editor.wrapTabs": true,
-  "workbench.editor.decorations.colors": true,
-  "workbench.editor.decorations.badges": true,
-  "[xml]": {
-    "editor.defaultFormatter": "mikeburgh.xml-format"
-  },
-  "spellright.language": [
-    "en",
-    "de",
-    "sv"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext"
-  ],
-  "clipboard.size": 25,
-  "security.workspace.trust.untrustedFiles": "open",
-  "[ruby]": {
-    "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived"
-  },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.renderWhitespace": "all",
-  "workbench.editor.untitled.hint": "hidden",
-  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.confirmUndo": "verbose",
-  "workbench.sideBar.location": "right",
-  "editor.autoIndent": "advanced",
-  "editor.snippetSuggestions": "top",
-  "window.openFoldersInNewWindow": "on",
-  "favorites.groupsFirst": false,
-  "editor.guides.indentation": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -84,36 +50,26 @@
     "*_component.rb": "${capture}_component.*",
     "Gemfile": "Gemfile.lock"
   },
-  "ruby.rubocop.executePath": "/Users/orange/.rbenv/versions/3.2.2/bin/",
-  "testExplorer.useNativeTesting": true,
-  "rubyTestExplorer.filePattern": [
-    "*_test.rb",
-    "*_spec.rb"
-  ],
-  "rubyTestExplorer.logpanel": true,
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]",
-    "OPTIMIZE"
-  ],
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
-  "testing.autoRun.mode": "rerun",
-  "hediet.vscode-drawio.resizeImages": null,
-  "workbench.colorTheme": "Monokai Dimmed",
-  "security.workspace.trust.startupPrompt": "never",
-  "security.workspace.trust.banner": "never",
-  "ruby.rubocop.useServer": true,
-  "extensions.ignoreRecommendations": true,
-  "telemetry.telemetryLevel": "off",
+  // ------ FILES ------
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "files.exclude": {
     ".history/": true,
     ".sass-cache/": true
+  },
+  // ------ OTHER ------
+  "diffEditor.ignoreTrimWhitespace": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "testExplorer.useNativeTesting": true,
+  "hediet.vscode-drawio.resizeImages": null,
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.banner": "never",
+  "extensions.ignoreRecommendations": true,
+  "telemetry.telemetryLevel": "off",
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
 }
