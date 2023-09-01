@@ -1,5 +1,5 @@
 alias br='bundle exec rspec'
 alias bru='UNIT=1 bundle exec rspec'
 
-alias ci='CI=1 bundle exec rspec --profile'
+alias ci='CI=1 bundle exec rspec --profile || CI=1 bundle exec rspec --only-failures'
 alias re='CI=1 bundle exec rspec --only-failures'
