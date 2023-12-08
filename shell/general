@@ -26,6 +26,9 @@ function o {
   fi
 }
 
+# Convenience shortcut to open xcode project in current folder
+alias xc='open *.xcodeproj'
+
 alias hosts='sudo code --new-window /etc/hosts'
 alias sshconf='code --new-window ~/.ssh/config'
 alias keys="open ~/.ssh"
@@ -58,6 +61,7 @@ function repeat {
 
 export EDITOR='code'
 export HISTCONTROL=erasedups
+export GOPATH=/Users/orange/.go
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh

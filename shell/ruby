@@ -3,3 +3,6 @@ alias be='bundle exec'
 alias bo='bundle open'
 alias bu='bundle update'
 alias t='ruby -I test'
+
+# See https://stackoverflow.com/a/76897818
+export PGGSSENCMODE="disable"

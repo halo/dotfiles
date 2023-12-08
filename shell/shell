@@ -4,6 +4,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -G'  # Colors on macOS
+alias night='pmset sleepnow'
 
 ddump () {
    defaults read > /tmp/dump1
