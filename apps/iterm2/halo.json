@@ -7,7 +7,7 @@
         "!*"
       ],
       "Flashing Bell": true,
-      "Scrollback Lines": 10000,
+      "Scrollback Lines": 100000,
       "Silence Bell": true,
       "Visual Bell": true,
       "Keyboard Map": {
