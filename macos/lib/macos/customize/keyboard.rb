@@ -8,16 +8,18 @@ module MacOS
       #  $ = shift
       #  \0 = NULL
       def call
-        # Deactivate these undoable shortcuts
-        set_shortcut caption: 'Hide Finder', keycode: '\0'
-        set_shortcut caption: 'Hide Google Chrome', keycode: '\0'
-        set_shortcut caption: 'Hide Mail', keycode: '\0'
-        set_shortcut caption: 'Hide Safari', keycode: '\0'
-        set_shortcut caption: 'Hide Visual Studio Code', keycode: '\0'
-
+        # Disable annoying global shortcuts
         set_shortcut caption: 'Hide Others', keycode: '\0'
         set_shortcut caption: 'Enter Full Screen', keycode: '\0'
         set_shortcut caption: 'Minimize', keycode: '\0'
+
+        # Disable annoying shortcuts of specific applications
+        set_shortcut caption: 'Hide Finder', keycode: '\0'
+        set_shortcut caption: 'Hide Google Chrome', keycode: '\0'
+        set_shortcut caption: 'Hide iTerm2', keycode: '\0'
+        set_shortcut caption: 'Hide Mail', keycode: '\0'
+        set_shortcut caption: 'Hide Safari', keycode: '\0'
+        set_shortcut caption: 'Hide Visual Studio Code', keycode: '\0'
 
         # Homogenious tabbing in all apps
         set_shortcut caption: 'Next Tab', keycode: "~@→"
@@ -35,7 +37,7 @@ module MacOS
         # set_shortcut app: 'com.apple.Safari', caption: 'Clear History...', keycode: "$@⌫" # Does not work on Catalina
         set_shortcut caption: 'Clear History...', keycode: "$@⌫"
 
-        # I use this feature very often but it has no shortcut
+        # I use this feature in Preview very often but it has no shortcut
         set_shortcut app: 'com.apple.Preview', caption: 'Adjust Size...', keycode: "$@r"
 
         # I accidentally press CMD + Enter and I don't want it to go to fullscreen..
