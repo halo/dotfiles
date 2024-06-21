@@ -34,6 +34,7 @@ alias sshconf='code --new-window ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
 
+alias vsextensions="cat ~/.vscode/ExtensionsFile  | xargs -L 1 code --install-extension"
 
 function diffx {
   `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`
