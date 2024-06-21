@@ -23,9 +23,9 @@ Run `macos` to configure the operating system defaults.
 
 ```bash
 export PATH=/opt/homebrew/bin:$PATH
-rbenv install 3.2.2
+rbenv install 3.3.0
 eval "$(rbenv init - zsh)"
-rbenv global 3.2.2
-rbenv shell 3.2.2
+rbenv global 3.3.0
+rbenv shell 3.3.0
 ~/.dotfiles/bin/dotfiles
 ```

@@ -15,6 +15,7 @@ source $HOME/.dotfiles/shell/shell
 
 # Paths
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 export PATH="$PATH:$HOME/.dotfiles/git/bin"
 export PATH="$PATH:$HOME/.dotfiles/macos/bin"
