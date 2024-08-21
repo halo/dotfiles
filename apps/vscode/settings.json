@@ -28,7 +28,7 @@
   // Closing a tab selectes the neighboring tab, not one recently used.
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.untitled.hint": "hidden",
+
   "workbench.editor.wrapTabs": true,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -72,9 +72,34 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp"
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+	  "editor.formatOnSave": false
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "code-eol.color": "#444",
-  "window.zoomLevel": 1
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.colorTheme": "GitHub Dark High Contrast",
+  "workbench.activityBar.location": "hidden",
+  "rubyLsp.enableExperimentalFeatures": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.codeActionsOnSave": {},
+  "editor.accessibilitySupport": "off",
+  "workbench.layoutControl.enabled": false,
+  "window.customTitleBarVisibility": "never",
+  "editor.unicodeHighlight.includeStrings": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.chat.welcomeMessage": "never",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "explorer.confirmPasteNative": false,
+  "files.associations": {
+    "*.sass": "sass"
+  },
+  "scm.experimental.showHistoryGraph": true,
+  "typescript.updateImportsOnFileMove.enabled": "never"
 }
