@@ -19,20 +19,20 @@
   },
   "module": {
     "prefix": [
-      "module"
-    ],
-    "body": [
-      "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}",
-      "  $0",
-      "end"
-    ]
-  },
-  "module": {
-    "prefix": [
       "mod"
     ],
     "body": [
       "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
+    ]
+  },
+  "method": {
+    "prefix": [
+      "def"
+    ],
+    "body": [
+      "def $1",
+      "  $0",
+      "end"
     ]
   },
   "private": {
