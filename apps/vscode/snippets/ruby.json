@@ -25,12 +25,22 @@
       "module ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}$0"
     ]
   },
-  "method": {
+  "instance method": {
     "prefix": [
       "def"
     ],
     "body": [
       "def $1",
+      "  $0",
+      "end"
+    ]
+  },
+  "singleton method": {
+    "prefix": [
+      "defs"
+    ],
+    "body": [
+      "def self.$1",
       "  $0",
       "end"
     ]
