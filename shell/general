@@ -33,6 +33,7 @@ alias hosts='sudo code --new-window /etc/hosts'
 alias sshconf='code --new-window ~/.ssh/config'
 alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+alias qr="zbarimg --raw"
 
 alias vsextensions="cat ~/.vscode/ExtensionsFile  | xargs -L 1 code --install-extension"
 
