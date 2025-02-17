@@ -50,6 +50,12 @@
         "0xf72d-0x0": {
           "Action": 8,
           "Text": ""
+        },
+        "0xd-0x100000-0x24": {
+          "Version": 1,
+          "Action": 13,
+          "Text": "",
+          "Label": ""
         }
       },
       "Foreground Color": {
