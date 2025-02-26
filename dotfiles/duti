@@ -10,6 +10,7 @@ com.apple.QuickTimePlayerX .mp3 all
 com.apple.QuickTimePlayerX .mp4 all
 
 com.microsoft.VSCode .coffee all
+com.microsoft.VSCode .conf all
 com.microsoft.VSCode .css all
 com.microsoft.VSCode .diff all
 com.microsoft.VSCode .erb all
