@@ -19,6 +19,7 @@ com.microsoft.VSCode .hbs all
 com.microsoft.VSCode .js all
 com.microsoft.VSCode .json all
 com.microsoft.VSCode .md all
+com.microsoft.VSCode .nfo all
 com.microsoft.VSCode .patch all
 com.microsoft.VSCode .rake all
 com.microsoft.VSCode .rb all
