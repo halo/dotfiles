@@ -112,5 +112,15 @@
   {
     "key": "shift+cmd+r",
     "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  {
+    "key": "cmd+r",
+    "command": "testing.runCurrentFile",
+    "when": "editorTextFocus && resourceFilename =~ /.*(test|spec)\\.\\w+$/"
+  },
+  {
+    "key": "ctrl+cmd+r",
+    "command": "testing.runAtCursor",
+    "when": "editorTextFocus && resourceFilename =~ /.*(test|spec)\\.\\w+$/"
   }
 ]
