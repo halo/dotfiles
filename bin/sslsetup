@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+# Exit when any command fails
+set -e
+
+if [ -z "$OP_SERVICE_ACCOUNT_TOKEN" ]; then
+  echo "$(tput setaf 1)Error: OP_SERVICE_ACCOUNT_TOKEN missing$(tput sgr0)"
+  exit 1
+fi
+
+echo "$(tput setaf 2)Changing to privileged admin user...$(tput sgr0)"
+(
+  su admin -c "
+    echo \$(tput setaf 2)Clearing previous working directory...\$(tput sgr0)
+    rm -rf /tmp/sslsetup
+    mkdir -p /tmp/sslsetup
+    cd /tmp/sslsetup
+
+    echo \$(tput setaf 2)Generating root certificate...\$(tput sgr0)
+    sudo CAROOT=/tmp/sslsetup mkcert -uninstall
+    sudo CAROOT=/tmp/sslsetup mkcert -install
+
+    echo \$(tput setaf 2)Storing global root cert in 1Password...\$(tput sgr0)
+    sudo chmod 644 /tmp/sslsetup/rootCA-key.pem
+    op document edit \"mkcert development certificate\" --vault development --file-name rootCA.pem /tmp/sslsetup/rootCA.pem
+    op document edit \"mkcert development certificate key\" --vault development --file-name rootCA-key.pem /tmp/sslsetup/rootCA-key.pem
+
+    echo \$(tput setaf 2)Deleting root cert from disk...\$(tput sgr0)
+    sudo rm -rf /tmp/sslsetup
+"
+)

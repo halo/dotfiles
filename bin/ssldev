@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+# Exit when any command fails
+set -e
+
+cd .ssl
+
+if [ $# -eq 0 ]; then
+  echo "$(tput setaf 1)Please provide a domainname as parameter. E.g. example.test$(tput sgr0)"
+  exit 1
+fi
+
+if [ -z "$OP_SERVICE_ACCOUNT_TOKEN" ]; then
+  echo "$(tput setaf 1)Error: OP_SERVICE_ACCOUNT_TOKEN missing$(tput sgr0)"
+  exit 1
+fi
+
+echo "$(tput setaf 2)Retreiving global root cert...$(tput sgr0)"
+op document get "mkcert development certificate" --force --vault development --out-file rootCA.pem
+op document get "mkcert development certificate key" --force --vault development --out-file rootCA-key.pem
+
+# # This will not generate a new root certificate if filerootCA.pem is already present.
+echo "$(tput setaf 2)Generating new SSL certificates...$(tput sgr0)"
+CAROOT=. mkcert $1
+
+echo "$(tput setaf 2)Deleting root cert from disk...$(tput sgr0)"
+rm -f rootCA.pem rootCA-key.pem
