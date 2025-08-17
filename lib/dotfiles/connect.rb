@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 module Dotfiles
+  # Creates a Symlink
   class Connect
-    def self.call(caption:, file:, link:, force: false, copy: false)
-      new(caption: caption, file: file, link: link, force: force, copy: copy).call
+    def self.call(caption:, symlink_destination:, symlink_source:, force: false, copy: false)
+      new(caption: caption, file: symlink_destination, link: symlink_source, force: force,
+          copy: copy).call
     end
 
     attr_reader :caption, :file, :link, :force, :copy

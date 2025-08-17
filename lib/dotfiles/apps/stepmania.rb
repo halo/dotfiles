@@ -3,14 +3,14 @@ module Dotfiles
     class Stepmania
       def call
         Connect.call caption: 'StepMania Keymaps',
-                     file: local.join('Keymaps.ini'),
-                     link: remote.join('Keymaps.ini'),
+                     symlink_destination: local.join('Keymaps.ini'),
+                     symlink_source: remote.join('Keymaps.ini'),
                      force: true,
                      copy: true
 
         Connect.call caption: 'StepMania Preferences',
-                     file: local.join('Preferences.ini'),
-                     link: remote.join('Preferences.ini'),
+                     symlink_destination: local.join('Preferences.ini'),
+                     symlink_source: remote.join('Preferences.ini'),
                      force: true,
                      copy: true
       rescue Errno::EACCES

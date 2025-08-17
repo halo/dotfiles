@@ -3,16 +3,16 @@ module Dotfiles
     class Vscode
       def call
         Connect.call caption: 'Visual Studio Code Settings',
-                     file: local.join('settings.json'),
-                     link: remote.join('settings.json')
+                     symlink_destination: local.join('settings.json'),
+                     symlink_source: remote.join('settings.json')
 
         Connect.call caption: 'Visual Studio Code Key Bindings',
-                     file: local.join('keybindings.json'),
-                     link: remote.join('keybindings.json')
+                     symlink_destination: local.join('keybindings.json'),
+                     symlink_source: remote.join('keybindings.json')
 
         Connect.call caption: 'Visual Studio Code Snippets',
-                     file: local.join('snippets'),
-                     link: remote.join('snippets')
+                     symlink_destination: local.join('snippets'),
+                     symlink_source: remote.join('snippets')
       end
 
       private

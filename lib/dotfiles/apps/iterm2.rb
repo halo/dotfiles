@@ -3,8 +3,8 @@ module Dotfiles
     class Iterm2
       def call
         Connect.call caption: 'iTerm2 Profile',
-                     file: local.join('halo.json'),
-                     link: remote.join('DynamicProfiles/halo.json')
+                     symlink_destination: local.join('halo.json'),
+                     symlink_source: remote.join('DynamicProfiles/halo.json')
 
         puts Pastel.new.bold 'iTerm2 Preferences'
         puts Pastel.new.dim "  Pointing to `#{local}`"

@@ -19,11 +19,13 @@ export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 export PATH="$PATH:$HOME/.dotfiles/git/bin"
 export PATH="$PATH:$HOME/.dotfiles/macos/bin"
-export PATH="$PATH:$HOME/Code/filing/filing/bin"
+export PATH="$PATH:$HOME/code/filing/filing/bin"
 export PATH="$PATH:$HOME/.go/bin"
 
 # Local bin directory takes highest precedence
-# Being careful as to when a bin directory is around I don't know the contents of ;)
+# Being careful as to when a bin directory is around I don't know the contents of :)
 export PATH="bin:$PATH"
 
 [ -s ~/.zshrc.local ] && source ~/.zshrc.local
+
+eval "$(starship init zsh)"
