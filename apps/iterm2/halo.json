@@ -6,6 +6,7 @@
       "Bound Hosts": [
         "!*"
       ],
+      "Normal Font": "HackNFM-Regular 12",
       "Flashing Bell": true,
       "Scrollback Lines": 100000,
       "Silence Bell": true,
