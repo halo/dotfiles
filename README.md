@@ -19,6 +19,8 @@ Run `dotfiles` in your Terminal to put all configuration files in place.
 
 Run `macos` to configure the operating system defaults.
 
+Use `.zshenv.local` for local overrrides that aren't commited to this repository.
+
 ### Caveats
 
 ```bash
