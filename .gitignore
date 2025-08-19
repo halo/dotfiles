@@ -4,4 +4,4 @@
 !/vendor/Gemfile
 !/vendor/Gemfile.lock
 .history
-.bundle
+/.bundle
