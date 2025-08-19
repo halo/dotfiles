@@ -35,7 +35,8 @@ alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
 alias qr="zbarimg --raw"
 
-alias vsextensions="cat ~/.vscode/ExtensionsFile  | xargs -L 1 code --install-extension"
+# Single command: `code --install-extension alpha --install-extension beta ...``
+alias vsextensions="code --force $(cat ~/.vscode/Extensionsfile | sed 's/^/--install-extension /')"
 
 function diffx {
   `/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $1 -right $2`

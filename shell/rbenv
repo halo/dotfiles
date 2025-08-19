@@ -1,5 +1,7 @@
-# Intel
-[ -x /usr/local/bin/rbenv ] && eval "$(/usr/local/bin/rbenv init - zsh)"
+# # Intel
+# [ -x /usr/local/bin/rbenv ] && eval "$(/usr/local/bin/rbenv init - zsh)"
 
-# Apple Silicon
-[ -x /opt/homebrew/bin/rbenv ] && eval "$(/opt/homebrew/bin/rbenv init - zsh)"
+# # Apple Silicon
+# [ -x /opt/homebrew/bin/rbenv ] && eval "$(/opt/homebrew/bin/rbenv init - zsh)"
+
+[ -x /opt/homebrew/bin/mise ] && eval "$(/opt/homebrew/bin/mise activate zsh)"

@@ -21,3 +21,16 @@ ddump () {
    echo
    diff /tmp/dump1 /tmp/dump2
 }
+
+alias ls='eza -l --group-directories-first --octal-permissions --icons --smart-group'
+alias la='ls --all'
+
+
+# See https://github.com/alacritty/alacritty/issues/7687#issuecomment-2235981498
+bindkey "^[[1;9D" beginning-of-line   # Cmd + Left Arrow
+bindkey "^[[1;9C" end-of-line         # Cmd + Right Arrow
+bindkey "^[[1;3D" backward-word       # Option + Left Arrow
+bindkey "^[[1;3C" forward-word        # Option + Right Arrow
+bindkey "^[[3;10~" backward-kill-word # Option + Delete
+bindkey "^[[3;3~" kill-word           # Option + fn + Delete
+
