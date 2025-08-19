@@ -29,3 +29,4 @@ export PATH="bin:$PATH"
 [ -s ~/.zshrc.local ] && source ~/.zshrc.local
 
 eval "$(starship init zsh)"
+

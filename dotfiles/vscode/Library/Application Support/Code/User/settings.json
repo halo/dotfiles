@@ -4,7 +4,6 @@
   "window.openFoldersInNewWindow": "on",
   // ------ EDITOR ------
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.autoIndent": "advanced",
   "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
   "editor.folding": false,
@@ -12,9 +11,7 @@
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -23,12 +20,12 @@
   "editor.wordWrap": "off",
   "editor.wordWrapColumn": 100,
   // ------ WORKBENCH ------
+  "workbench.colorTheme": "GitHub Dark High Contrast",
   "workbench.editor.decorations.badges": true,
   "workbench.editor.decorations.colors": true,
   // Closing a tab selectes the neighboring tab, not one recently used.
   "workbench.editor.focusRecentEditorAfterClose": false,
   "workbench.editor.tabSizing": "shrink",
-
   "workbench.editor.wrapTabs": true,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
@@ -59,7 +56,7 @@
   // ------ OTHER ------
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "testExplorer.useNativeTesting": true,
+
   "hediet.vscode-drawio.resizeImages": null,
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.banner": "never",
@@ -78,9 +75,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "code-eol.color": "#444",
   "workbench.editor.empty.hint": "hidden",
-  "workbench.colorTheme": "GitHub Dark High Contrast",
   "workbench.activityBar.location": "hidden",
-  "rubyLsp.enableExperimentalFeatures": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.codeActionsOnSave": {},
   "editor.accessibilitySupport": "off",
@@ -101,5 +96,26 @@
     "*.sass": "sass"
   },
   "scm.experimental.showHistoryGraph": true,
-  "typescript.updateImportsOnFileMove.enabled": "never"
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "rubyLsp.featureFlags": {
+    "all": true
+  },
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "editor.multiCursorLimit": 20000,
+  "github.copilot.editor.enableCodeActions": false,
+  // Copilot
+  "inlineChat.lineNaturalLanguageHint": false,
+  "accessibility.verbosity.inlineChat": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "security.promptForLocalFileProtocolHandling": false,
+  "git.blame.editorDecoration.enabled": false,
+  "go.lintOnSave": "off",
+  "git.openRepositoryInParentFolders": "always",
+  "testing.followRunningTest": true,
+  "ruby-spec-runner.rspecCodeLensDebugPrompts": false,
+  "ruby-spec-runner.rspecCodeLensPrompts": false,
+  "ruby-spec-runner.minitestCodeLensPrompts": false,
+  "ruby-spec-runner.rubyDebugger": "Ruby LSP",
+  "editor.codeLens": false,
+  "editor.fontFamily": "'Hack Nerd Font Mono', Menlo, Monaco, monospace"
 }

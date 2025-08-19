@@ -8,9 +8,9 @@ success_symbol = "[❯](bold #FFAB91)[❯](bold #FFAB91)[❯](bold #FFAB91)"
 
 [directory]
 style = "bold yellow"
-read_only = 'READ ONLY YA'
+read_only = ' (read only)'
 truncation_length = 2
-truncation_symbol = "…/"
+truncation_symbol = "… "
 repo_root_style = "bold yellow"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 

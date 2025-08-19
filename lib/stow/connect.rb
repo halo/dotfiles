@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Dotfiles
+module Stow
   # Creates a Symlink
   class Connect
     def self.call(caption:, symlink_destination:, symlink_source:, force: false, copy: false)
