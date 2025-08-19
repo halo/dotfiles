@@ -6,11 +6,11 @@ module MacOS
       # end
 
       def self.get(key:)
-        Command.new('/usr/sbin/scutil', "--get", key).out
+        Command.new('/usr/sbin/scutil', '--get', key).out
       end
 
       def self.set(key:, value:)
-        Command::Sudo.new('/usr/sbin/scutil', "--set", key, value).out
+        Command::Sudo.new('/usr/sbin/scutil', '--set', key, value).out
       end
     end
   end

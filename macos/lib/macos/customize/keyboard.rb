@@ -16,18 +16,18 @@ module MacOS
         # Disable annoying shortcuts of specific applications
         set_shortcut caption: 'Hide Finder', keycode: '\0'
         set_shortcut caption: 'Hide Google Chrome', keycode: '\0'
-        set_shortcut caption: 'Hide iTerm2', keycode: '\0'
+        set_shortcut caption: 'Hide alacritty', keycode: '\0'
         set_shortcut caption: 'Hide Mail', keycode: '\0'
         set_shortcut caption: 'Hide Safari', keycode: '\0'
         set_shortcut caption: 'Hide Visual Studio Code', keycode: '\0'
 
         # Homogenious tabbing in all apps
-        set_shortcut caption: 'Next Tab', keycode: "~@→"
-        set_shortcut caption: 'Show Next Tab', keycode: "~@→"
-        set_shortcut caption: 'Select Next Tab', keycode: "~@→"
-        set_shortcut caption: 'Previous Tab', keycode: "~@←"
-        set_shortcut caption: 'Show Previous Tab', keycode: "~@←"
-        set_shortcut caption: 'Select Previous Tab', keycode: "~@←"
+        set_shortcut caption: 'Next Tab', keycode: '~@→'
+        set_shortcut caption: 'Show Next Tab', keycode: '~@→'
+        set_shortcut caption: 'Select Next Tab', keycode: '~@→'
+        set_shortcut caption: 'Previous Tab', keycode: '~@←'
+        set_shortcut caption: 'Show Previous Tab', keycode: '~@←'
+        set_shortcut caption: 'Select Previous Tab', keycode: '~@←'
 
         # Export in Quicktime and Pages
         # set_shortcut caption: 'Export To', keycode: "$@e"
@@ -35,13 +35,10 @@ module MacOS
 
         # Making Safari behave like Chrome in this respect
         # set_shortcut app: 'com.apple.Safari', caption: 'Clear History...', keycode: "$@⌫" # Does not work on Catalina
-        set_shortcut caption: 'Clear History...', keycode: "$@⌫"
+        set_shortcut caption: 'Clear History...', keycode: '$@⌫'
 
         # I use this feature in Preview very often but it has no shortcut
-        set_shortcut app: 'com.apple.Preview', caption: 'Adjust Size...', keycode: "$@r"
-
-        # I accidentally press CMD + Enter and I don't want it to go to fullscreen..
-        set_shortcut app: 'com.googlecode.iterm2', caption: 'Toggle Full Screen', keycode: '\0'
+        set_shortcut app: 'com.apple.Preview', caption: 'Adjust Size...', keycode: '$@r'
 
         system 'killall Finder' if @restart_finder && Runtime.apply_mode?
       end
