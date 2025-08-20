@@ -57,6 +57,12 @@ module Stow
       end
 
       directory = link.parent
+
+      if directory.symlink?
+        whisper "  Removing conflicting symlink `#{unexpand(directory)}`..."
+        directory.delete unless Dotfiles.dry?
+      end
+
       unless directory.exist?
         whisper "  Creating necessary directory `#{unexpand(directory)}`..."
         directory.mkpath unless Dotfiles.dry?
