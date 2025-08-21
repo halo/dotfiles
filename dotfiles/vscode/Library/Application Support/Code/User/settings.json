@@ -69,10 +69,6 @@
     ".sass-cache/": true
   },
   //
-  // ------ EXTENSION https://github.com/rubocop/vscode-rubocop ------
-  "rubocop.bundleCommandPath": "mise exec ruby -- bundle",
-  "rubocop.mode": "onlyRunGlobally",
-  //
   // ------ LANGUAGES ------
   "[ruby]": {
     "editor.defaultFormatter": "rubocop.vscode-rubocop",
@@ -83,6 +79,9 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
+  //
+  // ------ EXTENSION vscode-rubocop -------
+  "rubocop.mode": "onlyRunGlobally",
   //
   // ------ OTHER ------
   "diffEditor.ignoreTrimWhitespace": false,
