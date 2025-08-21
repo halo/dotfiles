@@ -2,16 +2,24 @@
   // ------ WINDOW ------
   "window.nativeTabs": true,
   "window.openFoldersInNewWindow": "on",
+  //
   // ------ EDITOR ------
+  "editor.codeLens": false,
+  "editor.fontFamily": "'Hack Nerd Font Mono', Menlo, Monaco, monospace",
   "editor.acceptSuggestionOnEnter": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.guides.indentation": false,
+  "editor.multiCursorLimit": 20000,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.includeStrings": false,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -19,6 +27,10 @@
   // But the default must be off, so I choose "off" here.
   "editor.wordWrap": "off",
   "editor.wordWrapColumn": 100,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.codeActionsOnSave": {},
+  "editor.accessibilitySupport": "off",
+  //
   // ------ WORKBENCH ------
   "workbench.colorTheme": "GitHub Dark High Contrast",
   "workbench.editor.decorations.badges": true,
@@ -30,10 +42,12 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
+  //
   // ------ EXPLORER ------
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
   "explorer.confirmUndo": "verbose",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
@@ -46,6 +60,7 @@
     "*_component.rb": "${capture}_component.*",
     "Gemfile": "Gemfile.lock"
   },
+  //
   // ------ FILES ------
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -53,35 +68,36 @@
     ".history/": true,
     ".sass-cache/": true
   },
-  // ------ OTHER ------
-  "diffEditor.ignoreTrimWhitespace": false,
-  "security.workspace.trust.untrustedFiles": "open",
-
-  "hediet.vscode-drawio.resizeImages": null,
-  "security.workspace.trust.startupPrompt": "never",
-  "security.workspace.trust.banner": "never",
-  "extensions.ignoreRecommendations": true,
-  "telemetry.telemetryLevel": "off",
+  //
+  // ------ EXTENSION https://github.com/rubocop/vscode-rubocop ------
+  "rubocop.bundleCommandPath": "mise exec ruby -- bundle",
+  "rubocop.mode": "onlyRunGlobally",
+  //
+  // ------ LANGUAGES ------
+  "[ruby]": {
+    "editor.defaultFormatter": "rubocop.vscode-rubocop",
+  },
   "[xml]": {
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp",
-	  "editor.formatOnSave": false
-  },
+  //
+  // ------ OTHER ------
+  "diffEditor.ignoreTrimWhitespace": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "hediet.vscode-drawio.resizeImages": null,
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.banner": "never",
+  "extensions.ignoreRecommendations": true,
+  "telemetry.telemetryLevel": "off",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "code-eol.color": "#444",
   "workbench.editor.empty.hint": "hidden",
   "workbench.activityBar.location": "hidden",
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "editor.codeActionsOnSave": {},
-  "editor.accessibilitySupport": "off",
   "workbench.layoutControl.enabled": false,
   "window.customTitleBarVisibility": "never",
-  "editor.unicodeHighlight.includeStrings": false,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
@@ -91,7 +107,6 @@
   "github.copilot.chat.localeOverride": "en",
   "github.copilot.chat.welcomeMessage": "never",
   "github.copilot.editor.enableAutoCompletions": true,
-  "explorer.confirmPasteNative": false,
   "files.associations": {
     "*.sass": "sass"
   },
@@ -101,21 +116,14 @@
     "all": true
   },
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "editor.multiCursorLimit": 20000,
   "github.copilot.editor.enableCodeActions": false,
   // Copilot
   "inlineChat.lineNaturalLanguageHint": false,
   "accessibility.verbosity.inlineChat": false,
-  "editor.unicodeHighlight.invisibleCharacters": false,
   "security.promptForLocalFileProtocolHandling": false,
   "git.blame.editorDecoration.enabled": false,
   "go.lintOnSave": "off",
   "git.openRepositoryInParentFolders": "always",
   "testing.followRunningTest": true,
-  "ruby-spec-runner.rspecCodeLensDebugPrompts": false,
-  "ruby-spec-runner.rspecCodeLensPrompts": false,
-  "ruby-spec-runner.minitestCodeLensPrompts": false,
-  "ruby-spec-runner.rubyDebugger": "Ruby LSP",
-  "editor.codeLens": false,
-  "editor.fontFamily": "'Hack Nerd Font Mono', Menlo, Monaco, monospace"
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
