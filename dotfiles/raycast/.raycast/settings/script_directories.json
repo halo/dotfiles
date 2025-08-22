@@ -1,0 +1,11 @@
+{
+  "builtin_package_scriptCommands" : {
+    "provider_schemaVersion" : 1,
+    "scriptCommandsDirectories" : [
+      "~\/Desktop",
+      "~\/.raycast\/scripts",
+      "~\/Code\/raycast\/scripts"
+    ]
+  },
+  "raycast_version" : "1.74.1"
+}
