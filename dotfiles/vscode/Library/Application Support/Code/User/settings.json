@@ -1,5 +1,6 @@
 {
   // ------ WINDOW ------
+  // I feel better when the Title Bar looks like every other.
   "window.nativeTabs": true,
   "window.openFoldersInNewWindow": "on",
   //
@@ -57,8 +58,7 @@
     "*.tsx": "${capture}.ts",
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock",
-    "*_component.rb": "${capture}_component.*",
-    "Gemfile": "Gemfile.lock"
+    "*_component.rb": "${capture}_component.*"
   },
   //
   // ------ FILES ------
@@ -82,6 +82,13 @@
   //
   // ------ EXTENSION vscode-rubocop -------
   "rubocop.mode": "onlyRunGlobally",
+  // Somehow this activates "Format on save". So let's disable it.
+  "rubocop.autocorrect": false,
+  //
+  // ------ EXTENSION streetsidesoftware.code-spell-checker -------
+    "cSpell.enabledFileTypes": {
+    "*": false
+  },
   //
   // ------ OTHER ------
   "diffEditor.ignoreTrimWhitespace": false,
