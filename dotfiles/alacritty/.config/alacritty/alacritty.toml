@@ -19,4 +19,4 @@ bindings = [
 [[hints.enabled]]
 regex = "[a-zA-Z0-9/\\-_\\.]+(:\\d+)(:\\d*)?"
 command = { program = "code", args = [ "--goto" ] }
-mouse = { enabled = true }
+mouse = { enabled = true, mods = "Command" }
