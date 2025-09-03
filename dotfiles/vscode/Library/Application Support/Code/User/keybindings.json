@@ -122,5 +122,9 @@
     "key": "ctrl+cmd+r",
     "command": "testing.runAtCursor",
     "when": "editorTextFocus && resourceFilename =~ /.*(test|spec)\\.\\w+$/"
+  },
+  {
+    "key": "cmd+i",
+    "command": "rubocop.formatAutocorrects"
   }
 ]

@@ -62,6 +62,10 @@
   },
   //
   // ------ FILES ------
+  "files.associations": {
+    "*.sass": "sass",
+    "*.001": "fsharp" // Hack to support automatic CP850 encoding for Datanorm files.
+  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.exclude": {
@@ -70,6 +74,9 @@
   },
   //
   // ------ LANGUAGES ------
+  "[fsharp]": {
+    "files.encoding": "cp850"
+  },
   "[ruby]": {
     "editor.defaultFormatter": "rubocop.vscode-rubocop",
   },
@@ -86,7 +93,7 @@
   "rubocop.autocorrect": false,
   //
   // ------ EXTENSION streetsidesoftware.code-spell-checker -------
-    "cSpell.enabledFileTypes": {
+  "cSpell.enabledFileTypes": {
     "*": false
   },
   //
@@ -113,9 +120,6 @@
   "github.copilot.chat.localeOverride": "en",
   "github.copilot.chat.welcomeMessage": "never",
   "github.copilot.editor.enableAutoCompletions": true,
-  "files.associations": {
-    "*.sass": "sass"
-  },
   "scm.experimental.showHistoryGraph": true,
   "typescript.updateImportsOnFileMove.enabled": "never",
   "rubyLsp.featureFlags": {
