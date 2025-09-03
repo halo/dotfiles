@@ -1,6 +1,11 @@
+# Insert a blank line between shell prompts
 add_newline = true
+
 command_timeout = 200
 format = "[$username]($username_style)[$directory$git_branch]($style)$character"
+
+# On the right of the prompt, show how long a long command took to execute.
+right_format = "$cmd_duration"
 
 [character]
 error_symbol = "[×](bold red)"
@@ -15,7 +20,7 @@ repo_root_style = "bold yellow"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-format = "[$branch]($style) "
+format = " [$branch]($style) "
 style = "bold"
 
 [username]
@@ -24,3 +29,10 @@ disabled = false
 style_root = 'bold cyan'
 show_always = true
 aliases = { "admin" = "ADMIN ", "orange" = "" }
+
+# Test this with `sleep 3`
+[cmd_duration]
+disabled = false
+min_time = 2_000
+format = "[Took $duration ]($style)"
+style = "white"
