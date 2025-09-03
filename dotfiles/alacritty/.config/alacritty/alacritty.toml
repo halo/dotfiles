@@ -1,5 +1,3 @@
-general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
-
 [env]
 TERM = "xterm-256color"
 
@@ -14,27 +12,11 @@ padding.x = 14
 padding.y = 14
 
 [keyboard]
-# bindings = [
-#   { key = "Left", mods = "Alt", chars = "\u001BB" }, # Move backward one word
-#   { key = "Right", mods = "Alt", chars = "\u001BF" }, # Move forward one word
-#   # { key = "Left", mods = "Command", chars = "\u001B[1" }, # Move to beginning of line
+bindings = [
+  { mods = "Command", key = "N", action = "CreateNewWindow" }
+]
 
-#   # { key = "Right", mods = "Command", chars = "\u001B[F" }, # Cmd + → (Move to end of line)
-#   # { key = "G", mods = "Command", mode = "Search", chars = "\u001BB" },    # Cmd + ↑ (Previous word in search)
-#   # { key = "Down", mods = "Command", mode = "Search", chars = "\u001BF" },  # Cmd + ↓ (Next word in search)
-# ]
-
-# #   { key = "D", mods = "Alt", chars = "\u001BD" },  # Alt + D (Delete the word after the cursor)
-# #   { key = "Backspace", mods = "Alt", chars = "\u001B\u007F" },  # Alt + Backspace (Delete word before cursor)
-# #   { key = "U", mods = "Alt", chars = "\u001BU" },  # Alt + U (Uppercase from cursor to end of word)
-# #   { key = "L", mods = "Alt", chars = "\u001BL" },  # Alt + L (Lowercase from cursor to end of word)
-# #   { key = "C", mods = "Alt", chars = "\u001BC" },  # Alt + C (Capitalize the current word)
-# #   { key = ".", mods = "Alt", chars = "\u001B." },  # Alt + . (Insert the last argument of previous command)
-# #   { key = "Y", mods = "Alt", chars = "\u001BY" },  # Alt + Y (Yank the top of the kill-ring)
-# #   { key = "/", mods = "Alt", chars = "\u001B/" },  # Alt + / (Attempt completion)
-# #   { key = "T", mods = "Alt", chars = "\u001BT" },  # Alt + T (Transpose the words around cursor)
-# #   { key = "R", mods = "Alt", chars = "\u001BR" },  # Alt + R (Recall the last command that matches input)
-# #   { key = "N", mods = "Alt", chars = "\u001BN" },  # Alt + N (Search forward through history)
-# #   { key = "P", mods = "Alt", chars = "\u001BP" },  # Alt + P (Search backward through history)
-# #   { key = "Q", mods = "Alt", chars = "\u001BQ" }   # Alt + Q (Not a standard bash shortcut, customizable)
-# # ]
+[[hints.enabled]]
+regex = "[a-zA-Z0-9/\\-_\\.]+(:\\d+)(:\\d*)?"
+command = { program = "code", args = [ "--goto" ] }
+mouse = { enabled = true }
