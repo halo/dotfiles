@@ -1,11 +1,7 @@
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.3
-
-# I keep the length as short as possible without having too much pain.
-# 80 is too much pain, but many disagree.
-Layout/LineLength:
-  Max: 100
+  TargetRubyVersion: 3.4
+  SuggestExtensions: false
 
 # Automatically add frozen string safety comments.
 Style/FrozenStringLiteralComment:
