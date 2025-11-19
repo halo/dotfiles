@@ -21,7 +21,7 @@
     "command": "workbench.action.openEditorAtIndex5"
   },
   // Prettify document with `Command + i`
-  // `i` stands for indentation in my world :)
+  // `i` stands for indentation
   {
     "key": "cmd+i",
     "command": "editor.action.formatDocument",
@@ -122,9 +122,5 @@
     "key": "ctrl+cmd+r",
     "command": "testing.runAtCursor",
     "when": "editorTextFocus && resourceFilename =~ /.*(test|spec)\\.\\w+$/"
-  },
-  {
-    "key": "cmd+i",
-    "command": "rubocop.formatAutocorrects"
   }
 ]
