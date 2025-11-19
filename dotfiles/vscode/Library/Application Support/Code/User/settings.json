@@ -12,10 +12,10 @@
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.guides.indentation": false,
+  "editor.minimap.enabled": false,
   "editor.multiCursorLimit": 20000,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.unicodeHighlight.includeStrings": false,
-  "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "all",
   "editor.rulers": [
@@ -64,7 +64,8 @@
   // ------ FILES ------
   "files.associations": {
     "*.sass": "sass",
-    "*.001": "fsharp" // Hack to support automatic CP850 encoding for Datanorm files.
+    // Hack to support automatic CP850 encoding for Datanorm files.
+    "*.001": "fsharp"
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -74,30 +75,34 @@
   },
   //
   // ------ LANGUAGES ------
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "[fsharp]": {
     "files.encoding": "cp850"
   },
   "[ruby]": {
-    "editor.defaultFormatter": "rubocop.vscode-rubocop",
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": false,
   },
   "[xml]": {
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
+  // ------ EXTENSION shopify.ruby-lsp -------
+  "rubyLsp.formatter": "rubocop_internal",
+  "rubyLsp.enabledFeatures": {
+    "rails": false // Don't try to run spring
   },
-  //
-  // ------ EXTENSION vscode-rubocop -------
-  "rubocop.mode": "onlyRunGlobally",
-  // Somehow this activates "Format on save". So let's disable it.
-  "rubocop.autocorrect": false,
-  //
   // ------ EXTENSION streetsidesoftware.code-spell-checker -------
   "cSpell.enabledFileTypes": {
     "*": false
   },
   //
+  // ------ UPDATE ------
+  "update.showReleaseNotes": false,
+  "update.mode": "start",
   // ------ OTHER ------
+  // "rubocop.formatAutocorrects": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
   "hediet.vscode-drawio.resizeImages": null,
@@ -118,14 +123,10 @@
     "scminput": false
   },
   "github.copilot.chat.localeOverride": "en",
-  "github.copilot.chat.welcomeMessage": "never",
-  "github.copilot.editor.enableAutoCompletions": true,
-  "scm.experimental.showHistoryGraph": true,
   "typescript.updateImportsOnFileMove.enabled": "never",
-  "rubyLsp.featureFlags": {
-    "all": true
-  },
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  // "rubyLsp.featureFlags": {
+  //   "all": true
+  // },
   "github.copilot.editor.enableCodeActions": false,
   // Copilot
   "inlineChat.lineNaturalLanguageHint": false,
@@ -135,5 +136,5 @@
   "go.lintOnSave": "off",
   "git.openRepositoryInParentFolders": "always",
   "testing.followRunningTest": true,
-  "terminal.integrated.defaultProfile.osx": "zsh"
+  "terminal.integrated.defaultProfile.osx": "zsh",
 }
