@@ -27,6 +27,11 @@
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
   },
+  {
+    "key": "cmd+i",
+    "command": "standard.executeAutofix",
+    "when": "editorTextFocus && editorLangId =~ /javascript|javascriptreact/"
+  },
   // By default this selects the next match of the selected word.
   // But I really need `Command + d` to mean "duplicate" as everywhere else in macOS.
   {

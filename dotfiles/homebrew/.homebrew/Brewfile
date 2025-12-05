@@ -1,0 +1,43 @@
+# brew bundle install --file ~/.homebrew/Brewfile
+# brew bundle check --global
+
+# ----------------
+# Ruby Compilation
+# ----------------
+
+# Dependencies for compiling Ruby with `ruby-build`
+# See https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+brew 'autoconf'
+brew 'gmp'
+brew 'libyaml'
+brew 'openssl'
+brew 'readline'
+
+# -----------------------
+# Ruby Version Management
+# -----------------------
+
+brew 'ruby-build' # Ruby Installation Helper
+brew 'mise' # Ruby Version Manager
+
+# ----------------
+# Shell Essentials
+# ----------------
+
+brew 'autojump' # Shell extension to jump to frequently used directories
+brew 'btop' # Show CPU/RAM usage
+brew 'eza' # Modern, maintained replacement for ls
+
+# -----------------
+# Development Tools
+# -----------------
+#
+brew 'zbarimg' # Decode QR code from image file
+brew 'git-delta' # Better git diff
+brew 'bat' # Better cat (needed by git-delta for themes)
+
+# -----------
+# MacOS Tools
+# -----------
+
+brew 'smudge/smudge/nightlight' # A CLI for configuring 'Night Shift' on macOS

@@ -124,9 +124,6 @@
   },
   "github.copilot.chat.localeOverride": "en",
   "typescript.updateImportsOnFileMove.enabled": "never",
-  // "rubyLsp.featureFlags": {
-  //   "all": true
-  // },
   "github.copilot.editor.enableCodeActions": false,
   // Copilot
   "inlineChat.lineNaturalLanguageHint": false,

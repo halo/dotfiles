@@ -22,12 +22,3 @@ Run `macos` to configure the operating system defaults.
 Use `.zshenv.local` for local overrrides that aren't commited to this repository.
 
 ### Caveats
-
-```bash
-export PATH=/opt/homebrew/bin:$PATH
-rbenv install 3.3.0
-eval "$(rbenv init - zsh)"
-rbenv global 3.3.0
-rbenv shell 3.3.0
-~/.dotfiles/bin/dotfiles
-```

@@ -1,23 +1,20 @@
-# Start Guard.
-# See https://github.com/guard/guard
-alias g='bundle exec guard'
 
-# Ruby on Rails shortcuts.
-alias r='bin/rails'
-alias rst='touch tmp/restart.txt > /dev/null; bin/spring stop > /dev/null && echo Application restarted.'
 
-alias rr='bin/rails routes | grep '
-
+# Database
 alias mig='bundle exec rake db:migrate'
-alias rol='bundle exec rake db:rollback'
-
 alias tmig='RAILS_ENV=test bundle exec rake db:migrate'
+alias rol='bundle exec rake db:rollback'
 alias trol='RAILS_ENV=test bundle exec rake db:rollback'
 alias prep='RAILS_ENV=test bundle exec rake db:environment:set; RAILS_ENV=test bundle exec rake db:test:prepare'
 
+# Logs
 alias tdev='tail -n 90 -f log/development.log'
 alias ttest='tail -n 90 -f log/test.log'
 alias tdemo='tail -n 90 -f log/demo.log'
 
-# Heroku shortcuts.
-alias h='heroku'
+
+
+# Not so sure about these any more
+alias rst='touch tmp/restart.txt &> /dev/null; bin/spring stop &> /dev/null && echo Application restarted.'
+
+alias rr='bin/rails routes | grep '

@@ -1,3 +1,10 @@
+
+
+# Databases
+alias pg18='docker compose --file ~/code/2-areas/databases/docker-compose.yml up postgres18'
+alias redis='docker compose --file ~/code/2-areas/databases/docker-compose.yml up redis'
+
+
 alias switch='heroku accounts:set'
 
 # Allow URI schemes to be pasted without need for escaping
@@ -26,14 +33,12 @@ function o {
   fi
 }
 
-# Convenience shortcut to open xcode project in current folder
-alias xc='open *.xcodeproj'
+
 
 alias hosts='sudo code --new-window /etc/hosts'
 alias sshconf='code --new-window ~/.ssh/config'
-alias keys="open ~/.ssh"
 alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
-alias qr="zbarimg --raw"
+
 
 # Single command: `code --install-extension alpha --install-extension beta ...``
 alias vsextensions="code --force $(cat ~/.vscode/Extensionsfile | sed 's/^/--install-extension /')"

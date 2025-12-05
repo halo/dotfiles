@@ -1,10 +1,11 @@
+
 alias reload='(source /Users/orange/.zshrc && echo "sourced /Users/orange/.zshrc") || echo "Could not source /Users/orange/.zshrc"'
 alias la='ls -lAh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls -G'  # Colors on macOS
-alias night='pmset sleepnow'
+# alias night='pmset sleepnow'
 
 ddump () {
    defaults read > /tmp/dump1
@@ -34,3 +35,4 @@ bindkey "^[[1;3C" forward-word        # Option + Right Arrow
 bindkey "^[[3;10~" backward-kill-word # Option + Delete
 bindkey "^[[3;3~" kill-word           # Option + fn + Delete
 
+TLDR_AUTO_UPDATE_DISABLED=1
