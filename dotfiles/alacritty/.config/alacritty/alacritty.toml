@@ -10,13 +10,18 @@ size = 12
 [window]
 padding.x = 14
 padding.y = 14
+# Cannot use "Both" because that breaks alt+number keys such as |
+option_as_alt = 'OnlyRight'
 
 [keyboard]
 bindings = [
-  { mods = "Command", key = "N", action = "CreateNewWindow" }
+  { mods = "Command", key = "Comma", command = { program = '/usr/bin/open', args = ["/Users/orange/.config/alacritty/alacritty.toml"] } },
+  { mods = "Command|Shift", key = "K", action = "ClearHistory" },
+  { mods = "Command|Shift", key = "E", command = "/Users/orange/.config/alacritty/reset" },
+  { mods = "Command", key = "N", action = "CreateNewWindow" },
 ]
 
 [[hints.enabled]]
-regex = "[a-zA-Z0-9/\\-_\\.]+(:\\d+)(:\\d*)?"
+regex = "[@a-zA-Z0-9/\\-_\\.]+(:\\d+)?(:\\d*)?"
 command = { program = "code", args = [ "--goto" ] }
 mouse = { enabled = true, mods = "Command" }
