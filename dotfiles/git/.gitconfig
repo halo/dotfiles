@@ -25,6 +25,8 @@
   editor = code --wait
   hooksPath = ~/.githooks
   attributesfile = ~/.gitattributes
+  # See https://github.com/dandavison/delta
+  pager = delta
 
 [diff]
   # Experimental and slow, but more readable
@@ -42,3 +44,26 @@
 
 [user]
   # Keep user configuration local to each repo to avoid mistakes.
+
+# See https://github.com/dandavison/delta
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictStyle = zdiff3
+
+[delta]
+  line-numbers = false
+  features = tweaks
+
+[delta "tweaks"]
+  # Clean file path styling
+  file-style = bold blue
+  file-decoration-style = ol
+  # Don't show class/module of the modified section
+  hunk-header-style = omit
+  # No syntax highlight while in red/green diff mode
+  syntax-theme = none
+  # Highlighting (emph) only the word that changed, not the whole line
+  minus-non-emph-style = normal
+  plus-non-emph-style = normal

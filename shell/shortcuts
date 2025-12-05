@@ -1,0 +1,50 @@
+# Global
+alias b='bundle'
+alias d='docker'
+alias h='heroku'
+alias m='megatest'
+alias p='pnpm'
+alias r='rails'
+
+# Convenience shortcut to open xcode project in current folder
+alias xc='open *.xcodeproj'
+
+# Decode QR code from file
+alias qr="zbarimg --raw"
+
+# ---
+# Git
+# ---
+
+alias ga='git add --all'
+alias gam="git commit --amend"
+alias gb="git branch"
+alias gc="git commit -v"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gcp="git cherry-pick -x"
+alias gg='git grep'
+alias gm='git merge'
+alias gp='git push'
+alias gpp='git pull --rebase && git push'
+alias gr='git remote'
+alias gs="git status -sb"
+alias gu='git unstage'
+
+gd()  { git diff "$@" | delta }
+gdc() { git diff --cached "$@" | delta }
+
+# function gd {
+#   # What's changed but not been added? Accepts a subpath as argument.
+#   git diff --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
+# }
+
+# function gdc {
+#   # What's added but not yet committed? Accepts a subpath as argument.
+#   git diff --cached --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
+# }
+
+# Create a branch and check it out
+function gbo {
+  git branch $1 && git checkout $1
+}

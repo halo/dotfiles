@@ -1,39 +1,12 @@
-alias ga='git add --all'
-alias gam="git commit --amend"
-alias gb="git branch"
-alias gc="git commit -v"
-alias gco="git checkout"
-alias gcom="git checkout master"
-alias gcp="git cherry-pick"
+
 
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 # See https://github.com/holman/dotfiles/blob/7b8b643640e636d499fc4eaaf4de57d5bd8c2261/git/aliases.zsh#L14-L15
 
-alias gg='git grep'
 alias gl="git pull --rebase --prune && git cut"
-alias gm='git merge'
-alias gp='git push'
-alias gpp='git pull --rebase && git push'
-alias gpo='git push origin'
-alias gr='git remote show origin'
-alias gs="git status -sb"
+
 alias gt='git tag'
-alias gu='git unstage'
 alias glg='git lg'
-
-function gbo {
-  git branch $1 && git checkout $1
-}
-
-function gd {
-  # What's changed but not been added?
-  git diff --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
-}
-
-function gdc {
-  # What's added but not yet committed?
-  git diff --cached --color $1 | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r
-}
 
 function guser {
   if [ -z "$1" ]
