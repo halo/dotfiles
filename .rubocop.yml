@@ -1,4 +1,5 @@
 AllCops:
+  DisplayCopNames: true
   NewCops: enable
   TargetRubyVersion: 3.4
   SuggestExtensions: false
@@ -6,3 +7,14 @@ AllCops:
 # Automatically add frozen string safety comments.
 Style/FrozenStringLiteralComment:
   SafeAutoCorrect: true
+
+# Verify class macro name order
+# Disabled by default
+# See https://docs.rubocop.org/rubocop/cops_layout.html#layoutclassstructure
+Layout/ClassStructure:
+  Enabled: true
+
+# Avoid warnings in Ruby 3.3
+# I never used `it` unintentionally. I want it to refer to the first block argument.
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: false
