@@ -19,6 +19,9 @@ bindings = [
   { mods = "Command|Shift", key = "K", action = "ClearHistory" },
   { mods = "Command|Shift", key = "E", command = "/Users/orange/.config/alacritty/reset" },
   { mods = "Command", key = "N", action = "CreateNewWindow" },
+  { mods = "Shift", key = "Return", chars = "\n" },
+  { key = "Left", mods = "Command|Alt", action = "SelectPreviousTab" },
+  { key = "Right", mods = "Command|Alt", action = "SelectNextTab" }
 ]
 
 [[hints.enabled]]
