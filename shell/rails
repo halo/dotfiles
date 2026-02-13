@@ -8,6 +8,7 @@ alias trol='RAILS_ENV=test bundle exec rake db:rollback'
 alias prep='RAILS_ENV=test bundle exec rake db:environment:set; RAILS_ENV=test bundle exec rake db:test:prepare'
 
 # Logs
+alias tt='clear; tail -q -n 0 -f log/test.log log/development.log test/dummy/log/test.log test/dummy/log/development.log'
 alias tdev='tail -n 90 -f log/development.log'
 alias ttest='tail -n 90 -f log/test.log'
 alias tdemo='tail -n 90 -f log/demo.log'

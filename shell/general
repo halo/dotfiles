@@ -1,8 +1,10 @@
 
 
 # Databases
+alias dock="docker compose --file ~/code/2-areas/databases/docker-compose.yml up"
 alias pg18='docker compose --file ~/code/2-areas/databases/docker-compose.yml up postgres18'
 alias redis='docker compose --file ~/code/2-areas/databases/docker-compose.yml up redis'
+alias meili='docker compose --file ~/code/2-areas/databases/docker-compose.yml up meilisearch meilisearch-test'
 
 
 alias switch='heroku accounts:set'
@@ -70,6 +72,7 @@ function repeat {
 export EDITOR='code'
 export HISTCONTROL=erasedups
 export GOPATH=/Users/orange/.go
+export TLDR_AUTO_UPDATE_DISABLED=1
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
