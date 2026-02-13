@@ -134,4 +134,7 @@
   "git.openRepositoryInParentFolders": "always",
   "testing.followRunningTest": true,
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
 }
