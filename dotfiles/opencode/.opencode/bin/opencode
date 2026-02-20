@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+script_path = Pathname.new(__dir__).realpath.parent
+workspace_path = Dir.pwd
+
+dangerous_paths = %w[
+  /Users/orange
+  /Users/orange/
+]
+
+if dangerous_paths.include?(workspace_path)
+  puts "Refusing to open path `#{workspace_path}`"
+  exit 98
+end
+
+dangerous_prefixes = %w[
+  /Users/orange/.
+]
+
+if dangerous_prefixes.any? { workspace_path.start_with?(it) }
+  puts "Refusing to open prefix `#{workspace_path}`"
+  exit 99
+end
+
+Dir.chdir(script_path) do
+  puts "Building Image..."
+  system('docker', 'build', '.', '-t', 'opencode-sandbox') if ARGV.include?('--build')
+
+  puts "Mounting #{workspace_path}"
+  env = { 'PWD' => workspace_path }
+  system env, 'docker-compose', 'down'
+  system env, 'docker-compose', 'up', '-d'
+end
+
+if ARGV.include?('shell') ||  ARGV.include?('sh')
+  exec('docker', 'exec', '-it', 'opencode-sandbox', 'bash')
+else
+  puts "Running opencode"
+  exec('docker', 'exec', '-it', 'opencode-sandbox', 'opencode', *args)
+end

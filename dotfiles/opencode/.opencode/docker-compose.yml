@@ -1,0 +1,42 @@
+services:
+  opencode:
+    build: .
+    image: opencode-sandbox:latest
+    container_name: opencode-sandbox
+
+    # Needed to be able to type input as in regular TTY
+    stdin_open: true
+    tty: true
+
+    volumes:
+      # Read-write current working directory
+      - ${PWD}:/workspace:rw
+
+      # OpenCode Data
+      - ./home:/home/opencode:rw
+
+    # So that the agent finds the current project
+    working_dir: /workspace
+
+    # So that opencode finds its configuration files
+    environment:
+      - HOME=/home/opencode
+
+    networks:
+      - opencode-net
+
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+    read_only: false
+
+    restart: unless-stopped
+
+networks:
+  opencode-net:
+    driver: bridge
