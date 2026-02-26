@@ -1,4 +1,0 @@
-alias br='bundle exec rspec'
-alias bru='UNIT=1 bundle exec rspec'
-alias brn='bundle exec rspec --next-failure'
-alias brun='UNIT=1 bundle exec rspec --next-failure'

@@ -1,12 +1,5 @@
-
-
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 # See https://github.com/holman/dotfiles/blob/7b8b643640e636d499fc4eaaf4de57d5bd8c2261/git/aliases.zsh#L14-L15
-
-alias gl="git pull --rebase --prune && git cut"
-
-alias gt='git tag'
-alias glg='git lg'
 
 function guser {
   if [ -z "$1" ]

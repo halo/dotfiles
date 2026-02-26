@@ -1,12 +1,3 @@
-
-alias reload='(source /Users/orange/.zshrc && echo "sourced /Users/orange/.zshrc") || echo "Could not source /Users/orange/.zshrc"'
-alias la='ls -lAh'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias ls='ls -G'  # Colors on macOS
-# alias night='pmset sleepnow'
-
 ddump () {
    defaults read > /tmp/dump1
    printf "OK, do something! "
@@ -22,10 +13,6 @@ ddump () {
    echo
    diff /tmp/dump1 /tmp/dump2
 }
-
-alias ls='eza -l --group-directories-first --octal-permissions --icons --smart-group'
-alias la='ls --all'
-
 
 # See https://github.com/alacritty/alacritty/issues/7687#issuecomment-2235981498
 bindkey "^[[1;9D" beginning-of-line   # Cmd + Left Arrow

@@ -11,13 +11,13 @@ source $HOME/.dotfiles/shell/general
 source $HOME/.dotfiles/shell/git
 source $HOME/.dotfiles/shell/history
 source $HOME/.dotfiles/shell/homebrew
-source $HOME/.dotfiles/shell/media
 source $HOME/.dotfiles/shell/prompt
-source $HOME/.dotfiles/shell/rails
 source $HOME/.dotfiles/shell/mise
-source $HOME/.dotfiles/shell/rspec
 source $HOME/.dotfiles/shell/ruby
 source $HOME/.dotfiles/shell/shell
+
+# Aliases (aggregated)
+source $HOME/.dotfiles/shell/aliases
 
 # User Paths
 # export PATH="$PATH:$HOME/.local/share/mise/shims"

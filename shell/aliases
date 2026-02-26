@@ -1,0 +1,107 @@
+# Shell aliases aggregated from ./shell directory
+# Source this file in your shell to load all aliases
+# Sorted by precedence/importance
+
+# ───────────────────────────────────────────────────────────────
+# NAVIGATION
+# ───────────────────────────────────────────────────────────────
+alias ls='eza -l --group-directories-first --octal-permissions --icons --smart-group'
+alias la='ls --all'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# ───────────────────────────────────────────────────────────────
+# ONE-LETTER SHORTCUTS
+# ───────────────────────────────────────────────────────────────
+alias b='bundle'
+alias d='docker'
+alias h='heroku'
+alias m='megatest'
+alias p='pnpm'
+alias r='rails'
+
+# ───────────────────────────────────────────────────────────────
+# GIT
+# ───────────────────────────────────────────────────────────────
+alias gs="git status -sb"
+alias ga='git add --all'
+alias gc="git commit -v"
+alias gam="git commit --amend"
+alias gp='git push'
+alias gpp='git pull --rebase && git push'
+alias gl="git pull --rebase --prune && git cut"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gb="git branch"
+alias gg='git grep'
+alias gm='git merge'
+alias gr='git remote'
+alias gt='git tag'
+alias glg='git lg'
+alias gcp="git cherry-pick -x"
+alias gu='git unstage'
+
+# ───────────────────────────────────────────────────────────────
+# RUBY/RAILS
+# ───────────────────────────────────────────────────────────────
+alias be='bundle exec'
+alias bo='bundle open'
+alias bu='bundle update'
+alias mig='bundle exec rake db:migrate'
+alias tmig='RAILS_ENV=test bundle exec rake db:migrate'
+alias rol='bundle exec rake db:rollback'
+alias trol='RAILS_ENV=test bundle exec rake db:rollback'
+alias prep='RAILS_ENV=test bundle exec rake db:environment:set; RAILS_ENV=test bundle exec rake db:test:prepare'
+alias rr='bin/rails routes | grep '
+alias rst='touch tmp/restart.txt &> /dev/null; bin/spring stop &> /dev/null && echo Application restarted.'
+
+# ───────────────────────────────────────────────────────────────
+# RSPEC
+# ───────────────────────────────────────────────────────────────
+alias br='bundle exec rspec'
+alias bru='UNIT=1 bundle exec rspec'
+alias brn='bundle exec rspec --next-failure'
+alias brun='UNIT=1 bundle exec rspec --next-failure'
+
+# ───────────────────────────────────────────────────────────────
+# LOG TAILING
+# ───────────────────────────────────────────────────────────────
+alias tdev='tail -n 90 -f log/development.log'
+alias ttest='tail -n 90 -f log/test.log'
+alias tdemo='tail -n 90 -f log/demo.log'
+alias tt='clear; tail -q -n 0 -f log/test.log log/development.log test/dummy/log/test.log test/dummy/log/development.log'
+
+# ───────────────────────────────────────────────────────────────
+# DOCKER
+# ───────────────────────────────────────────────────────────────
+alias dock="docker compose --file ~/code/2-areas/databases/docker-compose.yml up"
+alias pg18='docker compose --file ~/code/2-areas/databases/docker-compose.yml up postgres18'
+alias redis='docker compose --file ~/code/2-areas/databases/docker-compose.yml up redis'
+alias meili='docker compose --file ~/code/2-areas/databases/docker-compose.yml up meilisearch meilisearch-test'
+
+# ───────────────────────────────────────────────────────────────
+# SYSTEM
+# ───────────────────────────────────────────────────────────────
+alias reload='(source /Users/orange/.zshrc && echo "sourced /Users/orange/.zshrc") || echo "Could not source /Users/orange/.zshrc"'
+alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo 'Offline :('"
+alias hosts='sudo code --new-window /etc/hosts'
+alias sshconf='code --new-window ~/.ssh/config'
+alias vsextensions="code --force $(cat ~/.vscode/Extensionsfile | sed 's/^/--install-extension /')"
+
+# ───────────────────────────────────────────────────────────────
+# HEROKU
+# ───────────────────────────────────────────────────────────────
+alias switch='heroku accounts:set'
+
+# ───────────────────────────────────────────────────────────────
+# MEDIA
+# ───────────────────────────────────────────────────────────────
+alias ya='yt-dlp --format bestaudio --extract-audio  --audio-quality 0 --output "%(autonumber)d - %(artist)s - %(title)s [%(id)s].%(ext)s" "URL"'
+alias yv='yt-dlp --format-sort "ext"'
+
+# ───────────────────────────────────────────────────────────────
+# MISC
+# ───────────────────────────────────────────────────────────────
+alias xc='open *.xcodeproj'
+alias qr="zbarimg --raw"

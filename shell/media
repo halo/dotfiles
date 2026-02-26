@@ -1,2 +1,0 @@
-alias ya='yt-dlp --format bestaudio --extract-audio  --audio-quality 0 --output "%(autonumber)d - %(artist)s - %(title)s [%(id)s].%(ext)s" "URL"'
-alias yv='yt-dlp --format-sort "ext"'
