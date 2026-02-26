@@ -73,6 +73,7 @@ export EDITOR='code'
 export HISTCONTROL=erasedups
 export GOPATH=/Users/orange/.go
 export TLDR_AUTO_UPDATE_DISABLED=1
+export MISE_RUBY_COMPILE=false
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh

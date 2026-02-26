@@ -3,7 +3,6 @@
 # After that it loads every personal file in `cat /etc/paths.d/*` (never overwritten by OS updates)
 
 alias paths="echo; echo \$PATH | tr ':' '\n'; echo"
-alias oc=opencode
 
 # Shell
 source $HOME/.dotfiles/shell/autocompletion
@@ -12,7 +11,6 @@ source $HOME/.dotfiles/shell/general
 source $HOME/.dotfiles/shell/git
 source $HOME/.dotfiles/shell/history
 source $HOME/.dotfiles/shell/homebrew
-source $HOME/.dotfiles/shell/hooks
 source $HOME/.dotfiles/shell/media
 source $HOME/.dotfiles/shell/prompt
 source $HOME/.dotfiles/shell/rails
@@ -28,7 +26,7 @@ export PATH="$PATH:$HOME/.dotfiles/git/bin"
 export PATH="$PATH:$HOME/.dotfiles/macos/bin"
 export PATH="$PATH:$HOME/code/filing/filing/bin"
 export PATH="$PATH:$HOME/.go/bin"
-export PATH="$PATH:$HOME/.opencode/bin"
+export PATH="$PATH:$HOME/.agents/bin"
 
 # Local bin directory takes highest precedence
 # Being careful as to when a bin directory is around I don't know the contents of :)
