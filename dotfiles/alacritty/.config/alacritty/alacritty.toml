@@ -25,6 +25,15 @@ bindings = [
 ]
 
 [[hints.enabled]]
-regex = "[@a-zA-Z0-9/\\-_\\.]+(:\\d+)?(:\\d*)?"
-command = { program = "code", args = [ "--goto" ] }
+# ( |^)                     start with space OR new line
+# (\\./\\.|\\./|[^ /]+/)    start with ./ OR ../ OR something/
+# [^ :]+                    anything not space and not colon
+# then anything that is not a space
+regex = "( |^)(./|../|app/|[^ /]+/)[^ ]+"
+command = { program = "/opt/homebrew/bin/code", args = [ "--goto"] }
 mouse = { enabled = true, mods = "Command" }
+
+[[hints.enabled]]
+hyperlinks = true
+mouse = { enabled = true, mods = "Command" }
+command = { program = "/usr/bin/open", args = ["$0"] }
