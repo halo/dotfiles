@@ -1,18 +1,4 @@
-ddump () {
-   defaults read > /tmp/dump1
-   printf "OK, do something! "
-   sleep 1
-   printf "3..."
-   sleep 1
-   printf "2..."
-   sleep 1
-   echo "1..."
-   sleep 1
-   echo "Comparing..."
-   defaults read > /tmp/dump2
-   echo
-   diff /tmp/dump1 /tmp/dump2
-}
+alias ls='eza -l --group-directories-first --octal-permissions --icons --smart-group'
 
 # See https://github.com/alacritty/alacritty/issues/7687#issuecomment-2235981498
 bindkey "^[[1;9D" beginning-of-line   # Cmd + Left Arrow

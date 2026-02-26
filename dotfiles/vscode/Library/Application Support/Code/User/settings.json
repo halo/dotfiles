@@ -138,7 +138,13 @@
     "*.svg": "default"
   },
   "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
     "https://opencode.ai/config.json": true,
-    "https://models.dev/model-schema.json": true
+    "https://models.dev/model-schema.json": true,
+    "https://opencode.ai/tui.json": true
   },
 }

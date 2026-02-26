@@ -5,7 +5,6 @@
 # ───────────────────────────────────────────────────────────────
 # NAVIGATION
 # ───────────────────────────────────────────────────────────────
-alias ls='eza -l --group-directories-first --octal-permissions --icons --smart-group'
 alias la='ls --all'
 alias ..='cd ..'
 alias ...='cd ../..'
