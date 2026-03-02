@@ -1,0 +1,45 @@
+#!/Users/orange/.local/share/mise/installs/ruby/3.4.8/bin/ruby
+
+require 'pathname'
+
+def log(message)
+  Pathname.new('/tmp/alacritty_uris.log').open('a') { it.puts message }
+end
+
+log "\n-----------------"
+
+if ARGV.first.start_with?('https://')
+  log "URL: #{ARGV.first}"
+  exec('/usr/bin/open', ARGV.first)
+end
+
+path = Pathname.new ARGV.first
+           .to_s
+           .delete_prefix("'") # Rspec output sometimes adds quotation marks
+           .delete_suffix("'")
+           .delete_suffix(":in") # This shows up in ruby backtraces sometimes
+           .sub(/\[.*\]$/, '') # Remove [1:2:1] RSpec notation
+path = path.expand_path
+log "Original : #{path}"
+
+file_path = path.sub(/:\d+.*$/, '') # Remove :65 or :164:in for existence check
+log "File     : #{file_path}"
+
+target = Pathname.new(file_path)
+unless target.exist?
+  log "Not found: #{target}"
+  exit(1)
+end
+
+ext = target.extname.downcase
+image_exts = %w[.png .jpg .jpeg .gif .svg .webp .mov .mp4 .mp3 .avi .pdf]
+
+if image_exts.include?(ext)
+  log "Image: #{file_path.expand_path}"
+  exec('/usr/bin/open', file_path.expand_path.to_s)
+else
+  # For code files: pass ORIGINAL with line numbers to VS Code
+  # VS Code understands ./spec/models/delivery_spec.rb:65
+  log "Opening : #{path.expand_path.to_s}"
+  exec('/opt/homebrew/bin/code', '--goto', path.expand_path.to_s)
+end
