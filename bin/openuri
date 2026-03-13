@@ -8,7 +8,7 @@ end
 
 log "\n-----------------"
 
-if ARGV.first.start_with?('https://')
+if ARGV.first.start_with?('https://') || ARGV.first.start_with?('http://')
   log "URL: #{ARGV.first}"
   exec('/usr/bin/open', ARGV.first)
 end
@@ -17,6 +17,7 @@ path = Pathname.new ARGV.first
            .to_s
            .delete_prefix("'") # Rspec output sometimes adds quotation marks
            .delete_suffix("'")
+           .delete_suffix("`") # Paths are commonly presented in backticks
            .delete_suffix(":in") # This shows up in ruby backtraces sometimes
            .sub(/\[.*\]$/, '') # Remove [1:2:1] RSpec notation
 path = path.expand_path

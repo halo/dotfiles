@@ -21,12 +21,13 @@ bindings = [
   { mods = "Command", key = "N", action = "CreateNewWindow" },
   { mods = "Shift", key = "Return", chars = "\n" },
   { key = "Left", mods = "Command|Alt", action = "SelectPreviousTab" },
-  { key = "Right", mods = "Command|Alt", action = "SelectNextTab" }
+  { key = "Right", mods = "Command|Alt", action = "SelectNextTab" },
+  { key = "NumpadEnter", chars = "\r" }
 ]
 
 [[hints.enabled]]
 # (\\./|/)     Starts with "./" or "/"
 # [^\\s]*      Any non-whitespace characters
-regex = "(\\./|/|https://)[^\\s]*"
+regex = "(\\./|/|[a-z0-9]+/|https?://)[^\\s]*"
 command = { program = "/Users/orange/.dotfiles/bin/openuri" }
 mouse = { enabled = true, mods = "Command" }
