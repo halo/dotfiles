@@ -47,6 +47,7 @@ function repeat {
   done
 }
 
+export OCTOKIT_SILENT=1
 export EDITOR='code'
 export HISTCONTROL=erasedups
 export GOPATH=/Users/orange/.go
