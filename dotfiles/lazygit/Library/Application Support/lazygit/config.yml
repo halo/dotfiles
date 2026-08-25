@@ -1,0 +1,3 @@
+gui:
+  # Don't give side panels more height than their content needs
+  shrinkSidePanelsToContent: true
