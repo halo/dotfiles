@@ -19,15 +19,15 @@ bindings = [
   { mods = "Command|Shift", key = "K", action = "ClearHistory" },
   { mods = "Command|Shift", key = "E", command = "/Users/orange/.config/alacritty/reset" },
   { mods = "Command", key = "N", action = "CreateNewWindow" },
-  { mods = "Shift", key = "Return", chars = "\n" },
+  { mods = "Shift", key = "Return", chars = "\n" }, # Multi-line TUI inputs, like in OpenCode
   { key = "Left", mods = "Command|Alt", action = "SelectPreviousTab" },
   { key = "Right", mods = "Command|Alt", action = "SelectNextTab" },
   { key = "NumpadEnter", chars = "\r" }
-]
+ ]
 
 [[hints.enabled]]
 # (\\./|/)     Starts with "./" or "/"
 # [^\\s]*      Any non-whitespace characters
-regex = "(\\./|/|[a-z0-9]+/|https?://)[^\\s]*"
+regex = "(\\./|/|[a-z0-9]+/|https?://|~/)[^\\s]*"
 command = { program = "/Users/orange/.dotfiles/bin/openuri" }
 mouse = { enabled = true, mods = "Command" }
