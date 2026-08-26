@@ -7,18 +7,18 @@
 # ───────────────────────────────────────────────────────────────
 alias la='ls --all'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 # ───────────────────────────────────────────────────────────────
 # ONE-LETTER SHORTCUTS
 # ───────────────────────────────────────────────────────────────
 alias b='bundle'
+alias c='container'
 alias d='docker'
 alias h='heroku'
-alias m='megatest'
+alias m='mise'
 alias p='pnpm'
 alias r='rails'
+alias t='terraform'
 
 # ───────────────────────────────────────────────────────────────
 # GIT
@@ -40,6 +40,7 @@ alias gt='git tag'
 alias glg='git lg'
 alias gcp="git cherry-pick -x"
 alias gu='git unstage'
+alias lg='lazygit'
 
 # ───────────────────────────────────────────────────────────────
 # RUBY/RAILS
@@ -56,14 +57,6 @@ alias rr='bin/rails routes | grep '
 alias rst='touch tmp/restart.txt &> /dev/null; bin/spring stop &> /dev/null && echo Application restarted.'
 
 # ───────────────────────────────────────────────────────────────
-# RSPEC
-# ───────────────────────────────────────────────────────────────
-alias br='bundle exec rspec'
-alias bru='UNIT=1 bundle exec rspec'
-alias brn='bundle exec rspec --next-failure'
-alias brun='UNIT=1 bundle exec rspec --next-failure'
-
-# ───────────────────────────────────────────────────────────────
 # LOG TAILING
 # ───────────────────────────────────────────────────────────────
 alias tdev='tail -n 90 -f log/development.log'
@@ -78,6 +71,7 @@ alias dock="docker compose --file ~/code/2-areas/databases/docker-compose.yml up
 alias pg18='docker compose --file ~/code/2-areas/databases/docker-compose.yml up postgres18'
 alias redis='docker compose --file ~/code/2-areas/databases/docker-compose.yml up redis'
 alias meili='docker compose --file ~/code/2-areas/databases/docker-compose.yml up meilisearch meilisearch-test'
+alias ld='lazydocker'
 
 # ───────────────────────────────────────────────────────────────
 # SYSTEM
@@ -87,11 +81,6 @@ alias online="ping -c 1 www.example.com &> /dev/null && echo 'Online :)' || echo
 alias hosts='sudo code --new-window /etc/hosts'
 alias sshconf='code --new-window ~/.ssh/config'
 alias vsextensions="code --force $(cat ~/.vscode/Extensionsfile | sed 's/^/--install-extension /')"
-
-# ───────────────────────────────────────────────────────────────
-# HEROKU
-# ───────────────────────────────────────────────────────────────
-alias switch='heroku accounts:set'
 
 # ───────────────────────────────────────────────────────────────
 # MEDIA
