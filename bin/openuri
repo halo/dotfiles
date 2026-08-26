@@ -16,7 +16,10 @@ end
 path = Pathname.new ARGV.first
            .to_s
            .delete_prefix("'") # Rspec output sometimes adds quotation marks
+           .delete_prefix("[") # `some_test_name [some/file_test.rb:53]:`
            .delete_suffix("'")
+           .delete_suffix(":") # Must come before removing `]`
+           .delete_suffix(']')
            .delete_suffix("`") # Paths are commonly presented in backticks
            .delete_suffix(":in") # This shows up in ruby backtraces sometimes
            .sub(/\[.*\]$/, '') # Remove [1:2:1] RSpec notation
