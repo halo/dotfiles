@@ -19,7 +19,7 @@ bindings = [
   { mods = "Command|Shift", key = "K", action = "ClearHistory" },
   { mods = "Command|Shift", key = "E", command = "/Users/orange/.config/alacritty/reset" },
   { mods = "Command", key = "N", action = "CreateNewWindow" },
-  { mods = "Shift", key = "Return", chars = "\n" }, # Multi-line TUI inputs, like in OpenCode
+  { mods = "Shift", key = "Return", chars = "\u001b[13;2u" }, # Multi-line TUI inputs (Kitty CSI-u style Shift+Enter)
   { key = "Left", mods = "Command|Alt", action = "SelectPreviousTab" },
   { key = "Right", mods = "Command|Alt", action = "SelectNextTab" },
   { key = "NumpadEnter", chars = "\r" }
