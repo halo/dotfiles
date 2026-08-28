@@ -147,4 +147,8 @@
     "https://models.dev/model-schema.json": true,
     "https://opencode.ai/tui.json": true
   },
+  "git.blame.statusBarItem.enabled": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
 }
