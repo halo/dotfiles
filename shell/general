@@ -55,6 +55,9 @@ export TLDR_AUTO_UPDATE_DISABLED=1
 export CHEF_TELEMETRY_OPT_OUT=1
 export MISE_RUBY_COMPILE=false
 
+# Cannot use any kind of process forking otherwise. E.g. parallel tests.
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 export SSH_AUTH_SOCK="~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
