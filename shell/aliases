@@ -11,10 +11,11 @@ alias ..='cd ..'
 # ───────────────────────────────────────────────────────────────
 # ONE-LETTER SHORTCUTS
 # ───────────────────────────────────────────────────────────────
+alias a='ansible'
 alias b='bundle'
 alias c='container'
 alias d='docker'
-alias h='heroku'
+alias h='herdr'
 alias m='mise'
 alias p='pnpm'
 alias r='rails'
