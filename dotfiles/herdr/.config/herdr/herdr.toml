@@ -1,0 +1,12 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[ui]
+status_indicators = "symbols"
+
+[ui.sound]
+enabled = true
+path = 'communication-out.mp3'
