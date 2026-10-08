@@ -9,4 +9,4 @@ status_indicators = "symbols"
 
 [ui.sound]
 enabled = true
-path = 'communication-out.mp3'
+path = 'beep.mp3'
